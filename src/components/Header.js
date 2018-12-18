@@ -1,33 +1,55 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+const NavbarStyled = styled.nav`
+  padding: 2rem 0rem;
+`;
+
+const Logo = styled.div`
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+`;
 
 const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
+  <NavbarStyled
+    className="navbar is-transparent"
+    role="navigation"
+    aria-label="main navigation"
   >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
+    <div className="container">
+      <div className="navbar-brand">
+        <a className="navbar-item">
+          <Logo className="is-size-2 has-text-primary">PACKRS</Logo>
+        </a>
+
+        <a
+          role="button"
+          className="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
         >
-          Gatsby
-        </Link>
-      </h1>
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" className="navbar-menu">
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
+              <a className="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a className="button is-light">Log in</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </NavbarStyled>
 );
 
 export default Header;
