@@ -33,7 +33,6 @@ const AppDownload = () => (
       <h1 className="title has-font-primary has-text-weight-bold is-size-1">
         Download Packrs App
       </h1>
-
       <h2 className="subtitle">
         App is available on both android and Ios Platforms
       </h2>

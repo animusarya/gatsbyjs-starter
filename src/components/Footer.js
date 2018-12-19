@@ -11,6 +11,9 @@ const Container = styled.section`
   .social {
     padding-right: 3rem;
     font-size: 2rem;
+    @media only screen and (max-width: 769px) {
+      padding-right: 1rem;
+    }
   }
 `;
 const Logo = styled.div`
@@ -29,10 +32,10 @@ const Footer = () => (
               <input
                 className="input is-rounded is-large"
                 type="text"
-                placeholder="Subscribe to us"
+                placeholder="Enter your email"
               />
             </p>
-            <p className="control">
+            <p className="control is-hidden-mobile">
               <a className="button is-primary is-rounded is-large">Subscribe</a>
             </p>
           </div>
@@ -40,16 +43,20 @@ const Footer = () => (
       </div>
       <div className="columns">
         <div className="column">
-          <Logo className="is-size-2 has-text-primary">PACKRS</Logo>
-          <span className="social">
-            <i className="fab fa-facebook-f" />
-          </span>
-          <span className="social">
-            <i className="fab fa-twitter" />
-          </span>
-          <span className="social">
-            <i className="fab fa-instagram" />
-          </span>
+          <Logo className="is-size-2 has-text-primary has-text-centered-mobile">
+            PACKRS
+          </Logo>
+          <div className="has-text-centered-mobile">
+            <span className="social">
+              <i className="fab fa-facebook-f" />
+            </span>
+            <span className="social">
+              <i className="fab fa-twitter" />
+            </span>
+            <span className="social">
+              <i className="fab fa-instagram" />
+            </span>
+          </div>
         </div>
         <div className="column" />
         <div className="column" />

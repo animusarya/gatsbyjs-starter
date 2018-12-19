@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const NavbarStyled = styled.nav`
   padding: 2rem 0rem;
+  background-color: #81cbe2;
   @media only screen and (max-width: 769px) {
     padding: 0rem;
   }
@@ -23,7 +24,9 @@ const Header = () => (
     <div className="container">
       <div className="navbar-brand">
         <a className="navbar-item">
-          <Logo className="is-size-2 has-text-primary">PACKRS</Logo>
+          <Logo className="is-size-2 has-text-primary">
+            <span className="has-text-white"> PACK</span>RS
+          </Logo>
         </a>
 
         <a
