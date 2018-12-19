@@ -9,6 +9,9 @@ const Container = styled.section`
   background-position: bottom right;
   .hero-body {
     padding-top: 12rem !important;
+    .is-info {
+      background-color: #1f95a6 !important;
+    }
     .subtitle {
       line-height: 1.8rem;
     }
