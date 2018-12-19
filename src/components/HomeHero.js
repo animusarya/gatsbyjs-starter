@@ -25,7 +25,9 @@ const HomeHero = () => (
         <div className="columns">
           <div className="column">
             <h1 className="title is-uppercase has-font-primary is-size-2 has-text-weight-bold has-text-white">
-              The most faster <span className="has-text-primary">delivery</span>{' '}
+              The most faster{' '}
+              <span className="has-text-primary">delivery </span>
+              {''}
               hub
             </h1>
             <h2 className="subtitle has-text-white has-text-weight-light">
