@@ -10,11 +10,23 @@ const Container = styled.section`
 `;
 
 const HomeHero = () => (
-  <Container className="hero is-large">
+  <Container className="hero is-medium">
     <div className="hero-body">
       <div className="container">
-        <h1 className="title">Fullheight title</h1>
-        <h2 className="subtitle">Fullheight subtitle</h2>
+        <div className="columns">
+          <div className="column">
+            <h1 className="title is-uppercase has-font-primary is-size-2 has-text-weight-bold">
+              The most faster <span className="has-text-primary">delivery</span>{' '}
+              hub
+            </h1>
+            <h2 className="subtitle">
+              Order from anywhere in the business – from local hotspots to
+              national favourites – and get the items you love delivered fast,
+              right to your door.
+            </h2>
+          </div>
+          <div className="column" />
+        </div>
       </div>
     </div>
   </Container>
