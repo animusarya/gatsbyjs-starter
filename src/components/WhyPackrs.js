@@ -2,12 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.section`
+  background-color: #fbfad3;
+  padding: 5rem;
   .subtitle {
     margin-top: 1rem !important;
     margin-bottom: 8rem !important;
   }
   .column {
     .card {
+      background-color: #fbfad3;
       box-shadow: 0 0px 0px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0) !important;
       .card-image {
         display: flex !important;

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import config from '../utils/config';
 import Header from './Header';
+import Footer from './Footer';
 import './layout.css';
 
 const Container = styled.div``;
@@ -19,6 +20,7 @@ const IndexLayout = ({ children }) => (
     </Helmet>
     <Header />
     <Container>{children}</Container>
+    <Footer />
   </div>
 );
 

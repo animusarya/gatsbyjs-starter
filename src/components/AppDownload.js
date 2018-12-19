@@ -3,6 +3,13 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Container = styled.section`
+  padding: 10rem;
+  @media only screen and (max-width: 769px) {
+    padding: 0rem;
+  }
+  .subtitle {
+    margin-top: 1rem !important;
+  }
   .button {
     width: 20rem;
     height: 5rem;
@@ -10,12 +17,22 @@ const Container = styled.section`
   .is-secondary {
     border-color: transparent !important;
   }
+  .fa-google-play,
+  .fa-apple {
+    margin-right: 1rem;
+  }
+  .level {
+    padding: 3rem;
+  }
 `;
 
 const AppDownload = () => (
   <Container className="section">
     <div className="container has-text-centered">
-      <h1 className="title">Download Packrs App</h1>
+      <h1 className="title has-font-primary has-text-weight-bold is-size-1">
+        Download Packrs App
+      </h1>
+
       <h2 className="subtitle">
         App is available on both android and Ios Platforms
       </h2>
