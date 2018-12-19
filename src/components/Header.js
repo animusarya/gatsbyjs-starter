@@ -4,6 +4,9 @@ import styled from 'styled-components';
 
 const NavbarStyled = styled.nav`
   padding: 2rem 0rem;
+  @media only screen and (max-width: 769px) {
+    padding: 0rem;
+  }
 `;
 
 const Logo = styled.div`

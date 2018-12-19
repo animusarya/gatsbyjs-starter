@@ -4,9 +4,15 @@ import styled from 'styled-components';
 const Container = styled.section`
   background-color: #fbfad3;
   padding: 5rem;
+  @media only screen and (max-width: 769px) {
+    padding: 3rem 1.5rem;
+  }
   .subtitle {
     margin-top: 1rem !important;
     margin-bottom: 8rem !important;
+    @media only screen and (max-width: 769px) {
+      margin-bottom: 5rem !important;
+    }
   }
   .column {
     .card {

@@ -6,6 +6,7 @@ const Container = styled.section`
   padding: 10rem;
   @media only screen and (max-width: 769px) {
     padding: 0rem;
+    padding-top: 2rem;
   }
   .subtitle {
     margin-top: 1rem !important;

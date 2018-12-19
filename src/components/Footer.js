@@ -5,6 +5,9 @@ import styled from 'styled-components';
 const Container = styled.section`
   background-color: #fbfad3;
   padding: 5rem;
+  @media only screen and (max-width: 769px) {
+    padding: 3rem;
+  }
   .social {
     padding-right: 3rem;
     font-size: 2rem;
