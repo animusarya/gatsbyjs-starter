@@ -11,6 +11,7 @@ const Container = styled.section`
   .social {
     padding-right: 3rem;
     font-size: 2rem;
+
     @media only screen and (max-width: 769px) {
       padding-right: 1rem;
     }
@@ -47,15 +48,15 @@ const Footer = () => (
             PACKRS
           </Logo>
           <div className="has-text-centered-mobile">
-            <span className="social">
+            <a className="social has-text-dark">
               <i className="fab fa-facebook-f" />
-            </span>
-            <span className="social">
+            </a>
+            <a className="social has-text-dark">
               <i className="fab fa-twitter" />
-            </span>
-            <span className="social">
+            </a>
+            <a className="social has-text-dark">
               <i className="fab fa-instagram" />
-            </span>
+            </a>
           </div>
         </div>
         <div className="column" />

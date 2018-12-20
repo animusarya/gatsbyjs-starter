@@ -33,7 +33,7 @@ const HomeHero = () => (
             <h2 className="subtitle has-text-white has-text-weight-light">
               Order from anywhere in the business – from local hotspots to
               national favourites – and get the items you love delivered fast,
-              right to your door.
+              right to your door. Order now
             </h2>
             <div className="field is-grouped">
               <p className="control is-expanded">
@@ -44,7 +44,7 @@ const HomeHero = () => (
                 />
               </p>
               <p className="control">
-                <a className="button is-info is-large is-rounded">SUBMIT</a>
+                <a className="button is-info is-large is-rounded">Order</a>
               </p>
             </div>
           </div>
