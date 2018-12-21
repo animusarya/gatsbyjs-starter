@@ -8,6 +8,16 @@ const Container = styled.section`
     padding: 0rem;
     padding-top: 2rem;
   }
+  .item-one {
+    justify-content: flex-end !important;
+    margin-right: 5rem;
+    @media only screen and (max-width: 769px) {
+      margin-right: 0rem;
+    }
+  }
+  .item-two {
+    justify-content: flex-start !important;
+  }
   .subtitle {
     margin-top: 1rem !important;
   }
@@ -37,7 +47,7 @@ const AppDownload = () => (
         App is available on both android and Ios Platforms
       </h2>
       <div className="level">
-        <div className="level-item">
+        <div className="level-item item-one">
           <button
             className="button is-rounded is-primary is-size-4"
             type="button"
@@ -45,7 +55,7 @@ const AppDownload = () => (
             <i className="fab fa-google-play" /> Google Play
           </button>
         </div>
-        <div className="level-item">
+        <div className="level-item item-two">
           <button
             className="button is-rounded is-secondary is-size-4"
             type="button"
