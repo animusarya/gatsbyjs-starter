@@ -16,6 +16,7 @@ export default class IndexPage extends React.Component {
           title="Home"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
+          image="/image/background.png"
         />
         <HomeHero />
         <WhyPackrs />

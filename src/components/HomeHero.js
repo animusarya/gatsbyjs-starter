@@ -3,12 +3,19 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Container = styled.section`
-  background-image: url('../images/delivery-bg.png');
-  background-size: cover;
+  background-image: url('../images/background.png');
+  background-size: 88%;
   background-repeat: no-repeat;
   background-position: bottom right;
+  .hero-text {
+  }
+  @media only screen and (max-width: 769px) {
+    background-size: 0 0;
+  }
+
   .hero-body {
-    padding-top: 12rem !important;
+    padding-bottom: 13rem !important;
+    padding-top: 10rem !important;
     .is-info {
       background-color: #1f95a6 !important;
     }
@@ -17,6 +24,11 @@ const Container = styled.section`
     }
     @media only screen and (max-width: 769px) {
       padding-top: 3rem !important;
+      padding-bottom: 5rem !important;
+    }
+    @media screen and (max-width: 1366px) and (min-width: 769px) {
+      padding-top: 6rem !important;
+      padding-bottom: 5rem !important;
     }
   }
 `;
@@ -26,14 +38,13 @@ const HomeHero = () => (
     <div className="hero-body">
       <div className="container">
         <div className="columns">
-          <div className="column">
-            <h1 className="title is-uppercase has-font-primary is-size-2 has-text-weight-bold has-text-white">
+          <div className="column hero-text">
+            <h1 className="title is-uppercase has-font-primary is-size-2 has-text-weight-bold">
               The most faster{' '}
               <span className="has-text-primary">delivery </span>
-              {''}
               hub
             </h1>
-            <h2 className="subtitle has-text-white has-text-weight-light">
+            <h2 className="subtitle  has-text-weight-light">
               Order from anywhere in the business – from local hotspots to
               national favourites – and get the items you love delivered fast,
               right to your door. Order now
@@ -47,7 +58,7 @@ const HomeHero = () => (
                 />
               </p>
               <p className="control">
-                <a className="button is-info is-large is-rounded">Order</a>
+                <a className="button is-primary is-large is-rounded">Order</a>
               </p>
             </div>
           </div>

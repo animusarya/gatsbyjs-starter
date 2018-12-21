@@ -4,7 +4,7 @@ module.exports = {
   siteName: 'Packrs',
   author: 'vipin',
   description: 'A delivery platform for anything',
-  siteUrl: 'http://kickoff-gatsbyjs.netlify.com',
+  siteUrl: 'http://packrs.co',
 
   twitter: '@NAME-HERE',
   fbUserId: '@NAME-HERE',
@@ -13,5 +13,5 @@ module.exports = {
   googleAnalytics: '',
 
   backgroundColor: '#e0e0e0',
-  themeColor: '#c62828',
+  themeColor: '#33b760',
 };

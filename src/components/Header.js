@@ -3,8 +3,8 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const NavbarStyled = styled.nav`
-  padding: 2rem 0rem;
-  background-color: #81cbe2;
+  padding: 1rem 0rem;
+  background-color: #fff;
   @media only screen and (max-width: 769px) {
     padding: 0rem;
   }
@@ -24,9 +24,7 @@ const Header = () => (
     <div className="container">
       <div className="navbar-brand">
         <a className="navbar-item">
-          <Logo className="is-size-2 has-text-primary">
-            <span className="has-text-white"> PACK</span>RS
-          </Logo>
+          <Logo className="is-size-2 has-text-primary">PACKRS</Logo>
         </a>
 
         <a
@@ -35,11 +33,7 @@ const Header = () => (
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-        </a>
+        />
       </div>
 
       <div id="navbarBasicExample" className="navbar-menu">
