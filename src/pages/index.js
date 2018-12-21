@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import config from '../utils/config';
 import Seo from '../components/Seo';
@@ -16,7 +15,7 @@ export default class IndexPage extends React.Component {
           title="Home"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
-          image="/image/background.png"
+          image="https://www.packrs.co/images/background.png"
         />
         <HomeHero />
         <WhyPackrs />
