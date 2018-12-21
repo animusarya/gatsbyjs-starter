@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Container = styled.section`
-  padding: 10rem;
+  padding: 5rem 0rem;
   @media only screen and (max-width: 769px) {
     padding: 0rem;
     padding-top: 2rem;

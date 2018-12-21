@@ -1,7 +1,7 @@
 module.exports = {
   DEBUG: process.env.NODE_ENV === 'development',
 
-  siteName: 'Packrs landing',
+  siteName: 'Packrs',
   author: 'vipin',
   description: 'A delivery platform for anything',
   siteUrl: 'http://kickoff-gatsbyjs.netlify.com',
