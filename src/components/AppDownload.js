@@ -86,7 +86,7 @@ const AppDownload = () => (
           </div>
         </div>
         <div className="column mockup">
-          <img src="/images/mockup-iphone.png" alt="mockup" />
+          <img src="/images/mockup-iphone-new.png" alt="mockup" />
         </div>
       </div>
     </div>
