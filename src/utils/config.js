@@ -4,7 +4,7 @@ module.exports = {
   siteName: 'Packrs',
   author: 'vipin',
   description: 'A delivery platform for anything',
-  siteUrl: 'http://packrs.co/',
+  siteUrl: 'https://packrs.co/',
   image: 'https://packrs.co/images/social-preview.png',
   twitter: '@NAME-HERE',
   fbUserId: '@NAME-HERE',
