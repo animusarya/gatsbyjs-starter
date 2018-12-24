@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Subscribe from './Subscribe';
 
 const Container = styled.section`
-  background-color: #fbfad3;
+  background-color: #e9f8ef;
   padding: 5rem;
   @media only screen and (max-width: 769px) {
     padding: 3rem;
