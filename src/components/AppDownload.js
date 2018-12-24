@@ -1,3 +1,4 @@
+/* global swal:true */
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -68,6 +69,7 @@ const AppDownload = () => (
               <button
                 className="button is-rounded is-primary is-size-5"
                 type="button"
+                onClick={() => swal('Coming soon !')}
               >
                 <i className="fab fa-google-play" /> Google Play
               </button>
@@ -76,6 +78,7 @@ const AppDownload = () => (
               <button
                 className="button is-rounded is-secondary is-size-5"
                 type="button"
+                onClick={() => swal('Coming soon !')}
               >
                 <i className="fab fa-apple" /> App Store
               </button>

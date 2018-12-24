@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Container = styled.section`
@@ -7,8 +6,20 @@ const Container = styled.section`
   background-size: 88%;
   background-repeat: no-repeat;
   background-position: bottom right;
-  .hero-text {
+  @media only screen and (max-width: 769px) {
+    .input.is-large,
+    .textarea.is-large {
+      font-size: 1rem !important;
+      height: 3rem !important;
+      padding-left: 1rem !important;
+    }
+    .button {
+      font-size: 1rem !important;
+      height: 3rem !important;
+      padding-left: 1rem !important;
+    }
   }
+
   @media only screen and (max-width: 769px) {
     background-size: 0 0;
   }
@@ -52,13 +63,15 @@ const HomeHero = () => (
             <div className="field is-grouped">
               <p className="control is-expanded">
                 <input
-                  className="input is-large is-rounded"
+                  className="input is-large is-rounded is-medium-mobile"
                   type="text"
                   placeholder="Enter Mobile Number"
                 />
               </p>
               <p className="control">
-                <a className="button is-primary is-large is-rounded">Order</a>
+                <a className="button is-primary is-large is-rounded is-medium-mobile">
+                  Order
+                </a>
               </p>
             </div>
           </div>

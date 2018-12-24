@@ -28,6 +28,7 @@ export default class HTML extends React.Component {
             defer
             src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
           />
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" />
           {/* Add custom css or scripts here */}
 
           {/* Add custom css or scripts here */}

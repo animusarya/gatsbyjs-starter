@@ -48,13 +48,22 @@ const Footer = () => (
             PACKRS
           </Logo>
           <div className="has-text-centered-mobile">
-            <a className="social has-text-dark">
+            <a
+              className="social has-text-dark"
+              href="https://www.facebook.com/PackrsOfficial/"
+            >
               <i className="fab fa-facebook-f" />
             </a>
-            <a className="social has-text-dark">
+            <a
+              className="social has-text-dark"
+              href="https://twitter.com/PackrsOfficial"
+            >
               <i className="fab fa-twitter" />
             </a>
-            <a className="social has-text-dark">
+            <a
+              className="social has-text-dark"
+              href="https://www.instagram.com/packrs_official/"
+            >
               <i className="fab fa-instagram" />
             </a>
           </div>

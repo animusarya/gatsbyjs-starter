@@ -5,6 +5,7 @@ select,
 textarea {
   font-family: 'Open Sans', sans-serif;
 }
+
 .has-text-primary {
   color: #33b760 !important;
 }
