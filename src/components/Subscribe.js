@@ -45,6 +45,7 @@ class Subscribe extends React.Component {
                   value={email}
                   placeholder="Enter your email"
                   onChange={this.handleChange}
+                  aria-label="email"
                 />
               </p>
               <p className="control is-hidden-mobile">

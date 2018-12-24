@@ -66,6 +66,7 @@ const HomeHero = () => (
                   className="input is-large is-rounded is-medium-mobile"
                   type="text"
                   placeholder="Enter Mobile Number"
+                  aria-label="phone"
                 />
               </p>
               <p className="control">

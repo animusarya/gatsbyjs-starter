@@ -36,18 +36,21 @@ const Footer = () => (
             <a
               className="social has-text-dark"
               href="https://www.facebook.com/PackrsOfficial/"
+              aria-label="facebook"
             >
               <i className="fab fa-facebook-f" />
             </a>
             <a
               className="social has-text-dark"
               href="https://twitter.com/PackrsOfficial"
+              aria-label="twitter"
             >
               <i className="fab fa-twitter" />
             </a>
             <a
               className="social has-text-dark"
               href="https://www.instagram.com/packrs_official/"
+              aria-label="instagram"
             >
               <i className="fab fa-instagram" />
             </a>
