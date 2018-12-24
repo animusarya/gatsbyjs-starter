@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.section`
-  background-image: url('../images/background.png');
+  background-image: url('../images/background.webp');
   background-size: 88%;
   background-repeat: no-repeat;
   background-position: bottom right;
