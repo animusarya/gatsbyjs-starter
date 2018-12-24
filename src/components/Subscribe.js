@@ -1,102 +1,69 @@
 import React from 'react';
-import styled from 'styled-components';
+import addToMailchimp from 'gatsby-plugin-mailchimp';
 
-const Container = styled.section`
-  .subtitle {
-    margin-top: 1rem !important;
-    margin-bottom: 8rem !important;
-  }
-  .column {
-    .card {
-      box-shadow: 0 0px 0px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0) !important;
-      .card-image {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-    .is-128x128 {
-      width: 250px;
-      height: 250px;
-    }
-  }
-`;
+class Subscribe extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      message: '',
+    };
 
-const Subscribe = () => (
-  <Container className="section">
-    <div className="container has-text-centered">
-      <h1 className="title has-font-primary has-text-weight-bold is-size-1">
-        Why Packrs ?
-      </h1>
-      <h2 className="subtitle">
-        Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Phasellus nec iaculis mauris. consectetur adipiscing
-        elit. Phasellus nec iaculis mauris.
-      </h2>
-      <div className="columns">
-        <div className="column has-text-centered">
-          <div className="card">
-            <div className="card-image">
-              <figure className="image is-128x128">
-                <img
-                  src="/images/timely-delivery.svg"
-                  alt="Placeholder image"
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  // 2. via `async/await`
+  handleSubmit = async e => {
+    const { email } = this.state;
+    e.preventDefault();
+    const result = await addToMailchimp(email);
+    this.setState({ email: '', message: result.msg });
+    setTimeout(() => {
+      this.setState({ message: '' });
+    }, 2000);
+  };
+
+  handleChange(event) {
+    this.setState({ email: event.target.value });
+  }
+
+  render() {
+    const { message, email } = this.state;
+
+    console.log('message', message);
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className="columns">
+          <div className="column  is-size-3">Subscribe to our newsletter</div>
+          <div className="column">
+            <div className="field is-grouped">
+              <p className="control is-expanded">
+                <input
+                  className="input is-rounded is-large"
+                  type="email"
+                  value={email}
+                  placeholder="Enter your email"
+                  onChange={this.handleChange}
                 />
-              </figure>
+              </p>
+              <p className="control is-hidden-mobile">
+                <button
+                  className="button is-primary is-rounded is-large"
+                  type="submit"
+                >
+                  Subscribe
+                </button>
+              </p>
             </div>
-            <div className="card-content">
-              <div className="content">
-                <div className="title has-text-centered">Fast Delivery</div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br />
-              </div>
-            </div>
+            <span className="has-text-primary has-text-centered">
+              {message}
+            </span>
           </div>
         </div>
-        <div className="column">
-          <div className="card">
-            <div className="card-image">
-              <figure className="image is-128x128">
-                <img
-                  src="/images/deliver-anywhere.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div className="card-content">
-              <div className="content">
-                <div className="title has-text-centered">Deliver Anywhere</div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <div className="card-image">
-              <figure className="image is-128x128">
-                <img src="/images/track-order.svg" alt="Placeholder image" />
-              </figure>
-            </div>
-            <div className="card-content">
-              <div className="content">
-                <div className="title has-text-centered">Track Delivery</div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </Container>
-);
+      </form>
+    );
+  }
+}
 
 export default Subscribe;

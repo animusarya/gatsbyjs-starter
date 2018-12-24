@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import Subscribe from './Subscribe';
 
 const Container = styled.section`
   background-color: #fbfad3;
@@ -25,23 +26,7 @@ const Logo = styled.div`
 const Footer = () => (
   <Container className="section">
     <div className="container">
-      <div className="columns">
-        <div className="column  is-size-3">Subscribe to our newsletter</div>
-        <div className="column">
-          <div className="field is-grouped">
-            <p className="control is-expanded">
-              <input
-                className="input is-rounded is-large"
-                type="text"
-                placeholder="Enter your email"
-              />
-            </p>
-            <p className="control is-hidden-mobile">
-              <a className="button is-primary is-rounded is-large">Subscribe</a>
-            </p>
-          </div>
-        </div>
-      </div>
+      <Subscribe />
       <div className="columns">
         <div className="column">
           <Logo className="is-size-2 has-text-primary has-text-centered-mobile">
