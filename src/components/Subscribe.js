@@ -50,7 +50,7 @@ class Subscribe extends React.Component {
               </p>
               <p className="control is-hidden-mobile">
                 <button
-                  className="button is-primary is-rounded is-large"
+                  className="button is-black is-rounded is-large"
                   type="submit"
                 >
                   Subscribe

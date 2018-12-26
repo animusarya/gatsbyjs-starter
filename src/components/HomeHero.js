@@ -70,7 +70,7 @@ const HomeHero = () => (
                 />
               </p>
               <p className="control">
-                <a className="button is-primary is-large is-rounded is-medium-mobile">
+                <a className="button is-black is-large is-rounded is-medium-mobile">
                   Order
                 </a>
               </p>
