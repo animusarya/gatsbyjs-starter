@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 const Container = styled.section`
   background-color: #dad4e1;
+  .button {
+    box-shadow: 0px 13px 21px -10px rgba(0, 0, 0, 0.3) !important;
+  }
   @media only screen and (max-width: 769px) {
     .input.is-large,
     .textarea.is-large {
