@@ -67,7 +67,7 @@ const AppDownload = () => (
           <div className="level">
             <div className="level-item item-one">
               <button
-                className="button is-rounded is-primary is-size-5"
+                className="button is-primary is-size-5"
                 type="button"
                 onClick={() => swal('Coming soon !')}
               >
@@ -76,7 +76,7 @@ const AppDownload = () => (
             </div>
             <div className="level-item item-two">
               <button
-                className="button is-rounded is-secondary is-size-5"
+                className="button is-secondary is-size-5"
                 type="button"
                 onClick={() => swal('Coming soon !')}
               >

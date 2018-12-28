@@ -54,7 +54,9 @@ const WhyPackrs = () => (
             </div>
             <div className="card-content">
               <div className="content">
-                <div className="title has-text-centered">Fast Delivery</div>
+                <div className="title has-text-centered is-uppercase">
+                  Fast Delivery
+                </div>
                 Shoppers increasingly want their orders to arrive at their
                 doorsteps as soon as they click a button, whether it's a hot
                 meal, groceries or a sofa. We aim to deliver everything in blink
@@ -70,13 +72,15 @@ const WhyPackrs = () => (
               <figure className="image is-128x128">
                 <img
                   src="/images/deliver-anywhere.svg"
-                  alt="Placeholder image"
+                  alt="Placeholderimage"
                 />
               </figure>
             </div>
             <div className="card-content">
               <div className="content">
-                <div className="title has-text-centered">Deliver Anywhere</div>
+                <div className="title has-text-centered is-uppercase">
+                  Deliver Anywhere
+                </div>
                 Able to deliver anything from anywhere, Packrs is the food
                 delivery, grocery delivery, whatever-you-can-think-of delivery
                 service to bring what you crave right to your door.
@@ -94,7 +98,9 @@ const WhyPackrs = () => (
             </div>
             <div className="card-content">
               <div className="content">
-                <div className="title has-text-centered">Track Delivery</div>
+                <div className="title has-text-centered is-uppercase">
+                  Track Delivery
+                </div>
                 Track your shipment or order on our app live. you are in contact
                 with our delivery boys everytime. So, no delays, safe shipment
                 and transparent mechanism from order to delivery.

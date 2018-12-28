@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const NavbarStyled = styled.nav`
+  background-color: #dad4e1 !important;
   padding: 1rem 0rem;
   background-color: #fff;
   @media only screen and (max-width: 769px) {
@@ -24,7 +24,9 @@ const Header = () => (
     <div className="container">
       <div className="navbar-brand">
         <a className="navbar-item">
-          <Logo className="is-size-2 has-text-primary">PACKRS</Logo>
+          <Logo className="is-size-2 has-text-primary">
+            PACK<span className="has-text-white">RS</span>
+          </Logo>
         </a>
 
         <a

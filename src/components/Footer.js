@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Subscribe from './Subscribe';
 
 const Container = styled.section`
-  background-color: #e9f8ef;
+  background-color: #000;
   padding: 5rem;
   @media only screen and (max-width: 769px) {
     padding: 3rem;
@@ -26,29 +26,28 @@ const Logo = styled.div`
 const Footer = () => (
   <Container className="section">
     <div className="container">
-      <Subscribe />
       <div className="columns">
         <div className="column">
-          <Logo className="is-size-2 has-text-primary has-text-centered-mobile">
+          <Logo className="is-size-2 has-text-white has-text-centered-mobile">
             PACKRS
           </Logo>
           <div className="has-text-centered-mobile">
             <a
-              className="social has-text-dark"
+              className="social has-text-white"
               href="https://www.facebook.com/PackrsOfficial/"
               aria-label="facebook"
             >
               <i className="fab fa-facebook-f" />
             </a>
             <a
-              className="social has-text-dark"
+              className="social has-text-white"
               href="https://twitter.com/PackrsOfficial"
               aria-label="twitter"
             >
               <i className="fab fa-twitter" />
             </a>
             <a
-              className="social has-text-dark"
+              className="social has-text-white"
               href="https://www.instagram.com/packrs_official/"
               aria-label="instagram"
             >
@@ -59,7 +58,7 @@ const Footer = () => (
         <div className="column" />
         <div className="column" />
       </div>
-      <div className="has-text-centered">
+      <div className="has-text-centered has-text-white">
         Copyright 2018 All Rights Reserved
       </div>
     </div>

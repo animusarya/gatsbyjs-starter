@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import HomeHero from '../components/HomeHero';
 import WhyPackrs from '../components/WhyPackrs';
 import AppDownload from '../components/AppDownload';
+import Subscribe from '../components/Subscribe';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -20,6 +21,7 @@ export default class IndexPage extends React.Component {
         <HomeHero />
         <WhyPackrs />
         <AppDownload />
+        <Subscribe />
       </Layout>
     );
   }

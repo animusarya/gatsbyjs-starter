@@ -1,5 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
+
+const Container = styled.section`
+  padding: 5rem;
+  background-color: red;
+  background-repeat: no-repeat;
+  .message {
+    position: absolute;
+  }
+`;
 
 class Subscribe extends React.Component {
   constructor(props) {
@@ -19,9 +29,9 @@ class Subscribe extends React.Component {
     e.preventDefault();
     const result = await addToMailchimp(email);
     this.setState({ email: '', message: result.msg });
-    setTimeout(() => {
-      this.setState({ message: '' });
-    }, 2000);
+    // setTimeout(() => {
+    //   this.setState({ message: '' });
+    // }, 2000);
   };
 
   handleChange(event) {
@@ -33,36 +43,39 @@ class Subscribe extends React.Component {
 
     console.log('message', message);
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="columns">
-          <div className="column  is-size-3">Subscribe to our newsletter</div>
-          <div className="column">
-            <div className="field is-grouped">
-              <p className="control is-expanded">
-                <input
-                  className="input is-rounded is-large"
-                  type="email"
-                  value={email}
-                  placeholder="Enter your email"
-                  onChange={this.handleChange}
-                  aria-label="email"
-                />
-              </p>
-              <p className="control is-hidden-mobile">
-                <button
-                  className="button is-primary is-rounded is-large"
-                  type="submit"
-                >
-                  Subscribe
-                </button>
-              </p>
+      <Container className="section is-primary">
+        <div className="container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="columns">
+              <div className="column has-text-white is-size-4">
+                Subscribe to our newsletter for new updates
+              </div>
+              <div className="column">
+                <div className="field is-grouped">
+                  <p className="control is-expanded">
+                    <input
+                      className="input is-large"
+                      type="email"
+                      value={email}
+                      placeholder="Enter your email"
+                      onChange={this.handleChange}
+                      aria-label="email"
+                    />
+                  </p>
+                  <p className="control is-hidden-mobile">
+                    <button className="button is-dark is-large" type="submit">
+                      Subscribe
+                    </button>
+                  </p>
+                </div>
+                <span className="has-text-white has-text-centered message is-primary">
+                  {message}
+                </span>
+              </div>
             </div>
-            <span className="has-text-primary has-text-centered">
-              {message}
-            </span>
-          </div>
+          </form>
         </div>
-      </form>
+      </Container>
     );
   }
 }

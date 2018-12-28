@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.section`
-  background-image: url('../images/background.webp');
-  background-size: 88%;
-  background-repeat: no-repeat;
-  background-position: bottom right;
+  background-color: #dad4e1;
   @media only screen and (max-width: 769px) {
     .input.is-large,
     .textarea.is-large {
@@ -20,13 +17,9 @@ const Container = styled.section`
     }
   }
 
-  @media only screen and (max-width: 769px) {
-    background-size: 0 0;
-  }
-
   .hero-body {
-    padding-bottom: 13rem !important;
-    padding-top: 10rem !important;
+    padding-bottom: 0rem !important;
+    padding-top: 5rem !important;
     .is-info {
       background-color: #1f95a6 !important;
     }
@@ -63,20 +56,24 @@ const HomeHero = () => (
             <div className="field is-grouped">
               <p className="control is-expanded">
                 <input
-                  className="input is-large is-rounded is-medium-mobile"
+                  className="input is-large is-medium-mobile"
                   type="text"
                   placeholder="Enter Mobile Number"
                   aria-label="phone"
                 />
               </p>
               <p className="control">
-                <a className="button is-primary is-large is-rounded is-medium-mobile">
-                  Order
+                <a className="button is-primary is-large is-medium-mobile">
+                  ORDER
                 </a>
               </p>
             </div>
           </div>
-          <div className="column" />
+          <div className="column">
+            <figure className="image">
+              <img src="/images/scooter_1.gif" alt="scooter" />
+            </figure>
+          </div>
         </div>
       </div>
     </div>
