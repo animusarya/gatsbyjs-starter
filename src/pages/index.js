@@ -4,9 +4,13 @@ import config from '../utils/config';
 import Seo from '../components/Seo';
 import Layout from '../components/Layout';
 import HomeHero from '../components/HomeHero';
-import WhyPackrs from '../components/WhyPackrs';
-import AppDownload from '../components/AppDownload';
 import Subscribe from '../components/Subscribe';
+import ServiceArea from '../components/ServiceArea';
+import AboutArea from '../components/AboutArea';
+import Features from '../components/Features';
+import Slider from '../components/Slider';
+import AppDownload from '../components/AppDownload';
+import Subscription from '../components/Subscription';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -19,9 +23,12 @@ export default class IndexPage extends React.Component {
           image={config.image}
         />
         <HomeHero />
-        <WhyPackrs />
+        <ServiceArea />
+        <AboutArea />
+        <Features />
+        <Slider />
         <AppDownload />
-        <Subscribe />
+        <Subscription />
       </Layout>
     );
   }
