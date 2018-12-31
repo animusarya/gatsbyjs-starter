@@ -14,7 +14,7 @@ const ServiceArea = () => (
       <div className="row">
         <div className="col-md-4 col-sm-4 col-xs-12">
           <div className="service-single">
-            <img src="/images/deliver-anywhere.svg" alt="serviceimage" />
+            <img src="/images/delivery.svg" alt="serviceimage" />
             <h2>Deliver anywhere</h2>
             <p>We deliver anything to you from your favourite places.</p>
           </div>

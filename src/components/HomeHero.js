@@ -2,14 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.section`
+  background-color: #33b7b7f7 !important;
   .form-control {
     height: 60px !important;
     border: 3px solid #fff !important;
     border-radius: 45px !important;
     background-color: transparent !important;
-    padding: 6px 30px !important;
+    padding: 6px 40px !important;
     font-size: 18px !important;
     color: #fff !important;
+    ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #fff;
+      opacity: 1; /* Firefox */
+    }
   }
   h2,
   h5 {
@@ -47,7 +53,7 @@ const HomeHero = () => (
         <div className="row">
           <div className="slider-inner text-right">
             <h2>Most faster deliver hub</h2>
-            <h5>Order Now !</h5>
+            <h5>Book Now !</h5>
             <div className="form-group has-feedback">
               <input
                 type="text"

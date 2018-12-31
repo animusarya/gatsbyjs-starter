@@ -13,6 +13,12 @@ const Container = styled.section`
   .section-title h2:after {
     background-color: #33b760;
   }
+  .screen-slider .owl-dots .owl-dot {
+    border: 1px solid #33b760 !important;
+  }
+  .screen-slider .owl-dots .active {
+    background-color: #33b760; !important;
+  }
 `;
 
 class Slider extends React.Component {

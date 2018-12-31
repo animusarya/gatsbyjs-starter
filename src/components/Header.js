@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Container = styled.header`
+  .header-area {
+    background-color: #33b7b7 !important;
+  }
+`;
+
 const Logo = styled.div`
   color: #fff;
   font-weight: 900 !important;
@@ -9,7 +15,7 @@ const Logo = styled.div`
 `;
 
 const Header = () => (
-  <header id="header">
+  <Container id="header">
     <div className="header-area">
       <div className="container">
         <div className="row">
@@ -47,7 +53,7 @@ const Header = () => (
         </div>
       </div>
     </div>
-  </header>
+  </Container>
 );
 
 export default Header;

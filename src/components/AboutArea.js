@@ -34,13 +34,13 @@ const AboutArea = () => (
         <div className="col-md-6 col-sm-6 col-xs-12 d-flex flex-center">
           <div className="about-content">
             <p>
-              Able to deliver anything from anywhere, Packrs is the food
-              delivery, grocery delivery, whatever-you-can-think-of delivery
-              service to bring what you crave right to your door.We have partner
-              merchants, many of them exclusive, and we’re adding more every
-              day. Every customer enjoys a curated and tailored experience,
-              showcasing the very best of their city. Just enter your address,
-              find something you like, and add order for delivery.
+              Aiming to deliver anything, anywhere, Packrs is the food delivery,
+              parcel delivery, whatever-you-want delivery service to bring what
+              you crave right to your door.We have partner merchants, many of
+              them exclusive, and we’re adding more every day. Every customer
+              enjoys a curated and tailored experience, showcasing the very best
+              of their city. Just enter your address, find something you like,
+              and add order for delivery.
             </p>
             <p>
               Once you place your order we’ll forward it to our couriers and you
