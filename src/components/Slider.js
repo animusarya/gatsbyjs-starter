@@ -17,7 +17,7 @@ const Container = styled.section`
 
 class Slider extends React.Component {
   componentDidMount() {
-    function screen_slider() {
+    async function screen_slider() {
       const owl = $('.screen-slider');
       owl.owlCarousel({
         loop: true,
