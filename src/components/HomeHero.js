@@ -45,14 +45,14 @@ const HomeHero = () => (
       <div className="col-md-6 col-sm-6 hidden-xs">
         <div className="row">
           <div className="slider-img">
-            <img src="/img/mobile/slider-left-img.png" alt="sliderimage" />
+            <img src="/img/slider-left-img.png" alt="sliderimage" />
           </div>
         </div>
       </div>
       <div className="col-md-6 col-sm-6 col-xs-12">
         <div className="row">
           <div className="slider-inner text-right">
-            <h2>Most faster deliver hub</h2>
+            <h2>Most faster delivery hub</h2>
             <h5>Book Now !</h5>
             <div className="form-group has-feedback">
               <input

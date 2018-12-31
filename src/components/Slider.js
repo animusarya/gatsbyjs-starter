@@ -22,10 +22,10 @@ const Container = styled.section`
 `;
 
 class Slider extends React.Component {
-  componentDidMount() {
-    async function screen_slider() {
-      const owl = $('.screen-slider');
-      owl.owlCarousel({
+  componentDidMount () {
+    async function screen_slider () {
+      const owl = $ ('.screen-slider');
+      owl.owlCarousel ({
         loop: true,
         margin: 20,
         navigation: false,
@@ -55,10 +55,10 @@ class Slider extends React.Component {
         },
       });
     }
-    screen_slider();
+    screen_slider ();
   }
 
-  render() {
+  render () {
     return (
       <Container className="screen-area bg-gray ptb--100" id="screenshot">
         <div className="container">
@@ -68,51 +68,30 @@ class Slider extends React.Component {
           </div>
           <img
             className="screen-img"
-            src="/img/mobile/screen-slider.png"
+            src="/img/screen-slider.png"
             alt="mobile screen"
           />
           <div className="screen-slider owl-carousel">
             <div className="single-screen">
-              <img
-                src="/img/mobile/screen-slider/screen1.jpg"
-                alt="mobile screen"
-              />
+              <img src="/img/screen1.jpg" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img
-                src="/img/mobile/screen-slider/screen2.jpg"
-                alt="mobile screen"
-              />
+              <img src="/img/screen2.jpg" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img
-                src="/img/mobile/screen-slider/screen3.jpg"
-                alt="mobile screen"
-              />
+              <img src="/img/screen3.jpg" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img
-                src="/img/mobile/screen-slider/screen4.jpg"
-                alt="mobile screen"
-              />
+              <img src="/img/screen4.jpg" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img
-                src="/img/mobile/screen-slider/screen5.jpg"
-                alt="mobile screen"
-              />
+              <img src="/img/screen5.jpg" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img
-                src="/img/mobile/screen-slider/screen3.jpg"
-                alt="mobile screen"
-              />
+              <img src="/img/screen3.jpg" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img
-                src="/img/mobile/screen-slider/screen4.jpg"
-                alt="mobile screen"
-              />
+              <img src="/img/screen4.jpg" alt="mobile screen" />
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ const AboutArea = () => (
       <div className="row d-flex flex-center">
         <div className="col-md-6 col-sm-6 hidden-xs">
           <div className="about-left-img">
-            <img src="/img/about/abt-left-img.png" alt="aboutimage" />
+            <img src="/img/abt-left-img.png" alt="aboutimage" />
           </div>
         </div>
 

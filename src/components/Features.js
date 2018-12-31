@@ -25,7 +25,7 @@ const Features = () => (
         <div className="col-md-4 col-sm-6 col-xs-12">
           <div className="ft-content rtl">
             <div className="ft-single">
-              <img src="/img/icon/feature/1.png" alt="icon" />
+              <img src="/img/1.png" alt="icon" />
               <div className="meta-content">
                 <h2>Full Optional</h2>
                 <p>
@@ -35,7 +35,7 @@ const Features = () => (
               </div>
             </div>
             <div className="ft-single">
-              <img src="/img/icon/feature/2.png" alt="icon" />
+              <img src="/img/2.png" alt="icon" />
               <div className="meta-content">
                 <h2>Unique Design</h2>
                 <p>
@@ -45,7 +45,7 @@ const Features = () => (
               </div>
             </div>
             <div className="ft-single">
-              <img src="/img/icon/feature/3.png" alt="icon" />
+              <img src="/img/3.png" alt="icon" />
               <div className="meta-content">
                 <h2>Voice Maker</h2>
                 <p>
@@ -58,13 +58,13 @@ const Features = () => (
         </div>
         <div className="col-md-4 hidden-sm col-xs-12">
           <div className="ft-screen-img">
-            <img src="/img/mobile/ft-screen-img.png" alt="imagemobile" />
+            <img src="/img/ft-screen-img.png" alt="imagemobile" />
           </div>
         </div>
         <div className="col-md-4 col-sm-6 col-xs-12">
           <div className="ft-content">
             <div className="ft-single">
-              <img src="/img/icon/feature/4.png" alt="icon" />
+              <img src="/img/4.png" alt="icon" />
               <div className="meta-content">
                 <h2>Easy Settings</h2>
                 <p>
@@ -74,7 +74,7 @@ const Features = () => (
               </div>
             </div>
             <div className="ft-single">
-              <img src="/img/icon/feature/5.png" alt="icon" />
+              <img src="/img/5.png" alt="icon" />
               <div className="meta-content">
                 <h2>Flat Design</h2>
                 <p>
@@ -84,7 +84,7 @@ const Features = () => (
               </div>
             </div>
             <div className="ft-single">
-              <img src="/img/icon/feature/6.png" alt="icon" />
+              <img src="/img/6.png" alt="icon" />
               <div className="meta-content">
                 <h2>Easy Download</h2>
                 <p>
