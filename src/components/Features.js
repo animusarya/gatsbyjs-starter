@@ -27,7 +27,7 @@ const Features = () => (
             <div className="ft-single">
               <img src="/img/1.png" alt="icon" />
               <div className="meta-content">
-                <h2>Full Optional</h2>
+                <h2>Book Anything</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                   iumod tempor incididunt
@@ -47,7 +47,7 @@ const Features = () => (
             <div className="ft-single">
               <img src="/img/3.png" alt="icon" />
               <div className="meta-content">
-                <h2>Voice Maker</h2>
+                <h2>Live Location</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                   iumod tempor incididunt
@@ -66,7 +66,7 @@ const Features = () => (
             <div className="ft-single">
               <img src="/img/4.png" alt="icon" />
               <div className="meta-content">
-                <h2>Easy Settings</h2>
+                <h2>Apply As Courier</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                   iumod tempor incididunt
@@ -76,7 +76,7 @@ const Features = () => (
             <div className="ft-single">
               <img src="/img/5.png" alt="icon" />
               <div className="meta-content">
-                <h2>Flat Design</h2>
+                <h2>Safe Delivery</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                   iumod tempor incididunt
@@ -86,7 +86,7 @@ const Features = () => (
             <div className="ft-single">
               <img src="/img/6.png" alt="icon" />
               <div className="meta-content">
-                <h2>Easy Download</h2>
+                <h2>Reffer Friends</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                   iumod tempor incididunt
