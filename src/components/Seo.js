@@ -15,7 +15,7 @@ const getSchemaOrgJSONLD = ({ url, title }) => [
 ];
 
 const Seo = ({ title, description, url, image }) => {
-  const pageTitle = `${title} - ${config.siteName}`;
+  const pageTitle = `${title} - Deliver anything, anywhere`;
 
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     url,

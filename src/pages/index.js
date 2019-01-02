@@ -17,7 +17,7 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <Seo
-          title="Home"
+          title="Packrs"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
           image={config.image}
