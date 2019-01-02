@@ -8,10 +8,15 @@ const Container = styled.header`
 `;
 
 const Logo = styled.div`
-  color: #fff;
-  font-weight: 900 !important;
-  font-size: 30px;
-  font-family: Nunito, sans-serif;
+  display: flex;
+  align-items: center;
+  .logo-text {
+    color: #fff;
+    font-weight: 900 !important;
+    font-size: 30px;
+    font-family: Nunito, sans-serif;
+    margin-left: 1rem;
+  }
 `;
 
 const Header = () => (
@@ -21,7 +26,15 @@ const Header = () => (
         <div className="row">
           <div className="menu-area">
             <div className="col-md-3 col-sm-12 col-xs-12">
-              <Logo className="logo">PACKRS</Logo>
+              <Logo className="logo">
+                <img
+                  src="/images/white-logo.png"
+                  alt="logo"
+                  height="40px"
+                  width="40px"
+                />
+                <span className="logo-text">PACKRS</span>
+              </Logo>
             </div>
             <div className="col-md-9 hidden-xs hidden-sm">
               <div className="main-menu">

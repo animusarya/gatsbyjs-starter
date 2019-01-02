@@ -29,8 +29,8 @@ const Features = () => (
               <div className="meta-content">
                 <h2>Book Anything</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  iumod tempor incididunt
+                  We are deliver anything platform aiming to deliver anything
+                  possible.
                 </p>
               </div>
             </div>
@@ -39,8 +39,8 @@ const Features = () => (
               <div className="meta-content">
                 <h2>Unique Design</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  iumod tempor incididunt
+                  The app has a unique design which cater to good user
+                  experience.
                 </p>
               </div>
             </div>
@@ -48,10 +48,7 @@ const Features = () => (
               <img src="/img/3.png" alt="icon" />
               <div className="meta-content">
                 <h2>Live Location</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  iumod tempor incididunt
-                </p>
+                <p>Track your deliveries on the go and be notified live.</p>
               </div>
             </div>
           </div>
@@ -67,10 +64,7 @@ const Features = () => (
               <img src="/img/4.png" alt="icon" />
               <div className="meta-content">
                 <h2>Apply As Courier</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  iumod tempor incididunt
-                </p>
+                <p>You can apply as a courier guy and earn bucks.</p>
               </div>
             </div>
             <div className="ft-single">
@@ -78,18 +72,18 @@ const Features = () => (
               <div className="meta-content">
                 <h2>Safe Delivery</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  iumod tempor incididunt
+                  Your bookings are safe with us. We will handle them as our
+                  own.
                 </p>
               </div>
             </div>
             <div className="ft-single">
               <img src="/img/6.png" alt="icon" />
               <div className="meta-content">
-                <h2>Reffer Friends</h2>
+                <h2>Refer Friends</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  iumod tempor incididunt
+                  Reffer your friends and get discount coupons for your next
+                  booking.
                 </p>
               </div>
             </div>

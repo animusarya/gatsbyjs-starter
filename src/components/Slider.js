@@ -22,10 +22,10 @@ const Container = styled.section`
 `;
 
 class Slider extends React.Component {
-  componentDidMount () {
-    async function screen_slider () {
-      const owl = $ ('.screen-slider');
-      owl.owlCarousel ({
+  componentDidMount() {
+    async function screenSlider() {
+      const owl = $('.screen-slider');
+      owl.owlCarousel({
         loop: true,
         margin: 20,
         navigation: false,
@@ -55,10 +55,10 @@ class Slider extends React.Component {
         },
       });
     }
-    screen_slider ();
+    screenSlider();
   }
 
-  render () {
+  render() {
     return (
       <Container className="screen-area bg-gray ptb--100" id="screenshot">
         <div className="container">
