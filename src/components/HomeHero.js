@@ -45,7 +45,7 @@ const HomeHero = () => (
       <div className="col-md-6 col-sm-6 hidden-xs">
         <div className="row">
           <div className="slider-img">
-            <img src="/img/slider-left-img.png" alt="sliderimage" />
+            <img src="/img/hero-mockup.png" alt="sliderimage" />
           </div>
         </div>
       </div>

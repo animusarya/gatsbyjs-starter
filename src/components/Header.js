@@ -30,8 +30,8 @@ const Header = () => (
                 <img
                   src="/images/white-logo.png"
                   alt="logo"
-                  height="40px"
-                  width="40px"
+                  height="35px"
+                  width="35px"
                 />
                 <span className="logo-text">PACKRS</span>
               </Logo>
