@@ -1,65 +1,17 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Subscribe from './Subscribe';
 
-const Container = styled.section`
-  background-color: #000;
-  padding: 5rem;
-  @media only screen and (max-width: 769px) {
-    padding: 3rem;
+const Container = styled.footer`
+  .footer-area {
+    background-color: #33b7b7 !important;
   }
-  .social {
-    padding-right: 3rem;
-    font-size: 2rem;
-
-    @media only screen and (max-width: 769px) {
-      padding-right: 1rem;
-    }
-  }
-`;
-const Logo = styled.div`
-  font-family: 'Nunito', sans-serif;
-  font-weight: 900;
 `;
 
 const Footer = () => (
-  <Container className="section">
-    <div className="container">
-      <div className="columns">
-        <div className="column">
-          <Logo className="is-size-2 has-text-white has-text-centered-mobile">
-            PACKRS
-          </Logo>
-          <div className="has-text-centered-mobile">
-            <a
-              className="social has-text-white"
-              href="https://www.facebook.com/PackrsOfficial/"
-              aria-label="facebook"
-            >
-              <i className="fab fa-facebook-f" />
-            </a>
-            <a
-              className="social has-text-white"
-              href="https://twitter.com/PackrsOfficial"
-              aria-label="twitter"
-            >
-              <i className="fab fa-twitter" />
-            </a>
-            <a
-              className="social has-text-white"
-              href="https://www.instagram.com/packrs_official/"
-              aria-label="instagram"
-            >
-              <i className="fab fa-instagram" />
-            </a>
-          </div>
-        </div>
-        <div className="column" />
-        <div className="column" />
-      </div>
-      <div className="has-text-centered has-text-white">
-        Copyright 2018 All Rights Reserved
+  <Container>
+    <div className="footer-area">
+      <div className="container">
+        <p>Copyright &copy;2018 | All rights reserved</p>
       </div>
     </div>
   </Container>
