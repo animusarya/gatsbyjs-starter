@@ -4,7 +4,6 @@ import config from '../utils/config';
 import Seo from '../components/Seo';
 import Layout from '../components/Layout';
 import HomeHero from '../components/HomeHero';
-import Subscribe from '../components/Subscribe';
 import ServiceArea from '../components/ServiceArea';
 import AboutArea from '../components/AboutArea';
 import Features from '../components/Features';

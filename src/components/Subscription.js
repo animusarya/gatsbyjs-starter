@@ -19,6 +19,9 @@ const Container = styled.section`
   .c-social ul li a {
     background-color: #33b760 !important;
   }
+  .message {
+    position: absolute;
+  }
 `;
 
 class Subscription extends React.Component {
@@ -72,9 +75,7 @@ class Subscription extends React.Component {
 
                   <input type="submit" value="Subscribe" id="send" />
                   <br />
-                  <span className="has-text-white has-text-centered message is-primary">
-                    {message}
-                  </span>
+                  <span className="message">{message}</span>
                 </form>
               </div>
             </div>

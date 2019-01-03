@@ -12,8 +12,8 @@ const Container = styled.div`
   }
   .download-btns a:hover {
     background-color: #fff;
-    color:#33b760 !important;
-}
+    color: #33b760 !important;
+  }
 `;
 
 const AppDownload = () => (
@@ -25,11 +25,11 @@ const AppDownload = () => (
           <p>Our app is available both on android and ios platforms</p>
         </div>
         <div className="download-btns btn-area text-center">
-          <a onClick={() => swal ('Coming soon !')}>
+          <a onClick={() => swal('Coming soon !')}>
             <i className="fab fa-google-play" />play store
           </a>
 
-          <a onClick={() => swal ('Coming soon !')}>
+          <a onClick={() => swal('Coming soon !')}>
             <i className="fab fa-apple" />app store
           </a>
         </div>

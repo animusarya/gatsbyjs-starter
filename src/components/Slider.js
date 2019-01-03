@@ -73,25 +73,25 @@ class Slider extends React.Component {
           />
           <div className="screen-slider owl-carousel">
             <div className="single-screen">
-              <img src="/img/screen1.jpg" alt="mobile screen" />
+              <img src="/img/s1.png" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img src="/img/screen2.jpg" alt="mobile screen" />
+              <img src="/img/s2.png" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img src="/img/screen3.jpg" alt="mobile screen" />
+              <img src="/img/s3.png" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img src="/img/screen4.jpg" alt="mobile screen" />
+              <img src="/img/s4.png" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img src="/img/screen5.jpg" alt="mobile screen" />
+              <img src="/img/s5.png" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img src="/img/screen3.jpg" alt="mobile screen" />
+              <img src="/img/s6.png" alt="mobile screen" />
             </div>
             <div className="single-screen">
-              <img src="/img/screen4.jpg" alt="mobile screen" />
+              <img src="/img/s7.png" alt="mobile screen" />
             </div>
           </div>
         </div>

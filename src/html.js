@@ -16,26 +16,12 @@ export default class HTML extends React.Component {
             href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800,900"
             rel="stylesheet"
           />
-          {/* <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
-          />
-      
-          <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,900"
-            rel="stylesheet"
-          /> */}
-          {/* <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,900"
-            rel="stylesheet"
-          /> */}
+
           <link rel="stylesheet" href="/css/bootstrap.min.css" />
           <link rel="stylesheet" href="/css/jquery-ui.css" />
           <link rel="stylesheet" href="/css/font-awesome.min.css" />
           <link rel="stylesheet" href="/css/owl.carousel.min.css" />
           <link rel="stylesheet" href="/css/slicknav.min.css" />
-          <link rel="stylesheet" href="/css/magnificpopup.css" />
-          <link rel="stylesheet" href="/css/jquery.mb.YTPlayer.min.css" />
           <link rel="stylesheet" href="/css/typography.css" />
           <link rel="stylesheet" href="/css/style.css" />
           <link rel="stylesheet" href="/css/responsive.css" />
@@ -67,7 +53,6 @@ export default class HTML extends React.Component {
           <script src="/js/magnific-popup.min.js" />
           <script src="/js/counterup.js" />
           <script src="/js/jquery.waypoints.min.js" />
-          <script src="/js/jquery.mb.YTPlayer.min.js" />
           <script src="/js/theme.js" />
         </body>
       </html>
