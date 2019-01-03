@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'gatsby';
 
 const Container = styled.section`
   background-color: #33b7b7f7 !important;
@@ -42,9 +43,9 @@ const CourierHero = () => (
           <div className="slider-inner text-right">
             <h2>Deliver with Packrs</h2>
             <h5>No boss. Flexible schedule. Quick pay.</h5>
-            <a href="#">
+            <Link to="/courier-application-form/">
               Sign up in minutes<i className="fas fa-arrow-right" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
