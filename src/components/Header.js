@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Container = styled.header`
   .header-area {
@@ -7,7 +8,7 @@ const Container = styled.header`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   display: flex;
   align-items: center;
   .logo-text {
@@ -19,14 +20,14 @@ const Logo = styled.div`
   }
 `;
 
-const Header = () => (
+const Header = ({ isCourier }) => (
   <Container id="header">
     <div className="header-area">
       <div className="container">
         <div className="row">
           <div className="menu-area">
             <div className="col-md-3 col-sm-12 col-xs-12">
-              <Logo className="logo">
+              <Logo className="logo" to="/">
                 <img
                   src="/images/white-logo.png"
                   alt="logo"
@@ -39,23 +40,38 @@ const Header = () => (
             <div className="col-md-9 hidden-xs hidden-sm">
               <div className="main-menu">
                 <nav className="nav-menu">
-                  <ul>
-                    <li className="active">
-                      <a href="#home">Home</a>
-                    </li>
-                    <li>
-                      <a href="#feature">Features</a>
-                    </li>
-                    <li>
-                      <a href="#screenshot">Screenshot</a>
-                    </li>
-                    <li>
-                      <a href="#download">Download</a>
-                    </li>
-                    <li>
-                      <a href="#contact">Subscribe</a>
-                    </li>
-                  </ul>
+                  {isCourier ? (
+                    <ul>
+                      <li className="active">
+                        <a href="#home">Home</a>
+                      </li>
+
+                      <li>
+                        <a href="#download">Download</a>
+                      </li>
+                    </ul>
+                  ) : (
+                    <ul>
+                      <li className="active">
+                        <a href="#home">Home</a>
+                      </li>
+                      <li>
+                        <a href="#feature">Features</a>
+                      </li>
+                      <li>
+                        <a href="#screenshot">Screenshot</a>
+                      </li>
+                      <li>
+                        <a href="#download">Download</a>
+                      </li>
+                      <li>
+                        <a href="#contact">Subscribe</a>
+                      </li>
+                      <li>
+                        <Link to="/courier-application/">Apply as Courier</Link>
+                      </li>
+                    </ul>
+                  )}
                 </nav>
               </div>
             </div>

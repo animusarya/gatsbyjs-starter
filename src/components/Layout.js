@@ -10,7 +10,7 @@ import './layout.css';
 
 const Container = styled.div``;
 
-const IndexLayout = ({ children }) => (
+const IndexLayout = ({ children, path }) => (
   <div>
     <Helmet>
       <title>{config.siteName}</title>
@@ -18,7 +18,8 @@ const IndexLayout = ({ children }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta description={config.description} />
     </Helmet>
-    <Header />
+    {path === '/courier-application/' ? <Header isCourier /> : <Header />}
+
     <Container>{children}</Container>
     <Footer />
   </div>
