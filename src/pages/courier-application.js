@@ -8,6 +8,7 @@ import CourierServiceArea from '../components/CourierServiceArea';
 import AppDownload from '../components/AppDownload';
 import DeliveryRequirements from '../components/DeliveryRequirements';
 import GetStartedAsCourier from '../components/GetStartedAsCourier';
+import HowItWorks from '../components/HowItWorks';
 
 export default class CourierApplication extends React.Component {
   render() {
@@ -24,6 +25,7 @@ export default class CourierApplication extends React.Component {
         <CourierHero />
         <CourierServiceArea />
         <DeliveryRequirements />
+        <HowItWorks />
         <GetStartedAsCourier />
         <AppDownload />
       </Layout>

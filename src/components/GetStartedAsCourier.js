@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin-top: 50px !important;
+  margin-top: 10px !important;
   padding: 5rem;
   @media screen and (max-width: 769px) {
     padding: 0rem;
