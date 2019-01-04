@@ -13,8 +13,6 @@ import Subscription from '../components/Subscription';
 
 export default class IndexPage extends React.Component {
   render() {
-    const location = this.props;
-    console.log(location.location);
     return (
       <Layout>
         <Seo

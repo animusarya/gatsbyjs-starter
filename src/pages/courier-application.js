@@ -12,7 +12,7 @@ import GetStartedAsCourier from '../components/GetStartedAsCourier';
 export default class CourierApplication extends React.Component {
   render() {
     const location = this.props.location.pathname;
-    console.log(location);
+
     return (
       <Layout path={location}>
         <Seo
