@@ -50,7 +50,6 @@ export default class HTML extends React.Component {
           <script src="/js/bootstrap.min.js" />
           <script src="/js/jquery.slicknav.min.js" />
           <script defer src="/js/owl.carousel.min.js" />
-          <script src="/js/magnific-popup.min.js" />
           <script src="/js/counterup.js" />
           <script src="/js/jquery.waypoints.min.js" />
           <script src="/js/theme.js" />
