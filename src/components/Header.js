@@ -91,9 +91,7 @@ const Header = ({ isCourier }) => (
                 </nav>
               </div>
             </div>
-            <div className="col-sm-12 col-xs-12 visible-sm visible-xs">
-              <div className="mobile_menu" />
-            </div>
+            <div className="col-sm-12 col-xs-12 visible-sm visible-xs" />
           </div>
         </div>
       </div>
