@@ -22,6 +22,10 @@ const Container = styled.section`
   .message {
     position: absolute;
   }
+  .social-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
 `;
 
 class Subscription extends React.Component {
@@ -79,7 +83,7 @@ class Subscription extends React.Component {
                 </form>
               </div>
             </div>
-            <div className="col-md-6 col-sm-6 col-xs-12">
+            <div className="col-md-6 col-sm-6 col-xs-12 social-buttons">
               <div className="contact_info">
                 <div className="c-social">
                   <ul>
