@@ -39,6 +39,10 @@ const Button = styled(Link)`
   :hover {
     background-color: #fff;
     color: #33b7b7f7;
+    .fa-arrow-right {
+      margin-left: 5%;
+      transition: all 250ms ease !important;
+    }
   }
 `;
 
