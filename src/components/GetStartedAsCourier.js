@@ -7,6 +7,10 @@ const Container = styled.div`
   @media screen and (max-width: 769px) {
     padding: 0rem;
   }
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
   h2 {
     font-family: Nunito, sans-serif !important;
     font-weight: 600 !important;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 
 const Container = styled.section`
   background-color: #33b7b7f7 !important;
@@ -35,6 +35,13 @@ const Container = styled.section`
   }
 `;
 
+const Button = styled(Link)`
+  :hover {
+    background-color: #fff;
+    color: #33b7b7f7;
+  }
+`;
+
 const CourierHero = () => (
   <Container className="slider-area" id="home">
     <div className="container">
@@ -43,9 +50,9 @@ const CourierHero = () => (
           <div className="slider-inner text-right">
             <h2>Deliver with Packrs</h2>
             <h5>No boss. Flexible schedule. Quick pay.</h5>
-            <Link to="/courier-application-form/">
+            <Button to="/courier-application-form/">
               Sign up in minutes<i className="fas fa-arrow-right" />
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

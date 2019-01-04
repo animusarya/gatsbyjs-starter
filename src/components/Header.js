@@ -6,6 +6,14 @@ const Container = styled.header`
   .header-area {
     background-color: #33b7b7 !important;
   }
+  .header-region {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .apply-as-courier {
+    color: #fff;
+  }
 `;
 
 const Logo = styled(Link)`
@@ -26,7 +34,7 @@ const Header = ({ isCourier }) => (
       <div className="container">
         <div className="row">
           <div className="menu-area">
-            <div className="col-md-3 col-sm-12 col-xs-12">
+            <div className="col-md-3 col-sm-12 col-xs-12 header-region">
               <Logo className="logo" to="/">
                 <img
                   src="/images/white-logo.png"
@@ -36,6 +44,14 @@ const Header = ({ isCourier }) => (
                 />
                 <span className="logo-text">PACKRS</span>
               </Logo>
+              {!isCourier && (
+                <Link
+                  to="/courier-application/"
+                  className="visible-xs visible-sm apply-as-courier"
+                >
+                  Apply as Courier
+                </Link>
+              )}
             </div>
             <div className="col-md-9 hidden-xs hidden-sm">
               <div className="main-menu">

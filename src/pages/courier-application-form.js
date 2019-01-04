@@ -4,11 +4,13 @@ import config from '../utils/config';
 import Seo from '../components/Seo';
 import Layout from '../components/Layout';
 import CourierApplicationForm from '../components/CourierApplicationForm';
+import Subscription from '../components/Subscription';
+import AppDownload from '../components/AppDownload';
 
 export default class CourierApplyForm extends React.Component {
-  render () {
+  render() {
     const location = this.props.location.pathname;
-    console.log (location);
+
     return (
       <Layout path={location}>
         <Seo
@@ -19,6 +21,8 @@ export default class CourierApplyForm extends React.Component {
         />
 
         <CourierApplicationForm />
+        <AppDownload />
+        <Subscription />
       </Layout>
     );
   }
