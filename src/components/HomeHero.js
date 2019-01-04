@@ -52,8 +52,8 @@ const HomeHero = () => (
       <div className="col-md-6 col-sm-6 col-xs-12">
         <div className="row">
           <div className="slider-inner text-right">
-            <h2>Most faster delivery hub</h2>
-            <h5>Book Now !</h5>
+            <h2>Deliver anything, anywhere</h2>
+            <h5>Get app now !</h5>
             <div className="form-group has-feedback">
               <input
                 type="text"
