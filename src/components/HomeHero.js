@@ -3,6 +3,13 @@ import styled from 'styled-components';
 
 const Container = styled.section`
   background-color: #33b7b7f7 !important;
+  .slider-inner h2 {
+    font-size: 46px;
+    @media screen and (max-width: 768px) {
+      font-size: 23px !important;
+    }
+  }
+
   .form-control {
     height: 60px !important;
     border: 3px solid #fff !important;
