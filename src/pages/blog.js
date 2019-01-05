@@ -8,6 +8,7 @@ import BlogList from '../components/BlogList';
 
 export default class Blog extends React.Component {
   render() {
+    // eslint-disable-next-line react/destructuring-assignment
     const location = this.props.location.pathname;
     return (
       <Layout path={location}>

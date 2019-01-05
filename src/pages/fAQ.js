@@ -34,6 +34,7 @@ export default class FAQ extends React.Component {
   render() {
     const { data } = this.state;
     console.log('data', data);
+    // eslint-disable-next-line react/destructuring-assignment
     const location = this.props.location.pathname;
 
     return (

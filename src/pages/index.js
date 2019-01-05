@@ -13,6 +13,7 @@ import Subscription from '../components/Subscription';
 
 export default class IndexPage extends React.Component {
   render() {
+    // eslint-disable-next-line react/destructuring-assignment
     const location = this.props.location.pathname;
     return (
       <Layout path={location}>
