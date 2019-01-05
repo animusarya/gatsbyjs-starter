@@ -17,7 +17,7 @@ const query = gql`
   }
 `;
 
-export default class Contact extends React.Component {
+export default class FAQ extends React.Component {
   state = { data: {} };
 
   componentDidMount() {
@@ -44,7 +44,7 @@ export default class Contact extends React.Component {
           url={`${config.siteUrl}`}
           image={config.image}
         />
-        <Breadcrumb title="About" />
+        <Breadcrumb title="FAQ" />
         <h1>{data.title}</h1>
         <p>{data.details}</p>
       </Layout>
