@@ -13,7 +13,6 @@ const Container = styled.section`
   .form-control {
     height: 60px !important;
     border: 3px solid #fff !important;
-    border-radius: 45px !important;
     background-color: transparent !important;
     padding: 6px 40px !important;
     font-size: 18px !important;
@@ -38,10 +37,32 @@ const Container = styled.section`
     height: 60px !important;
   }
   .form-control {
-    width: 65% !important;
     float: right !important;
     @media screen and (max-width: 768px) {
       width: 100% !important;
+    }
+  }
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    .btn {
+      width: 30%;
+      padding: 15px 20px;
+      border-radius: 6rem;
+      color: #18b9ba;
+      transition: 0.5s;
+      font-weight: 500;
+      border-width: 2px;
+      border-color: #fff;
+      @media screen and (max-width: 768px) {
+        width: 100% !important;
+      }
+    }
+    .btn-default:hover {
+      background-color: #18b9ba;
+      border-color: #fff;
+      border-width: 2px;
+      color: #fff;
     }
   }
 `;
@@ -61,16 +82,23 @@ const HomeHero = () => (
           <div className="slider-inner text-right">
             <h2>Deliver anything, anywhere</h2>
             <h5>Get app now !</h5>
-            <div className="form-group has-feedback">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Mobile number"
-                id="inputSuccess4"
-                aria-describedby="inputSuccess4Status"
-              />
+            <div className="form-wrapper">
+              <div className="form-group has-feedback">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter your phone number to get the app."
+                  id="inputSuccess4"
+                  aria-describedby="inputSuccess4Status"
+                />
 
-              <i className="fas fa-mobile-alt form-control-feedback" />
+                <i className="fas fa-mobile-alt form-control-feedback" />
+              </div>
+              <div className="button-wrapper">
+                <button type="button" className="btn btn-default">
+                  Text Me
+                </button>
+              </div>
             </div>
           </div>
         </div>

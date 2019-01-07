@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 
+import config from '../utils/config';
+
 const Container = styled.section`
   h2 {
     font-family: Nunito, sans-serif !important;
@@ -88,18 +90,18 @@ class Subscription extends React.Component {
                 <div className="c-social">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/PackrsOfficial/">
+                      <a href={config.fbUrl}>
                         <i className="fab fa-facebook-f" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://twitter.com/PackrsOfficial">
+                      <a href={config.twitterUrl}>
                         <i className="fab fa-twitter" />
                       </a>
                     </li>
 
                     <li>
-                      <a href="https://www.instagram.com/packrs_official/">
+                      <a href={config.instagramUrl}>
                         <i className="fab fa-instagram" />
                       </a>
                     </li>

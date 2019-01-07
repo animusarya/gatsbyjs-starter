@@ -28,7 +28,7 @@ const Logo = styled(Link)`
   }
 `;
 
-const Header = ({ isCourier }) => (
+const Header = ({ isHome }) => (
   <Container id="header">
     <div className="header-area">
       <div className="container">
@@ -44,29 +44,18 @@ const Header = ({ isCourier }) => (
                 />
                 <span className="logo-text">PACKRS</span>
               </Logo>
-              {!isCourier && (
-                <Link
-                  to="/courier-application/"
-                  className="visible-xs visible-sm apply-as-courier"
-                >
-                  Apply as Courier
-                </Link>
-              )}
+
+              <Link
+                to="/courier-application/"
+                className="visible-xs visible-sm apply-as-courier"
+              >
+                Apply as Courier
+              </Link>
             </div>
             <div className="col-md-9 hidden-xs hidden-sm">
               <div className="main-menu">
                 <nav className="nav-menu">
-                  {isCourier ? (
-                    <ul>
-                      <li className="active">
-                        <a href="#home">Home</a>
-                      </li>
-
-                      <li>
-                        <a href="#download">Download</a>
-                      </li>
-                    </ul>
-                  ) : (
+                  {isHome ? (
                     <ul>
                       <li className="active">
                         <a href="#home">Home</a>
@@ -83,6 +72,13 @@ const Header = ({ isCourier }) => (
                       <li>
                         <a href="#contact">Subscribe</a>
                       </li>
+
+                      <li>
+                        <Link to="/courier-application/">Apply as Courier</Link>
+                      </li>
+                    </ul>
+                  ) : (
+                    <ul>
                       <li>
                         <Link to="/courier-application/">Apply as Courier</Link>
                       </li>

@@ -46,10 +46,7 @@ const WhyPackrs = () => (
           <div className="card">
             <div className="card-image">
               <figure className="image is-128x128">
-                <img
-                  src="/images/timely-delivery.svg"
-                  alt="Placeholder image"
-                />
+                <img src="/images/timely-delivery.svg" alt="Placeholderimage" />
               </figure>
             </div>
             <div className="card-content">

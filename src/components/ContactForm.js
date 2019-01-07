@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 
+import config from '../utils/config';
+
 const Container = styled.section`
   h2 {
     font-family: Nunito, sans-serif !important;
@@ -56,50 +58,68 @@ class ContactForm extends React.Component {
   }
 
   render() {
-    const { message, email } = this.state;
+    // const { message, email } = this.state;
     return (
       <Container className="contact-area ptb--100" id="contact">
         <div className="container">
           <div className="section-title">
-            <h2>Subscribe</h2>
-            <p>Subscribe to us with your email to get daily updates</p>
+            <h2>Contact Us</h2>
+            <p>Have any questions, directly contact us.</p>
           </div>
           <div className="row">
             <div className="col-md-6 col-sm-6 col-xs-12">
               <div className="contact-form">
-                <form onSubmit={this.handleSubmit}>
+                <form action="#">
                   <input
-                    type="email"
+                    type="text"
                     name="name"
-                    value={email}
-                    placeholder="Enter Your Email"
-                    onChange={this.handleChange}
-                    aria-label="email"
+                    placeholder="Enter Your Name"
                   />
-
-                  <input type="submit" value="Subscribe" id="send" />
-                  <br />
-                  <span className="message">{message}</span>
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Enter Your Email"
+                  />
+                  <textarea name="msg" id="msg" placeholder="Your Message " />
+                  <input type="submit" value="Send" id="send" />
                 </form>
               </div>
             </div>
-            <div className="col-md-6 col-sm-6 col-xs-12 social-buttons">
+            <div className="col-md-6 col-sm-6 col-xs-12">
               <div className="contact_info">
+                <div className="s-info">
+                  <div className="meta-content">
+                    <span>17 Bath Rd, Heathrow, Longford,Hounslow</span>
+                    <span>TW7 1AB, UK</span>
+                  </div>
+                </div>
+                <div className="s-info">
+                  <div className="meta-content">
+                    <span>+0123 456 789 78</span>
+                    <span>+0123 456 789 78</span>
+                  </div>
+                </div>
+                <div className="s-info">
+                  <div className="meta-content">
+                    <span>Support@domain.com</span>
+                    <span>Example@Gmail.com</span>
+                  </div>
+                </div>
                 <div className="c-social">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/PackrsOfficial/">
+                      <a href={config.fbUrl}>
                         <i className="fab fa-facebook-f" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://twitter.com/PackrsOfficial">
+                      <a href={config.twitterUrl}>
                         <i className="fab fa-twitter" />
                       </a>
                     </li>
 
                     <li>
-                      <a href="https://www.instagram.com/packrs_official/">
+                      <a href={config.instagramUrl}>
                         <i className="fab fa-instagram" />
                       </a>
                     </li>

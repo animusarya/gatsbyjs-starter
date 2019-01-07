@@ -13,8 +13,9 @@ import Subscription from '../components/Subscription';
 
 export default class IndexPage extends React.Component {
   render() {
+    const { location } = this.props;
     return (
-      <Layout>
+      <Layout path={location.pathname}>
         <Seo
           title="Packrs"
           description="Deliver anything, anywhere"
