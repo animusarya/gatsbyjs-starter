@@ -13,10 +13,9 @@ import Subscription from '../components/Subscription';
 
 export default class IndexPage extends React.Component {
   render() {
-    // eslint-disable-next-line react/destructuring-assignment
-    const location = this.props.location.pathname;
+    const { location } = this.props;
     return (
-      <Layout path={location}>
+      <Layout path={location.pathname}>
         <Seo
           title="Packrs"
           description="Deliver anything, anywhere"

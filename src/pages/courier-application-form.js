@@ -9,10 +9,10 @@ import AppDownload from '../components/AppDownload';
 
 export default class CourierApplyForm extends React.Component {
   render() {
-    const location = this.props.location.pathname;
+    const { location } = this.props;
 
     return (
-      <Layout path={location}>
+      <Layout path={location.pathname}>
         <Seo
           title="Apply as Courier"
           description="Deliver anything, anywhere"

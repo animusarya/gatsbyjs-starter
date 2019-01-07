@@ -34,11 +34,10 @@ export default class FAQ extends React.Component {
   render() {
     const { data } = this.state;
     console.log('data', data);
-    // eslint-disable-next-line react/destructuring-assignment
-    const location = this.props.location.pathname;
+    const { location } = this.props;
 
     return (
-      <Layout path={location}>
+      <Layout path={location.pathname}>
         <Seo
           title="Packrs"
           description="Deliver anything, anywhere"
