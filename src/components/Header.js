@@ -72,13 +72,18 @@ const Header = ({ isHome }) => (
                       <li>
                         <a href="#contact">Subscribe</a>
                       </li>
-
+                      <li>
+                        <Link to="/contact/">Contact</Link>
+                      </li>
                       <li>
                         <Link to="/courier-application/">Apply as Courier</Link>
                       </li>
                     </ul>
                   ) : (
                     <ul>
+                      <li>
+                        <Link to="/contact/">Contact</Link>
+                      </li>
                       <li>
                         <Link to="/courier-application/">Apply as Courier</Link>
                       </li>

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import PreRegisterForm from './forms/PreRegisterForm';
+
 const Container = styled.section`
   background-color: #33b7b7f7 !important;
   .slider-inner h2 {
@@ -82,24 +84,7 @@ const HomeHero = () => (
           <div className="slider-inner text-right">
             <h2>Deliver anything, anywhere</h2>
             <h5>Get app now !</h5>
-            <div className="form-wrapper">
-              <div className="form-group has-feedback">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter your phone number to get the app."
-                  id="inputSuccess4"
-                  aria-describedby="inputSuccess4Status"
-                />
-
-                <i className="fas fa-mobile-alt form-control-feedback" />
-              </div>
-              <div className="button-wrapper">
-                <button type="button" className="btn btn-default">
-                  Text Me
-                </button>
-              </div>
-            </div>
+            <PreRegisterForm />
           </div>
         </div>
       </div>

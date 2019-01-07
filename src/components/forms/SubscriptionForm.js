@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 
-import config from '../utils/config';
+import config from '../../utils/config';
 
 const Container = styled.section`
   h2 {
@@ -30,7 +30,7 @@ const Container = styled.section`
   }
 `;
 
-class Subscription extends React.Component {
+class SubscriptionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -116,4 +116,4 @@ class Subscription extends React.Component {
   }
 }
 
-export default Subscription;
+export default SubscriptionForm;

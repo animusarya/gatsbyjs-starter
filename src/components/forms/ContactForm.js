@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import addToMailchimp from 'gatsby-plugin-mailchimp';
+import gql from 'graphql-tag';
 
-import config from '../utils/config';
+import apolloClient from '../../utils/apolloClient';
+
+import config from '../../utils/config';
 
 const Container = styled.section`
   h2 {
@@ -30,35 +32,54 @@ const Container = styled.section`
   }
 `;
 
+const contactMutation = gql`
+  mutation ContactForm($type: ContactType!, $formData: FormData!) {
+    contactForm(input: { type: $type, formData: $formData }) {
+      success
+    }
+  }
+`;
+
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      fullName: '',
       email: '',
-      message: '',
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // 2. via `async/await`
-  handleSubmit = async e => {
-    const { email } = this.state;
-    e.preventDefault();
-    const result = await addToMailchimp(email);
-    this.setState({ email: '', message: result.msg });
-    setTimeout(() => {
-      this.setState({ message: '' });
-    }, 2000);
+  handleChange = event => {
+    const change = {};
+    change[event.target.name] = event.target.value;
+    this.setState(change);
   };
 
-  handleChange(event) {
-    this.setState({ email: event.target.value });
-  }
+  handleSubmit = event => {
+    const { fullName, email, message } = this.state;
+    event.preventDefault();
+    apolloClient
+      .mutate({
+        mutation: contactMutation,
+        variables: {
+          type: 'contact',
+          formData: {
+            fullName,
+            email,
+            message,
+          },
+        },
+      })
+      .then(result => console.log(result));
+    this.setState({
+      fullName: '',
+      email: '',
+      message: '',
+    });
+  };
 
   render() {
-    // const { message, email } = this.state;
+    const { fullName, email, message } = this.state;
     return (
       <Container className="contact-area ptb--100" id="contact">
         <div className="container">
@@ -69,18 +90,28 @@ class ContactForm extends React.Component {
           <div className="row">
             <div className="col-md-6 col-sm-6 col-xs-12">
               <div className="contact-form">
-                <form action="#">
+                <form onSubmit={this.handleSubmit}>
                   <input
                     type="text"
                     name="name"
+                    value={fullName}
+                    onChange={this.handleChange}
                     placeholder="Enter Your Name"
                   />
                   <input
                     type="text"
                     name="email"
+                    value={email}
+                    onChange={this.handleChange}
                     placeholder="Enter Your Email"
                   />
-                  <textarea name="msg" id="msg" placeholder="Your Message " />
+                  <textarea
+                    name="msg"
+                    id="msg"
+                    value={message}
+                    onChange={this.handleChange}
+                    placeholder="Your Message"
+                  />
                   <input type="submit" value="Send" id="send" />
                 </form>
               </div>
@@ -89,8 +120,8 @@ class ContactForm extends React.Component {
               <div className="contact_info">
                 <div className="s-info">
                   <div className="meta-content">
-                    <span>17 Bath Rd, Heathrow, Longford,Hounslow</span>
-                    <span>TW7 1AB, UK</span>
+                    <span>jalandhar,</span>
+                    <span>Punjab</span>
                   </div>
                 </div>
                 <div className="s-info">
@@ -102,7 +133,7 @@ class ContactForm extends React.Component {
                 <div className="s-info">
                   <div className="meta-content">
                     <span>Support@domain.com</span>
-                    <span>Example@Gmail.com</span>
+                    <span>packrsofficial@gmail.com</span>
                   </div>
                 </div>
                 <div className="c-social">
@@ -117,7 +148,6 @@ class ContactForm extends React.Component {
                         <i className="fab fa-twitter" />
                       </a>
                     </li>
-
                     <li>
                       <a href={config.instagramUrl}>
                         <i className="fab fa-instagram" />

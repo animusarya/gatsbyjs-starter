@@ -9,7 +9,7 @@ import AboutArea from '../components/AboutArea';
 import Features from '../components/Features';
 import Slider from '../components/Slider';
 import AppDownload from '../components/AppDownload';
-import Subscription from '../components/Subscription';
+import SubscriptionForm from '../components/forms/SubscriptionForm';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -28,7 +28,7 @@ export default class IndexPage extends React.Component {
         <Features />
         <Slider />
         <AppDownload />
-        <Subscription />
+        <SubscriptionForm />
       </Layout>
     );
   }
