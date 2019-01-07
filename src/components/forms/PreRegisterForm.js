@@ -85,6 +85,9 @@ class PreRegisterForm extends React.Component {
         },
       })
       .then(result => console.log(result));
+    setTimeout(() => {
+      this.setState({ telephone: '' });
+    }, 1000);
   };
 
   render() {
@@ -94,7 +97,7 @@ class PreRegisterForm extends React.Component {
         <div className="form-wrapper">
           <div className="form-group has-feedback">
             <input
-              type="text"
+              type="number"
               name="telephone"
               className="form-control"
               value={telephone}

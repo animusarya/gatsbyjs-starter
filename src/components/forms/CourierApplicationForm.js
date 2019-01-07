@@ -122,7 +122,7 @@ class CourierApplicationForm extends React.Component {
       address: '',
       adharNumber: '',
       panNumber: '',
-      status: false,
+      success: false,
     };
   }
 
@@ -172,9 +172,9 @@ class CourierApplicationForm extends React.Component {
         address: '',
         adharNumber: '',
         panNumber: '',
-        status: true,
+        success: true,
       });
-    }, 2000);
+    }, 1000);
   };
 
   render() {
@@ -185,7 +185,7 @@ class CourierApplicationForm extends React.Component {
       panNumber,
       adharNumber,
       address,
-      status,
+      success,
     } = this.state;
     return (
       <Container className="login-page">
@@ -235,7 +235,7 @@ class CourierApplicationForm extends React.Component {
             />
 
             <button type="submit" value="submit">
-              {status === true ? (
+              {success === true ? (
                 <React.Fragment>
                   <i className="fas fa-check-circle" />
                   <span>Thanks for submission</span>
