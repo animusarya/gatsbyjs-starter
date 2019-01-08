@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import gql from 'graphql-tag';
+import * as Yup from 'yup';
+import {withFormik} from 'formik';
 
 import apolloClient from '../../utils/apolloClient';
 
@@ -102,6 +104,10 @@ const Container = styled.div`
     color: #fff;
     margin-right: 1rem !important;
   }
+  .help {
+    color: red;
+    float: left;
+  }
 `;
 
 const courierApplicationMutation = gql`
@@ -112,143 +118,144 @@ const courierApplicationMutation = gql`
   }
 `;
 
-class CourierApplicationForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fullName: '',
-      email: '',
-      telephone: '',
-      address: '',
-      adharNumber: '',
-      panNumber: '',
-      success: false,
-    };
-  }
+const CourierApplicationForm = props => {
+  const {
+    values,
+    touched,
+    errors,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting,
+  } = props;
+  return (
+    <Container className="login-page">
+      <div className="form">
+        <form className="login-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="fullName"
+            placeholder="full name"
+            value={values.fullName}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.fullName &&
+            touched.fullName &&
+            <span className="help">{errors.fullName}</span>}
+          <input
+            type="email"
+            name="email"
+            value={values.email}
+            placeholder="email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.email &&
+            touched.email &&
+            <span className="help">{errors.email}</span>}
+          <input
+            type="text"
+            name="telephone"
+            value={values.telephone}
+            placeholder="mobile"
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.telephone &&
+            touched.telephone &&
+            <span className="help">{errors.telephone}</span>}
+          <input
+            type="text"
+            name="address"
+            placeholder="permanent address"
+            value={values.address}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.address &&
+            touched.address &&
+            <span className="help">{errors.address}</span>}
+          <input
+            type="text"
+            name="panNumber"
+            placeholder="PAN"
+            value={values.panNumber}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.panNumber &&
+            touched.panNumber &&
+            <span className="help">{errors.panNumber}</span>}
+          <input
+            type="text"
+            name="adharNumber"
+            placeholder="adhar number"
+            value={values.adharNumber}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.adharNumber &&
+            touched.adharNumber &&
+            <span className="help">{errors.adharNumber}</span>}
 
-  componentDidMount = () => {
-    $('.message a').click(() => {
-      $('form').animate({ height: 'toggle', opacity: 'toggle' }, 'slow');
-    });
-  };
+          <button type="submit" value="submit" disabled={isSubmitting}>
+            SUBMIT
+          </button>
+        </form>
+      </div>
+    </Container>
+  );
+};
 
-  handleChange = event => {
-    const change = {};
-    change[event.target.name] = event.target.value;
-    this.setState(change);
-  };
+export default withFormik ({
+  mapPropsToValues: () => ({
+    fullName: '',
+    email: '',
+    telephone: '',
+    address: '',
+    panNumber: '',
+    adharNumber: '',
+  }),
+  validationSchema: Yup.object ().shape ({
+    fullName: Yup.string ().required ('Full name is required!'),
+    email: Yup.string ()
+      .email ('Invalid email address')
+      .required ('Email is required!'),
+    telephone: Yup.string ().required ('Telephone is required!'),
+    address: Yup.string ().required ('Address is required!'),
+    panNumber: Yup.string ().required ('PAN is required!'),
+    adharNumber: Yup.string ().required ('ADHAR is required!'),
+  }),
+  handleSubmit: (values, {setSubmitting}) => {
+    // console.log ('handle submit', values);
+    const alertify = require ('alertify.js'); // eslint-disable-line
 
-  handleSubmit = event => {
-    const {
-      fullName,
-      email,
-      telephone,
-      panNumber,
-      adharNumber,
-      address,
-    } = this.state;
-    event.preventDefault();
     apolloClient
-      .mutate({
+      .mutate ({
         mutation: courierApplicationMutation,
         variables: {
           type: 'courierApplication',
           formData: {
-            fullName,
-            email,
-            telephone,
-            address,
-            adharNumber,
-            panNumber,
+            fullName: values.fullName,
+            email: values.email,
+            telephone: values.telephone,
+            address: values.address,
+            panNumber: values.panNumber,
+            adharNumber: values.adharNumber,
           },
         },
       })
-      .then(result => console.log(result));
-    setTimeout(() => {
-      this.setState({
-        fullName: '',
-        email: '',
-        telephone: '',
-        address: '',
-        adharNumber: '',
-        panNumber: '',
-        success: true,
+      .then (() => {
+        alertify.alert (
+          'Thank you for submission, we will get back to you soon.'
+        );
+        setSubmitting (false);
+      })
+      .catch (() => {
+        setSubmitting (false);
+        alertify.alert ('Submission failed, please try again.');
       });
-    }, 1000);
-  };
-
-  render() {
-    const {
-      fullName,
-      email,
-      telephone,
-      panNumber,
-      adharNumber,
-      address,
-      success,
-    } = this.state;
-    return (
-      <Container className="login-page">
-        <div className="form">
-          <form className="login-form" onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              name="fullName"
-              placeholder="full name"
-              value={fullName}
-              onChange={this.handleChange}
-            />
-            <input
-              type="email"
-              name="email"
-              value={email}
-              placeholder="email"
-              onChange={this.handleChange}
-            />
-            <input
-              type="number"
-              name="telephone"
-              value={telephone}
-              placeholder="mobile"
-              onChange={this.handleChange}
-            />
-            <input
-              type="text"
-              name="address"
-              placeholder="permanent address"
-              value={address}
-              onChange={this.handleChange}
-            />
-            <input
-              type="text"
-              name="panNumber"
-              placeholder="PAN"
-              value={panNumber}
-              onChange={this.handleChange}
-            />
-            <input
-              type="number"
-              name="adharNumber"
-              placeholder="adhar number"
-              value={adharNumber}
-              onChange={this.handleChange}
-            />
-
-            <button type="submit" value="submit">
-              {success === true ? (
-                <React.Fragment>
-                  <i className="fas fa-check-circle" />
-                  <span>Thanks for submission</span>
-                </React.Fragment>
-              ) : (
-                'submit'
-              )}
-            </button>
-          </form>
-        </div>
-      </Container>
-    );
-  }
-}
-
-export default CourierApplicationForm;
+  },
+  displayName: 'CourierApplication', // helps with React DevTools
+}) (CourierApplicationForm);
