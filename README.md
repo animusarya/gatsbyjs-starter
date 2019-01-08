@@ -1,8 +1,8 @@
-# Kickoff GatsbyJs
+# Packrs.co
 
-A starting point using ReactJs, bundled with awesome GatsbyJs v2.
+Deliver anything, anywhere, anytime
 
-[Demo](https://kickoff-gatsbyjs.netlify.com/)
+[Demo](https://www.packrs.co/)
 
 ## Stack
 
