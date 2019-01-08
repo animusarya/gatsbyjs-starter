@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
+import * as Yup from 'yup';
+import {withFormik} from 'formik';
 
 import apolloClient from '../../utils/apolloClient';
 
@@ -30,6 +33,10 @@ const Container = styled.section`
     display: flex;
     justify-content: flex-end;
   }
+  .help {
+   
+    color: red !important;
+  }
 `;
 
 const contactMutation = gql`
@@ -40,127 +47,158 @@ const contactMutation = gql`
   }
 `;
 
-class ContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fullName: '',
-      email: '',
-    };
-  }
-
-  handleChange = event => {
-    const change = {};
-    change[event.target.name] = event.target.value;
-    this.setState(change);
-  };
-
-  handleSubmit = event => {
-    const { fullName, email, message } = this.state;
-    event.preventDefault();
-    apolloClient
-      .mutate({
-        mutation: contactMutation,
-        variables: {
-          type: 'contact',
-          formData: {
-            fullName,
-            email,
-            message,
-          },
-        },
-      })
-      .then(result => console.log(result));
-    this.setState({
-      fullName: '',
-      email: '',
-      message: '',
-    });
-  };
-
-  render() {
-    const { fullName, email, message } = this.state;
-    return (
-      <Container className="contact-area ptb--100" id="contact">
-        <div className="container">
-          <div className="section-title">
-            <h2>Contact Us</h2>
-            <p>Have any questions, directly contact us.</p>
-          </div>
-          <div className="row">
-            <div className="col-md-6 col-sm-6 col-xs-12">
-              <div className="contact-form">
-                <form onSubmit={this.handleSubmit}>
-                  <input
-                    type="text"
-                    name="name"
-                    value={fullName}
-                    onChange={this.handleChange}
-                    placeholder="Enter Your Name"
-                  />
-                  <input
-                    type="text"
-                    name="email"
-                    value={email}
-                    onChange={this.handleChange}
-                    placeholder="Enter Your Email"
-                  />
-                  <textarea
-                    name="msg"
-                    id="msg"
-                    value={message}
-                    onChange={this.handleChange}
-                    placeholder="Your Message"
-                  />
-                  <input type="submit" value="Send" id="send" />
-                </form>
-              </div>
+const ContactForm = props => {
+  const {
+    values,
+    touched,
+    errors,
+    isSubmitting,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = props;
+  return (
+    <Container className="contact-area ptb--100" id="contact">
+      <div className="container">
+        <div className="section-title">
+          <h2>Contact Us</h2>
+          <p>Have any questions, directly contact us.</p>
+        </div>
+        <div className="row">
+          <div className="col-md-6 col-sm-6 col-xs-12">
+            <div className="contact-form">
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="fullName"
+                  value={values.fullName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Enter Your Name"
+                />
+                {errors.fullName &&
+                  touched.fullName &&
+                  <span className="help">{errors.fullName}</span>}
+                <input
+                  type="text"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                  placeholder="Enter Your Email"
+                />
+                {errors.email &&
+                  touched.email &&
+                  <span className="help is-danger">{errors.email}</span>}
+                <textarea
+                  name="message"
+                  id="msg"
+                  value={values.message}
+                  onChange={handleChange}
+                  placeholder="Your Message"
+                />
+                {errors.message &&
+                  touched.message &&
+                  <span className="help is-danger">{errors.message}</span>}
+                <br />
+                <input type="submit" value="Send" id="send" />
+              </form>
             </div>
-            <div className="col-md-6 col-sm-6 col-xs-12">
-              <div className="contact_info">
-                <div className="s-info">
-                  <div className="meta-content">
-                    <span>jalandhar,Punjab</span>
-                  </div>
+          </div>
+          <div className="col-md-6 col-sm-6 col-xs-12">
+            <div className="contact_info">
+              <div className="s-info">
+                <div className="meta-content">
+                  <span>jalandhar,Punjab</span>
                 </div>
-                <div className="s-info">
-                  <div className="meta-content">
-                    <a href="tel:00911815195423">01815195423</a>
-                  </div>
+              </div>
+              <div className="s-info">
+                <div className="meta-content">
+                  <a href="tel:00911815195423">01815195423</a>
                 </div>
-                <div className="s-info">
-                  <div className="meta-content">
-                    <a href="mailto:hi@packrs.co" target="_top">
-                      hi@packrs.co
+              </div>
+              <div className="s-info">
+                <div className="meta-content">
+                  <a href="mailto:hi@packrs.co" target="_top">
+                    hi@packrs.co
+                  </a>
+                </div>
+              </div>
+              <div className="c-social">
+                <ul>
+                  <li>
+                    <a href={config.fbUrl}>
+                      <i className="fab fa-facebook-f" />
                     </a>
-                  </div>
-                </div>
-                <div className="c-social">
-                  <ul>
-                    <li>
-                      <a href={config.fbUrl}>
-                        <i className="fab fa-facebook-f" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={config.twitterUrl}>
-                        <i className="fab fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={config.instagramUrl}>
-                        <i className="fab fa-instagram" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                  </li>
+                  <li>
+                    <a href={config.twitterUrl}>
+                      <i className="fab fa-twitter" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={config.instagramUrl}>
+                      <i className="fab fa-instagram" />
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </Container>
-    );
-  }
-}
+      </div>
+    </Container>
+  );
+};
 
-export default ContactForm;
+ContactForm.propTypes = {
+  values: PropTypes.object.isRequired,
+  touched: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired,
+  isSubmitting: PropTypes.bool.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleBlur: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+};
+
+export default withFormik ({
+  mapPropsToValues: () => ({
+    fullName: '',
+    email: '',
+    message: '',
+  }),
+  validationSchema: Yup.object ().shape ({
+    fullName: Yup.string ().required ('Full name is required!'),
+    email: Yup.string ()
+      .email ('Invalid email address')
+      .required ('Email is required!'),
+    message: Yup.string ().required ('Message is required!'),
+  }),
+  handleSubmit: (values, {setSubmitting}) => {
+    console.log ('handle submit', values);
+    const alertify = require ('alertify.js'); // eslint-disable-line
+
+    apolloClient
+      .mutate ({
+        mutation: contactMutation,
+        variables: {
+          type: 'contact',
+          formData: {
+            fullName: values.fullName,
+            email: values.email,
+            message: values.message,
+          },
+        },
+      })
+      .then (() => {
+        alertify.alert (
+          'Thank you contacting us, we will get back to you soon.'
+        );
+        setSubmitting (false);
+      })
+      .catch (() => {
+        setSubmitting (false);
+        alertify.alert ('Contact form failed, please try again.');
+      });
+  },
+  displayName: 'ContactUs', // helps with React DevTools
+}) (ContactForm);
