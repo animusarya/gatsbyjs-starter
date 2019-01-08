@@ -25,6 +25,7 @@
     "apollo-client": "^2.4.8",
     "apollo-link-context": "^1.0.12",
     "apollo-link-http": "^1.5.9",
+    "formik": "^1.4.2",
     "gatsby": "next",
     "gatsby-plugin-favicon": "^3.1.5",
     "gatsby-plugin-google-analytics": "next",

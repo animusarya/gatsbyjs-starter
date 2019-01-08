@@ -12,7 +12,7 @@ export default class Blog extends React.Component {
     return (
       <Layout path={location.pathname}>
         <Seo
-          title="Packrs"
+          title="Blog"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
           image={config.image}

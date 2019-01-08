@@ -82,7 +82,7 @@ const Features = () => (
               <div className="meta-content">
                 <h2>Refer Friends</h2>
                 <p>
-                  Reffer your friends and get discount coupons for your next
+                  Refer your friends and get discount coupons for your next
                   booking.
                 </p>
               </div>

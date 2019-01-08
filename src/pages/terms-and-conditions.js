@@ -47,14 +47,14 @@ export default class TermsAndConditions extends React.Component {
 
   render() {
     const { data } = this.state;
-    console.log('data', data);
+    // console.log('data', data);
 
     const { location } = this.props;
 
     return (
       <Layout path={location.pathname}>
         <Seo
-          title="Packrs"
+          title="Terms and Conditions"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
           image={config.image}

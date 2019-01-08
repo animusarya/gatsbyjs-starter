@@ -39,7 +39,7 @@ export default class FAQ extends React.Component {
       .query({
         query,
         variables: {
-          slug: 'about',
+          slug: 'faq',
         },
       })
       .then(result => this.setState({ data: result.data.page }));
@@ -53,7 +53,7 @@ export default class FAQ extends React.Component {
     return (
       <Layout path={location.pathname}>
         <Seo
-          title="Packrs"
+          title="FAQ"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
           image={config.image}

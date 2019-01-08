@@ -120,20 +120,19 @@ class ContactForm extends React.Component {
               <div className="contact_info">
                 <div className="s-info">
                   <div className="meta-content">
-                    <span>jalandhar,</span>
-                    <span>Punjab</span>
+                    <span>jalandhar,Punjab</span>
                   </div>
                 </div>
                 <div className="s-info">
                   <div className="meta-content">
-                    <span>+0123 456 789 78</span>
-                    <span>+0123 456 789 78</span>
+                    <a href="tel:00911815195423">01815195423</a>
                   </div>
                 </div>
                 <div className="s-info">
                   <div className="meta-content">
-                    <span>Support@domain.com</span>
-                    <span>packrsofficial@gmail.com</span>
+                    <a href="mailto:hi@packrs.co" target="_top">
+                      hi@packrs.co
+                    </a>
                   </div>
                 </div>
                 <div className="c-social">

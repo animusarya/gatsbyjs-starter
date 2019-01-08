@@ -18,15 +18,13 @@ const contactMutation = gql`
 
 export default class Contact extends React.Component {
   handleSubmit = () => {
-    apolloClient
-      .mutate({
-        mutation: contactMutation,
-        variables: {
-          type: 'contact',
-          formData: { fullName: 'parmindeasdr klair', telephone: '122343123' },
-        },
-      })
-      .then(result => console.log(result));
+    apolloClient.mutate({
+      mutation: contactMutation,
+      variables: {
+        type: 'contact',
+        formData: { fullName: 'parmindeasdr klair', telephone: '122343123' },
+      },
+    });
   };
 
   render() {
@@ -34,7 +32,7 @@ export default class Contact extends React.Component {
     return (
       <Layout path={location.pathname}>
         <Seo
-          title="Packrs"
+          title="Contact"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
           image={config.image}

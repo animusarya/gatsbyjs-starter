@@ -46,14 +46,12 @@ export default class Contact extends React.Component {
 
   render() {
     const { data } = this.state;
-    console.log('data', data);
-
     const { location } = this.props;
 
     return (
       <Layout path={location.pathname}>
         <Seo
-          title="Packrs"
+          title="About"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
           image={config.image}
