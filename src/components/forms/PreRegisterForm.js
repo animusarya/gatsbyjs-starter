@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import gql from 'graphql-tag';
-import { withFormik } from 'formik';
+import * as Yup from 'yup';
+import {withFormik} from 'formik';
 
 import apolloClient from '../../utils/apolloClient';
 
@@ -60,108 +61,80 @@ const preRegisterMutation = gql`
   }
 `;
 
-class PreRegisterForm extends React.Component {
-  // state = {
-  //   telephone: '',
-  // };
-
-  // handleChange = event => {
-  //   this.setState({
-  //     telephone: event.target.value,
-  //   });
-  //   console.log(event.target.value);
-  // };
-
-  // handleSubmit = event => {
-  //   const { telephone } = this.state;
-  //   event.preventDefault();
-  //   apolloClient
-  //     .mutate({
-  //       mutation: preRegisterMutation,
-  //       variables: {
-  //         type: 'preRegister',
-  //         formData: {
-  //           telephone,
-  //         },
-  //       },
-  //     })
-  //     .then(result => console.log(result));
-  //   setTimeout(() => {
-  //     this.setState({ telephone: '' });
-  //   }, 1000);
-  // };
-
-  render() {
-    const {
-      values,
-      errors,
-      touched,
-      handleChange,
-      handleBlur,
-      handleSubmit,
-      loading,
-    } = this.props;
-    return (
-      <Container>
-        <div className="form-wrapper">
-          <div className="form-group has-feedback">
-            <input
-              type="number"
-              name="telephone"
-              className="form-control"
-              value={values.telephone}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder="Enter your phone number to get the app."
-              id="inputSuccess4"
-              aria-describedby="inputSuccess4Status"
-            />
-            <i className="fas fa-mobile-alt form-control-feedback" />
-          </div>
-          <div className="button-wrapper">
-            <button
-              type="submit"
-              className="btn btn-default"
-              onClick={handleSubmit}
-            >
-              Text Me
-            </button>
-          </div>
+const PreRegisterForm = props => {
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    loading,
+  } = props;
+  return (
+    <Container onSubmit={handleSubmit}>
+      <div className="form-wrapper">
+        <div className="form-group has-feedback">
+          <input
+            type="text"
+            name="telephone"
+            className="form-control"
+            value={values.telephone}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="Enter your phone number to get the app."
+            id="inputSuccess4"
+            aria-describedby="inputSuccess4Status"
+          />
+          <i className="fas fa-mobile-alt form-control-feedback" />
         </div>
-      </Container>
-    );
-  }
-}
 
-export default withFormik({
-  // Transform outer props into form values
+        <div className="button-wrapper">
+          <button type="submit" className="btn btn-default">
+            Text Me
+          </button>
+        </div>
+      </div>
+    </Container>
+  );
+};
+
+export default withFormik ({
   mapPropsToValues: () => ({
     telephone: '',
   }),
-  // Add a custom validation function (this can be async too!)
-  // validate: values => {
-  //   const errors = {};
-  //   if (!values.email) {
-  //     errors.email = 'Required';
-  //   } else if (
-  //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-  //   ) {
-  //     errors.email = 'Invalid email address';
-  //   }
-  //   return errors;
-  // },
-  // Submission handler
-  handleSubmit: values => {
+  // validationSchema: Yup.object ().shape ({
+  //   fullName: Yup.string ().required ('Full name is required!'),
+  //   email: Yup.string ()
+  //     .email ('Invalid email address')
+  //     .required ('Email is required!'),
+  //   telephone: Yup.string ().required ('Telephone is required!'),
+
+  // }),
+  handleSubmit: (values, {setSubmitting}) => {
+    // console.log ('handle submit', values);
+    const alertify = require ('alertify.js'); // eslint-disable-line
+
     apolloClient
-      .mutate({
+      .mutate ({
         mutation: preRegisterMutation,
         variables: {
           type: 'preRegister',
           formData: {
-            ...values,
+            telephone: values.telephone,
           },
         },
       })
-      .then(result => console.log(result));
+      .then (() => {
+        alertify.alert (
+          'Thank you, Link for downloading app will be sent soon to your phone.'
+        );
+        setSubmitting (false);
+      })
+      .catch (() => {
+        setSubmitting (false);
+        alertify.alert ('Submission failed, please try again.');
+      });
   },
-})(PreRegisterForm);
+  displayName: 'PreRegister', // helps with React DevTools
+}) (PreRegisterForm);
