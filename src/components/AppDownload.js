@@ -14,6 +14,10 @@ const Container = styled.div`
     background-color: #fff;
     color: #33b760 !important;
   }
+  a,
+  a:visited {
+    cursor: pointer;
+  }
 `;
 
 const AppDownload = () => (
@@ -26,11 +30,12 @@ const AppDownload = () => (
         </div>
         <div className="download-btns btn-area text-center">
           <a onClick={() => swal('Coming soon !')}>
-            <i className="fab fa-google-play" />play store
+            <i className="fab fa-google-play" />
+            play store
           </a>
-
           <a onClick={() => swal('Coming soon !')}>
-            <i className="fab fa-apple" />app store
+            <i className="fab fa-apple" />
+            app store
           </a>
         </div>
       </div>

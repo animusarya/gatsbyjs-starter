@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import * as Yup from 'yup';
 import { withFormik } from 'formik';
+import swal from 'sweetalert';
 
 import apolloClient from '../../utils/apolloClient';
 
@@ -173,9 +174,6 @@ export default withFormik({
     message: Yup.string().required('Message is required!'),
   }),
   handleSubmit: (values, { setSubmitting }) => {
-    console.log('handle submit', values);
-    const alertify = require('alertify.js'); // eslint-disable-line
-
     apolloClient
       .mutate({
         mutation: contactMutation,
@@ -189,14 +187,14 @@ export default withFormik({
         },
       })
       .then(() => {
-        alertify.alert(
-          'Thank you contacting us, we will get back to you soon.',
-        );
+        swal({
+          text: 'Thank you! We will revert back soon',
+        });
         setSubmitting(false);
       })
       .catch(() => {
         setSubmitting(false);
-        alertify.alert('Contact form failed, please try again.');
+        swal('Oops', 'Something went wrong!', 'error');
       });
   },
   displayName: 'ContactUs', // helps with React DevTools

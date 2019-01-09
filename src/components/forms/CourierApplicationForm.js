@@ -226,7 +226,13 @@ export default withFormik({
 
     address: Yup.string().required('Address is required!'),
     panNumber: Yup.string().required('PAN is required!'),
-    adharNumber: Yup.string().required('ADHAR is required!'),
+    adharNumber: Yup.string()
+      .required('ADHAR is required!')
+      .test(
+        'len',
+        'Must be exactly 16 characters',
+        val => val.toString().length === 16,
+      ),
   }),
   handleSubmit: (values, { setSubmitting }) => {
     // console.log ('handle submit', values);
@@ -241,7 +247,7 @@ export default withFormik({
           formData: {
             fullName: values.fullName,
             email: values.email,
-            telephone: newTelephone,
+            telephone: `0091${newTelephone}`,
             address: values.address,
             panNumber: values.panNumber,
             adharNumber: newAdharNumber,

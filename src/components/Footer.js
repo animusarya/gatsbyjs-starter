@@ -21,6 +21,7 @@ const Footer = () => (
     <div className="footer-area">
       <div className="container">
         <div className="row">
+          <Link to="/contact/">Contact</Link>
           <Link to="/blog/">Blog</Link>
           <Link to="/about/">About</Link>
           <Link to="/terms-and-conditions/">T&C</Link>

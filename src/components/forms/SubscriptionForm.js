@@ -16,7 +16,8 @@ const Container = styled.section`
     background-color: #33b760;
   }
   #send {
-    background-color: #33b760 !important;
+    background-color: ${props =>
+      props.result === 'success' ? 'green' : '#33b760'} !important;
   }
   .c-social ul li a {
     background-color: #33b760 !important;
@@ -36,6 +37,7 @@ class SubscriptionForm extends React.Component {
     this.state = {
       email: '',
       message: '',
+      result: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -46,11 +48,12 @@ class SubscriptionForm extends React.Component {
   handleSubmit = async e => {
     const { email } = this.state;
     e.preventDefault();
-    const result = await addToMailchimp(email);
-    this.setState({ email: '', message: result.msg });
+    const data = await addToMailchimp(email);
+    console.log(data);
+    this.setState({ email: '', message: data.msg });
     setTimeout(() => {
-      this.setState({ message: '' });
-    }, 2000);
+      this.setState({ message: '', result: data.result });
+    }, 1000);
   };
 
   handleChange(event) {
@@ -58,9 +61,9 @@ class SubscriptionForm extends React.Component {
   }
 
   render() {
-    const { message, email } = this.state;
+    const { message, email, result } = this.state;
     return (
-      <Container className="contact-area ptb--100" id="contact">
+      <Container className="contact-area ptb--100" id="contact" result={result}>
         <div className="container">
           <div className="section-title">
             <h2>Subscribe</h2>
@@ -79,7 +82,13 @@ class SubscriptionForm extends React.Component {
                     aria-label="email"
                   />
 
-                  <input type="submit" value="Subscribe" id="send" />
+                  <input
+                    type="submit"
+                    value={`${
+                      result === 'success' ? ' Subscribed' : 'Subscribe'
+                    }`}
+                    id="send"
+                  />
                   <br />
                   <span className="message">{message}</span>
                 </form>

@@ -38,6 +38,11 @@ const Container = styled.form`
   .form-wrapper {
     display: flex;
     flex-direction: column;
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
     .btn {
       width: 30%;
       padding: 15px 20px;
@@ -47,6 +52,7 @@ const Container = styled.form`
       font-weight: 500;
       border-width: 2px;
       border-color: #fff;
+      outline: 0;
       @media screen and (max-width: 768px) {
         width: 100% !important;
       }
@@ -116,6 +122,11 @@ export default withFormik({
     telephone: Yup.number()
       .typeError("That doesn't look like a phone number")
       .positive("A phone number can't start with a minus")
+      .test(
+        'len',
+        'Must be exactly 10 characters',
+        val => val.toString().length === 10,
+      )
       .required('A phone number is required'),
   }),
   handleSubmit: (values, { setSubmitting }) => {
@@ -129,13 +140,13 @@ export default withFormik({
         variables: {
           type: 'preRegister',
           formData: {
-            telephone: newTelephone,
+            telephone: `0091${newTelephone}`,
           },
         },
       })
       .then(() => {
         swal({
-          title: 'Thank you! The download link will be sent soon to your phone',
+          text: 'Thank you! The download link will be sent soon to your phone',
         });
         setSubmitting(false);
       })

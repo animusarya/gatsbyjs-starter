@@ -27,11 +27,34 @@ const Container = styled.section`
     width: 1em !important;
     color: #fff !important;
   }
-  .fa-arrow-right {
-    margin-left: 1rem;
-  }
+
   .slider-inner a {
     padding-left: 0px !important;
+  }
+  .fa-arrow-right {
+    margin-left: 1rem;
+    position: relative;
+    -webkit-animation: mymove 0.5s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
+    animation: mymove 0.5s;
+    animation-iteration-count: infinite;
+  }
+  @-webkit-keyframes mymove {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 8px;
+    }
+  }
+
+  @keyframes mymove {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 8px;
+    }
   }
 `;
 
@@ -51,7 +74,8 @@ const CourierHero = () => (
             <h2>Deliver with Packrs</h2>
             <h5>No boss. Flexible schedule. Quick pay.</h5>
             <Button to="/courier-application-form/">
-              Sign up in minutes<i className="fas fa-arrow-right" />
+              Sign up in minutes
+              <i className="fas fa-arrow-right" />
             </Button>
           </div>
         </div>
