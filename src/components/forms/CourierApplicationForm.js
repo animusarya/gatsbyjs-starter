@@ -222,11 +222,8 @@ export default withFormik({
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
-    telephone: Yup.number().test(
-      'len',
-      'Must be exactly 10 characters',
-      val => val.toString().length === 10,
-    ),
+    telephone: Yup.number(),
+
     address: Yup.string().required('Address is required!'),
     panNumber: Yup.string().required('PAN is required!'),
     adharNumber: Yup.string().required('ADHAR is required!'),
