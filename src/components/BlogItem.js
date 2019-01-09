@@ -26,10 +26,12 @@ const BlogItem = () => (
         <div className="blog-meta">
           <ul>
             <li>
-              <i className="fa fa-calendar" />12 Feb 2017
+              <i className="fa fa-calendar" />
+              12 Feb 2017
             </li>
             <li>
-              <i className="fa fa-comment" />Comments
+              <i className="fa fa-comment" />
+              Comments
             </li>
           </ul>
         </div>
