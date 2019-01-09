@@ -1,9 +1,9 @@
-/* global $: true */
 import React from 'react';
 import styled from 'styled-components';
 import gql from 'graphql-tag';
 import * as Yup from 'yup';
-import {withFormik} from 'formik';
+import { withFormik } from 'formik';
+import swal from 'sweetalert';
 
 import apolloClient from '../../utils/apolloClient';
 
@@ -140,9 +140,9 @@ const CourierApplicationForm = props => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {errors.fullName &&
-            touched.fullName &&
-            <span className="help">{errors.fullName}</span>}
+          {errors.fullName && touched.fullName && (
+            <span className="help">{errors.fullName}</span>
+          )}
           <input
             type="email"
             name="email"
@@ -151,20 +151,20 @@ const CourierApplicationForm = props => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {errors.email &&
-            touched.email &&
-            <span className="help">{errors.email}</span>}
+          {errors.email && touched.email && (
+            <span className="help">{errors.email}</span>
+          )}
           <input
-            type="text"
+            type="number"
             name="telephone"
             value={values.telephone}
             placeholder="mobile"
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {errors.telephone &&
-            touched.telephone &&
-            <span className="help">{errors.telephone}</span>}
+          {errors.telephone && touched.telephone && (
+            <span className="help">{errors.telephone}</span>
+          )}
           <input
             type="text"
             name="address"
@@ -173,9 +173,9 @@ const CourierApplicationForm = props => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {errors.address &&
-            touched.address &&
-            <span className="help">{errors.address}</span>}
+          {errors.address && touched.address && (
+            <span className="help">{errors.address}</span>
+          )}
           <input
             type="text"
             name="panNumber"
@@ -184,20 +184,20 @@ const CourierApplicationForm = props => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {errors.panNumber &&
-            touched.panNumber &&
-            <span className="help">{errors.panNumber}</span>}
+          {errors.panNumber && touched.panNumber && (
+            <span className="help">{errors.panNumber}</span>
+          )}
           <input
-            type="text"
+            type="number"
             name="adharNumber"
             placeholder="adhar number"
             value={values.adharNumber}
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {errors.adharNumber &&
-            touched.adharNumber &&
-            <span className="help">{errors.adharNumber}</span>}
+          {errors.adharNumber && touched.adharNumber && (
+            <span className="help">{errors.adharNumber}</span>
+          )}
 
           <button type="submit" value="submit" disabled={isSubmitting}>
             SUBMIT
@@ -208,7 +208,7 @@ const CourierApplicationForm = props => {
   );
 };
 
-export default withFormik ({
+export default withFormik({
   mapPropsToValues: () => ({
     fullName: '',
     email: '',
@@ -217,45 +217,51 @@ export default withFormik ({
     panNumber: '',
     adharNumber: '',
   }),
-  validationSchema: Yup.object ().shape ({
-    fullName: Yup.string ().required ('Full name is required!'),
-    email: Yup.string ()
-      .email ('Invalid email address')
-      .required ('Email is required!'),
-    telephone: Yup.string ().required ('Telephone is required!'),
-    address: Yup.string ().required ('Address is required!'),
-    panNumber: Yup.string ().required ('PAN is required!'),
-    adharNumber: Yup.string ().required ('ADHAR is required!'),
+  validationSchema: Yup.object().shape({
+    fullName: Yup.string().required('Full name is required!'),
+    email: Yup.string()
+      .email('Invalid email address')
+      .required('Email is required!'),
+    telephone: Yup.number().test(
+      'len',
+      'Must be exactly 10 characters',
+      val => val.toString().length === 10,
+    ),
+    address: Yup.string().required('Address is required!'),
+    panNumber: Yup.string().required('PAN is required!'),
+    adharNumber: Yup.string().required('ADHAR is required!'),
   }),
-  handleSubmit: (values, {setSubmitting}) => {
+  handleSubmit: (values, { setSubmitting }) => {
     // console.log ('handle submit', values);
-    const alertify = require ('alertify.js'); // eslint-disable-line
-
+    const { telephone, adharNumber } = values;
+    const newTelephone = telephone.toString();
+    const newAdharNumber = adharNumber.toString();
     apolloClient
-      .mutate ({
+      .mutate({
         mutation: courierApplicationMutation,
         variables: {
           type: 'courierApplication',
           formData: {
             fullName: values.fullName,
             email: values.email,
-            telephone: values.telephone,
+            telephone: newTelephone,
             address: values.address,
             panNumber: values.panNumber,
-            adharNumber: values.adharNumber,
+            adharNumber: newAdharNumber,
           },
         },
       })
-      .then (() => {
-        alertify.alert (
-          'Thank you for submission, we will get back to you soon.'
-        );
-        setSubmitting (false);
+      .then(() => {
+        swal({
+          title: 'Thanks for submission! We will revert back soon.',
+          icon: 'success',
+        });
+        setSubmitting(false);
       })
-      .catch (() => {
-        setSubmitting (false);
-        alertify.alert ('Submission failed, please try again.');
+      .catch(() => {
+        setSubmitting(false);
+        swal('Oops', 'Something went wrong!', 'error');
       });
   },
   displayName: 'CourierApplication', // helps with React DevTools
-}) (CourierApplicationForm);
+})(CourierApplicationForm);

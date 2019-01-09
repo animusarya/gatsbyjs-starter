@@ -15,14 +15,18 @@ const Container = styled.section`
   .form-control {
     height: 60px !important;
     border: 3px solid #fff !important;
-    background-color: transparent !important;
+    width: 75%;
+    background-color: #3b9e9e !important;
     padding: 6px 40px !important;
+    padding-left: 20px !important;
     font-size: 18px !important;
     color: #fff !important;
+    letter-spacing: 0px !important ;
     ::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: #fff;
       opacity: 1; /* Firefox */
+      font-weight: 100 !important;
     }
   }
   h2,

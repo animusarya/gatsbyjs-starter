@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import * as Yup from 'yup';
-import {withFormik} from 'formik';
+import { withFormik } from 'formik';
 
 import apolloClient from '../../utils/apolloClient';
 
@@ -34,8 +34,9 @@ const Container = styled.section`
     justify-content: flex-end;
   }
   .help {
-   
     color: red !important;
+    font-size: 15px;
+    margin-top: -15px;
   }
 `;
 
@@ -75,9 +76,9 @@ const ContactForm = props => {
                   onBlur={handleBlur}
                   placeholder="Enter Your Name"
                 />
-                {errors.fullName &&
-                  touched.fullName &&
-                  <span className="help">{errors.fullName}</span>}
+                {errors.fullName && touched.fullName && (
+                  <div className="help">{errors.fullName}</div>
+                )}
                 <input
                   type="text"
                   name="email"
@@ -85,9 +86,9 @@ const ContactForm = props => {
                   onChange={handleChange}
                   placeholder="Enter Your Email"
                 />
-                {errors.email &&
-                  touched.email &&
-                  <span className="help is-danger">{errors.email}</span>}
+                {errors.email && touched.email && (
+                  <div className="help is-danger">{errors.email}</div>
+                )}
                 <textarea
                   name="message"
                   id="msg"
@@ -95,9 +96,9 @@ const ContactForm = props => {
                   onChange={handleChange}
                   placeholder="Your Message"
                 />
-                {errors.message &&
-                  touched.message &&
-                  <span className="help is-danger">{errors.message}</span>}
+                {errors.message && touched.message && (
+                  <div className="help is-danger">{errors.message}</div>
+                )}
                 <br />
                 <input type="submit" value="Send" id="send" />
               </form>
@@ -158,25 +159,25 @@ ContactForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
-export default withFormik ({
+export default withFormik({
   mapPropsToValues: () => ({
     fullName: '',
     email: '',
     message: '',
   }),
-  validationSchema: Yup.object ().shape ({
-    fullName: Yup.string ().required ('Full name is required!'),
-    email: Yup.string ()
-      .email ('Invalid email address')
-      .required ('Email is required!'),
-    message: Yup.string ().required ('Message is required!'),
+  validationSchema: Yup.object().shape({
+    fullName: Yup.string().required('Full name is required!'),
+    email: Yup.string()
+      .email('Invalid email address')
+      .required('Email is required!'),
+    message: Yup.string().required('Message is required!'),
   }),
-  handleSubmit: (values, {setSubmitting}) => {
-    console.log ('handle submit', values);
-    const alertify = require ('alertify.js'); // eslint-disable-line
+  handleSubmit: (values, { setSubmitting }) => {
+    console.log('handle submit', values);
+    const alertify = require('alertify.js'); // eslint-disable-line
 
     apolloClient
-      .mutate ({
+      .mutate({
         mutation: contactMutation,
         variables: {
           type: 'contact',
@@ -187,16 +188,16 @@ export default withFormik ({
           },
         },
       })
-      .then (() => {
-        alertify.alert (
-          'Thank you contacting us, we will get back to you soon.'
+      .then(() => {
+        alertify.alert(
+          'Thank you contacting us, we will get back to you soon.',
         );
-        setSubmitting (false);
+        setSubmitting(false);
       })
-      .catch (() => {
-        setSubmitting (false);
-        alertify.alert ('Contact form failed, please try again.');
+      .catch(() => {
+        setSubmitting(false);
+        alertify.alert('Contact form failed, please try again.');
       });
   },
   displayName: 'ContactUs', // helps with React DevTools
-}) (ContactForm);
+})(ContactForm);

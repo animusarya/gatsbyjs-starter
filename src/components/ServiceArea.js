@@ -23,7 +23,10 @@ const ServiceArea = () => (
           <div className="service-single">
             <img src="/images/track-order.svg" alt="serviceimage" />
             <h2>Live tracking</h2>
-            <p>Track your order on the go live on our app.</p>
+            <p>
+              Track your orders live and watch our couriers zigzagging through
+              the city.
+            </p>
           </div>
         </div>
         <div className="col-md-4 col-sm-4 col-xs-12 col-6">

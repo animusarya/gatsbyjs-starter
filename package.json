@@ -37,6 +37,7 @@
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-styled-components": "next",
+    "gatsby-source-medium": "^2.0.2",
     "gatsby-transformer-sharp": "next",
     "graphql-tag": "^2.10.0",
     "isomorphic-unfetch": "^3.0.0",
@@ -44,6 +45,7 @@
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.4.5",
+    "sweetalert": "^2.1.2",
     "yup": "^0.26.6"
   },
   "devDependencies": {

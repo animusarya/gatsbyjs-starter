@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import gql from 'graphql-tag';
 import * as Yup from 'yup';
-import {withFormik} from 'formik';
+import { withFormik } from 'formik';
+import swal from 'sweetalert';
 
 import apolloClient from '../../utils/apolloClient';
 
@@ -10,6 +11,11 @@ const Container = styled.form`
   .form-control-feedback {
     right: 25px !important;
     height: 60px !important;
+  }
+  .warning {
+    color: #fff;
+    float: left;
+    margin-top: -14px;
   }
   .form-control {
     float: right !important;
@@ -26,6 +32,7 @@ const Container = styled.form`
     }
     @media screen and (max-width: 768px) {
       width: 100% !important;
+      padding-right: 55px !important;
     }
   }
   .form-wrapper {
@@ -64,30 +71,32 @@ const preRegisterMutation = gql`
 const PreRegisterForm = props => {
   const {
     values,
-    errors,
-    touched,
     handleChange,
     handleBlur,
     handleSubmit,
-    loading,
+    touched,
+    errors,
   } = props;
   return (
     <Container onSubmit={handleSubmit}>
       <div className="form-wrapper">
         <div className="form-group has-feedback">
           <input
-            type="text"
+            type="number"
             name="telephone"
             className="form-control"
             value={values.telephone}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder="Enter your phone number to get the app."
+            placeholder="Add your mobile number to get the app"
             id="inputSuccess4"
             aria-describedby="inputSuccess4Status"
           />
           <i className="fas fa-mobile-alt form-control-feedback" />
         </div>
+        {errors.telephone && touched.telephone && (
+          <div className="warning">{errors.telephone}</div>
+        )}
 
         <div className="button-wrapper">
           <button type="submit" className="btn btn-default">
@@ -99,42 +108,41 @@ const PreRegisterForm = props => {
   );
 };
 
-export default withFormik ({
+export default withFormik({
   mapPropsToValues: () => ({
     telephone: '',
   }),
-  // validationSchema: Yup.object ().shape ({
-  //   fullName: Yup.string ().required ('Full name is required!'),
-  //   email: Yup.string ()
-  //     .email ('Invalid email address')
-  //     .required ('Email is required!'),
-  //   telephone: Yup.string ().required ('Telephone is required!'),
-
-  // }),
-  handleSubmit: (values, {setSubmitting}) => {
+  validationSchema: Yup.object().shape({
+    telephone: Yup.number()
+      .typeError("That doesn't look like a phone number")
+      .positive("A phone number can't start with a minus")
+      .required('A phone number is required'),
+  }),
+  handleSubmit: (values, { setSubmitting }) => {
     // console.log ('handle submit', values);
-    const alertify = require ('alertify.js'); // eslint-disable-line
+    const { telephone } = values;
+    const newTelephone = telephone.toString();
 
     apolloClient
-      .mutate ({
+      .mutate({
         mutation: preRegisterMutation,
         variables: {
           type: 'preRegister',
           formData: {
-            telephone: values.telephone,
+            telephone: newTelephone,
           },
         },
       })
-      .then (() => {
-        alertify.alert (
-          'Thank you, Link for downloading app will be sent soon to your phone.'
-        );
-        setSubmitting (false);
+      .then(() => {
+        swal({
+          title: 'Thank you! The download link will be sent soon to your phone',
+        });
+        setSubmitting(false);
       })
-      .catch (() => {
-        setSubmitting (false);
-        alertify.alert ('Submission failed, please try again.');
+      .catch(() => {
+        setSubmitting(false);
+        swal('Oops', 'Something went wrong!', 'error');
       });
   },
   displayName: 'PreRegister', // helps with React DevTools
-}) (PreRegisterForm);
+})(PreRegisterForm);
