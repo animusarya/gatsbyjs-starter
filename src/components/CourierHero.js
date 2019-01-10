@@ -56,6 +56,13 @@ const Container = styled.section`
       left: 8px;
     }
   }
+  .container {
+    display: flex;
+  }
+  .signup {
+    align-self: center;
+    margin-right: 50px;
+  }
 `;
 
 const Button = styled(Link)`
@@ -68,7 +75,7 @@ const Button = styled(Link)`
 const CourierHero = () => (
   <Container className="slider-area" id="home">
     <div className="container">
-      <div className="col-md-6 col-sm-6 col-xs-12 ">
+      <div className="col-md-6 col-sm-6 col-xs-12 signup">
         <div className="row">
           <div className="slider-inner text-right">
             <h2>Deliver with Packrs</h2>
