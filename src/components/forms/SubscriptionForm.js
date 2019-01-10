@@ -17,7 +17,10 @@ const Container = styled.section`
   }
   #send {
     background-color: ${props =>
-      props.result === 'success' ? 'green' : '#33b760'} !important;
+      props.result === 'success' ? 'gray' : '#33b760'} !important;
+    :hover {
+      background: #55d681 !important;
+    }
   }
   .c-social ul li a {
     background-color: #33b760 !important;
