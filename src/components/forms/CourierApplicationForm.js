@@ -8,7 +8,7 @@ import swal from 'sweetalert';
 import apolloClient from '../../utils/apolloClient';
 
 const Container = styled.div`
-  background-image: url('/images/bg.jpg');
+  background: rgba(51, 183, 183, 0.97);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 8% 0 8%;
@@ -25,19 +25,23 @@ const Container = styled.div`
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
   }
   .form input {
     outline: 0;
+    border-radius: 7px;
     background: #f2f2f2;
     width: 100%;
     border: 0;
-    margin: 0 0 15px;
+    margin-bottom: 10px;
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px;
   }
   .form button {
     text-transform: uppercase;
+    border-radius: 10px;
+    font-weight: bold;
     outline: 0;
     background: #4caf50;
     width: 100%;
@@ -108,6 +112,9 @@ const Container = styled.div`
     color: red;
     float: left;
   }
+  .illstration img {
+    width: 80%;
+  }
 `;
 
 const courierApplicationMutation = gql`
@@ -130,79 +137,88 @@ const CourierApplicationForm = props => {
   } = props;
   return (
     <Container className="login-page">
-      <div className="form">
-        <form className="login-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="fullName"
-            placeholder="full name"
-            value={values.fullName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.fullName && touched.fullName && (
-            <span className="help">{errors.fullName}</span>
-          )}
-          <input
-            type="email"
-            name="email"
-            value={values.email}
-            placeholder="email"
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.email && touched.email && (
-            <span className="help">{errors.email}</span>
-          )}
-          <input
-            type="number"
-            name="telephone"
-            value={values.telephone}
-            placeholder="mobile"
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.telephone && touched.telephone && (
-            <span className="help">{errors.telephone}</span>
-          )}
-          <input
-            type="text"
-            name="address"
-            placeholder="permanent address"
-            value={values.address}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.address && touched.address && (
-            <span className="help">{errors.address}</span>
-          )}
-          <input
-            type="text"
-            name="panNumber"
-            placeholder="PAN"
-            value={values.panNumber}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.panNumber && touched.panNumber && (
-            <span className="help">{errors.panNumber}</span>
-          )}
-          <input
-            type="number"
-            name="adharNumber"
-            placeholder="adhar number"
-            value={values.adharNumber}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.adharNumber && touched.adharNumber && (
-            <span className="help">{errors.adharNumber}</span>
-          )}
+      <div className="row">
+        <div className="col-md-5">
+          <div className="form">
+            <h2>Deliver with Us</h2>
+            <hr />
+            <form className="login-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Full Name"
+                value={values.fullName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.fullName && touched.fullName && (
+                <span className="help">{errors.fullName}</span>
+              )}
+              <input
+                type="email"
+                name="email"
+                value={values.email}
+                placeholder="Email Address"
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.email && touched.email && (
+                <span className="help">{errors.email}</span>
+              )}
+              <input
+                type="number"
+                name="telephone"
+                value={values.telephone}
+                placeholder="Contact Number"
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.telephone && touched.telephone && (
+                <span className="help">{errors.telephone}</span>
+              )}
+              <input
+                type="text"
+                name="address"
+                placeholder="Permanent Address"
+                value={values.address}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.address && touched.address && (
+                <span className="help">{errors.address}</span>
+              )}
+              <input
+                type="text"
+                name="panNumber"
+                placeholder="PAN Number"
+                value={values.panNumber}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.panNumber && touched.panNumber && (
+                <span className="help">{errors.panNumber}</span>
+              )}
+              <input
+                type="number"
+                name="adharNumber"
+                placeholder="Aadhar Number"
+                value={values.adharNumber}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.adharNumber && touched.adharNumber && (
+                <span className="help">{errors.adharNumber}</span>
+              )}
 
-          <button type="submit" value="submit" disabled={isSubmitting}>
-            SUBMIT
-          </button>
-        </form>
+              <button type="submit" value="submit" disabled={isSubmitting}>
+                Become a Courier
+              </button>
+            </form>
+          </div>
+        </div>
+        <div className="col-md-7 illustration">
+          <img src="../images/handshake-2.svg" />
+        </div>
       </div>
     </Container>
   );
