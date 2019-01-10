@@ -112,8 +112,9 @@ const Container = styled.div`
     color: red;
     float: left;
   }
-  .illstration img {
+  .illustration img {
     width: 80%;
+    margin: 0 auto;
   }
 `;
 
@@ -217,7 +218,7 @@ const CourierApplicationForm = props => {
           </div>
         </div>
         <div className="col-md-7 illustration">
-          <img src="../images/handshake-2.svg" />
+          <img src="../images/handshake-2.svg" alt="" />
         </div>
       </div>
     </Container>

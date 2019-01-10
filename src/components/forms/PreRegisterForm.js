@@ -17,24 +17,25 @@ const Container = styled.form`
     float: left;
     margin-top: -14px;
   }
+
   .form-control {
-    float: right !important;
     height: 60px !important;
     border: 3px solid #fff !important;
-    background-color: transparent !important;
+    width: 75%;
+    background-color: #3b9e9e !important;
     padding: 6px 40px !important;
+    padding-left: 20px !important;
     font-size: 18px !important;
     color: #fff !important;
+    letter-spacing: 0px !important ;
     ::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: #fff;
       opacity: 1; /* Firefox */
-    }
-    @media screen and (max-width: 768px) {
-      width: 100% !important;
-      padding-right: 55px !important;
+      font-weight: 100 !important;
     }
   }
+
   .form-wrapper {
     display: flex;
     flex-direction: column;
