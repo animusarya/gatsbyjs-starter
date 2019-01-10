@@ -14,6 +14,7 @@ import SubscriptionForm from '../components/forms/SubscriptionForm';
 export default class IndexPage extends React.Component {
   render() {
     const { location } = this.props;
+
     return (
       <Layout path={location.pathname}>
         <Seo
@@ -22,7 +23,7 @@ export default class IndexPage extends React.Component {
           url={`${config.siteUrl}`}
           image={config.image}
         />
-        <HomeHero />
+        <HomeHero refCode={location.search} />
         <ServiceArea />
         <AboutArea />
         <Features />

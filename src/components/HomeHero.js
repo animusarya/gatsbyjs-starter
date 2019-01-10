@@ -56,7 +56,7 @@ const Container = styled.section`
   }
 `;
 
-const HomeHero = () => (
+const HomeHero = ({ refCode }) => (
   <Container className="slider-area" id="home">
     <div className="container">
       <div className="col-md-6 col-sm-6 hidden-xs">
@@ -71,7 +71,7 @@ const HomeHero = () => (
           <div className="slider-inner text-right">
             <h2>Deliver anything, anywhere</h2>
             <h5>Get app now !</h5>
-            <PreRegisterForm />
+            <PreRegisterForm refCode={refCode} />
           </div>
         </div>
       </div>

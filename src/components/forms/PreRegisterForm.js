@@ -84,6 +84,7 @@ const PreRegisterForm = props => {
     touched,
     errors,
   } = props;
+
   return (
     <Container onSubmit={handleSubmit}>
       <div className="form-wrapper">
@@ -116,8 +117,9 @@ const PreRegisterForm = props => {
 };
 
 export default withFormik({
-  mapPropsToValues: () => ({
+  mapPropsToValues: refCode => ({
     telephone: '',
+    refCode,
   }),
   validationSchema: Yup.object().shape({
     telephone: Yup.number()
@@ -134,6 +136,7 @@ export default withFormik({
     // console.log ('handle submit', values);
     const { telephone } = values;
     const newTelephone = telephone.toString();
+    console.log('refCode', values.refCode.refCode);
 
     apolloClient
       .mutate({
