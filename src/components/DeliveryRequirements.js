@@ -28,6 +28,12 @@ const Container = styled.div`
   .section-title {
     text-align: left;
   }
+  .illustration img {
+    width: 70%;
+  }
+  .delivery-points ul {
+    list-style: none;
+  }
 `;
 
 const DeliveryRequirements = () => (
@@ -37,21 +43,33 @@ const DeliveryRequirements = () => (
         <h2>Delivery requirements*</h2>
       </div>
       <div className="row">
-        <div className="col-md-8 col-sm-8 col-xs-12">
+        <div className="col-md-12 col-sm-12 col-xs-12">
           <div className="row">
-            <div className="col-md-6 col-sm-6 col-xs-6">
+            <div className="col-md-6 col-sm-6 col-xs-6 illustration">
               <img src="/images/courier-feature-one.svg" alt="serviceimage" />
             </div>
             <div className="col-md-6 col-sm-6 col-xs-6">
-              <div className="">
+              <div className="pull-right delivery-points">
                 <h2 className="title">Two Wheeler delivery:</h2>
-
                 <ul>
-                  <li>Any make or model 2-wheel scooter</li>
-                  <li>Valid Driving License</li>
-                  <li>Registration Certificate of two wheeler</li>
-                  <li>Valid insurance for two wheeler</li>
-                  <li>PAN Card</li>
+                  <li>
+                    <i className="fas fa-motorcycle" /> Any make or model
+                    2-wheel scooter
+                  </li>
+                  <li>
+                    <i className="fas fa-id-card" /> Valid Driving License
+                  </li>
+                  <li>
+                    <i className="far fa-registered" /> Registration Certificate
+                    of two wheeler
+                  </li>
+                  <li>
+                    <i className="fas fa-hand-holding-usd" /> Valid insurance
+                    for two wheeler
+                  </li>
+                  <li>
+                    <i className="fas fa-credit-card-blank" /> PAN Card
+                  </li>
                 </ul>
               </div>
             </div>
