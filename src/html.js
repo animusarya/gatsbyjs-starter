@@ -53,6 +53,7 @@ export default class HTML extends React.Component {
           <script src="/js/counterup.js" />
           <script src="/js/jquery.waypoints.min.js" />
           <script src="/js/theme.js" />
+          <script src="/js/crisp.js" />
         </body>
       </html>
     );
