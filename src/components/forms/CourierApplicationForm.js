@@ -139,6 +139,9 @@ const CourierApplicationForm = props => {
   return (
     <Container className="login-page">
       <div className="row">
+        <div className="col-md-7 illustration">
+          <img src="../images/handshake-2.svg" alt="" />
+        </div>
         <div className="col-md-5">
           <div className="form">
             <h2>Deliver with Us</h2>
@@ -216,9 +219,6 @@ const CourierApplicationForm = props => {
               </button>
             </form>
           </div>
-        </div>
-        <div className="col-md-7 illustration">
-          <img src="../images/handshake-2.svg" alt="" />
         </div>
       </div>
     </Container>
