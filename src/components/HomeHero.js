@@ -56,27 +56,49 @@ const Container = styled.section`
   }
 `;
 
-const HomeHero = ({ refCode }) => (
-  <Container className="slider-area" id="home">
-    <div className="container">
-      <div className="col-md-6 col-sm-6 hidden-xs">
-        <div className="row">
-          <div className="slider-img">
-            <img src="/img/hero-mockup.png" alt="sliderimage" />
+class HomeHero extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: false,
+    };
+  }
+
+  toggleLoading = () => {
+    const { loading } = this.state;
+    this.setState({ loading: !loading });
+  };
+
+  render() {
+    const { loading } = this.state;
+    const { refCode } = this.props;
+    return (
+      <Container className="slider-area" id="home">
+        <div className="container">
+          <div className="col-md-6 col-sm-6 hidden-xs">
+            <div className="row">
+              <div className="slider-img">
+                <img src="/img/hero-mockup.png" alt="sliderimage" />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 col-sm-6 col-xs-12">
+            <div className="row">
+              <div className="slider-inner text-right">
+                <h2>Deliver anything, anywhere</h2>
+                <h5>Get app now !</h5>
+                <PreRegisterForm
+                  refCode={refCode}
+                  loading={loading}
+                  toggleLoading={this.toggleLoading}
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="col-md-6 col-sm-6 col-xs-12">
-        <div className="row">
-          <div className="slider-inner text-right">
-            <h2>Deliver anything, anywhere</h2>
-            <h5>Get app now !</h5>
-            <PreRegisterForm refCode={refCode} />
-          </div>
-        </div>
-      </div>
-    </div>
-  </Container>
-);
+      </Container>
+    );
+  }
+}
 
 export default HomeHero;

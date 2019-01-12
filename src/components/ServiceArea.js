@@ -19,7 +19,7 @@ const ServiceArea = () => (
             <p>We deliver anything to you from your favourite places.</p>
           </div>
         </div>
-        <div className="col-md-4 col-sm-4 col-xs-12 col-6">
+        <div className="col-md-4 col-sm-4 col-xs-12">
           <div className="service-single">
             <img src="/images/track-order.svg" alt="serviceimage" />
             <h2>Live tracking</h2>
@@ -29,7 +29,7 @@ const ServiceArea = () => (
             </p>
           </div>
         </div>
-        <div className="col-md-4 col-sm-4 col-xs-12 col-6">
+        <div className="col-md-4 col-sm-4 col-xs-12">
           <div className="service-single">
             <img src="/images/timely-delivery.svg" alt="serviceimage" />
             <h2>Fast delivery</h2>

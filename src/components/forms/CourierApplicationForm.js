@@ -126,104 +126,111 @@ const courierApplicationMutation = gql`
   }
 `;
 
-const CourierApplicationForm = props => {
-  const {
-    values,
-    touched,
-    errors,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isSubmitting,
-  } = props;
-  return (
-    <Container className="login-page">
-      <div className="row">
-        <div className="col-md-7 illustration">
-          <img src="../images/handshake-2.svg" alt="" />
-        </div>
-        <div className="col-md-5">
-          <div className="form">
-            <h2>Deliver with Us</h2>
-            <hr />
-            <form className="login-form" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="fullName"
-                placeholder="Full Name"
-                value={values.fullName}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.fullName && touched.fullName && (
-                <span className="help">{errors.fullName}</span>
-              )}
-              <input
-                type="email"
-                name="email"
-                value={values.email}
-                placeholder="Email Address"
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.email && touched.email && (
-                <span className="help">{errors.email}</span>
-              )}
-              <input
-                type="number"
-                name="telephone"
-                value={values.telephone}
-                placeholder="Contact Number"
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.telephone && touched.telephone && (
-                <span className="help">{errors.telephone}</span>
-              )}
-              <input
-                type="text"
-                name="address"
-                placeholder="Permanent Address"
-                value={values.address}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.address && touched.address && (
-                <span className="help">{errors.address}</span>
-              )}
-              <input
-                type="text"
-                name="panNumber"
-                placeholder="PAN Number"
-                value={values.panNumber}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.panNumber && touched.panNumber && (
-                <span className="help">{errors.panNumber}</span>
-              )}
-              <input
-                type="number"
-                name="adharNumber"
-                placeholder="Aadhar Number"
-                value={values.adharNumber}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.adharNumber && touched.adharNumber && (
-                <span className="help">{errors.adharNumber}</span>
-              )}
+class CourierApplicationForm extends React.Component {
+  state = {
+    isLoading: false,
+  };
 
-              <button type="submit" value="submit" disabled={isSubmitting}>
-                Become a Courier
-              </button>
-            </form>
+  render() {
+    const {
+      values,
+      touched,
+      errors,
+      handleChange,
+      handleBlur,
+      handleSubmit,
+      isSubmitting,
+    } = this.props;
+    console.log(isSubmitting);
+    return (
+      <Container className="login-page">
+        <div className="row">
+          <div className="col-md-7 illustration">
+            <img src="../images/handshake-2.svg" alt="" />
+          </div>
+          <div className="col-md-5">
+            <div className="form">
+              <h2>Deliver with Us</h2>
+              <hr />
+              <form className="login-form" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="fullName"
+                  placeholder="Full Name"
+                  value={values.fullName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.fullName && touched.fullName && (
+                  <span className="help">{errors.fullName}</span>
+                )}
+                <input
+                  type="email"
+                  name="email"
+                  value={values.email}
+                  placeholder="Email Address"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.email && touched.email && (
+                  <span className="help">{errors.email}</span>
+                )}
+                <input
+                  type="number"
+                  name="telephone"
+                  value={values.telephone}
+                  placeholder="Contact Number"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.telephone && touched.telephone && (
+                  <span className="help">{errors.telephone}</span>
+                )}
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Permanent Address"
+                  value={values.address}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.address && touched.address && (
+                  <span className="help">{errors.address}</span>
+                )}
+                <input
+                  type="text"
+                  name="panNumber"
+                  placeholder="PAN Number"
+                  value={values.panNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.panNumber && touched.panNumber && (
+                  <span className="help">{errors.panNumber}</span>
+                )}
+                <input
+                  type="number"
+                  name="adharNumber"
+                  placeholder="Aadhar Number"
+                  value={values.adharNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.adharNumber && touched.adharNumber && (
+                  <span className="help">{errors.adharNumber}</span>
+                )}
+
+                <button type="submit" value="submit" disabled={isSubmitting}>
+                  Become a Courier
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
-  );
-};
+      </Container>
+    );
+  }
+}
 
 export default withFormik({
   mapPropsToValues: () => ({
@@ -239,7 +246,13 @@ export default withFormik({
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
-    telephone: Yup.number(),
+    telephone: Yup.string()
+      .required('ADHAR is required!')
+      .test(
+        'len',
+        'Must be exactly 10 characters',
+        val => val.toString().length === 10,
+      ),
 
     address: Yup.string().required('Address is required!'),
     panNumber: Yup.string().required('PAN is required!'),
@@ -251,7 +264,7 @@ export default withFormik({
         val => val.toString().length === 16,
       ),
   }),
-  handleSubmit: (values, { setSubmitting }) => {
+  handleSubmit: (values, { setSubmitting, resetForm }) => {
     // console.log ('handle submit', values);
     const { telephone, adharNumber } = values;
     const newTelephone = telephone.toString();
@@ -271,6 +284,7 @@ export default withFormik({
           },
         },
       })
+
       .then(() => {
         swal({
           title: 'Thanks for submission! We will revert back soon.',
@@ -282,6 +296,7 @@ export default withFormik({
         setSubmitting(false);
         swal('Oops', 'Something went wrong!', 'error');
       });
+    resetForm();
   },
   displayName: 'CourierApplication', // helps with React DevTools
 })(CourierApplicationForm);
