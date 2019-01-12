@@ -57,7 +57,7 @@ const Container = styled.section`
     }
   }
   .first-loop-text {
-    margin-right: 6px;
+    margin-right: 5px;
   }
 `;
 
@@ -66,7 +66,7 @@ const TextLoopWrapper = styled.span``;
 const TextLoopStyled = styled(TextLoop)``;
 
 const AnythingTextStyled = styled.span`
-  font-size: 45px;
+  font-size: 42px !important;
   @media screen and (max-width: 768px) {
     font-size: 23px !important;
   }
