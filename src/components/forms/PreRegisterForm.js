@@ -97,7 +97,7 @@ const PreRegisterForm = props => {
             value={values.telephone}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder="Add your mobile number to get the app"
+            placeholder="Add your mobile number"
             id="inputSuccess4"
             aria-describedby="inputSuccess4Status"
           />
