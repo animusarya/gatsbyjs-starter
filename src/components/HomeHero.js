@@ -57,7 +57,7 @@ const Container = styled.section`
     }
   }
   .first-loop-text {
-    margin-right: 5px;
+    margin-right: 8px;
   }
 `;
 
