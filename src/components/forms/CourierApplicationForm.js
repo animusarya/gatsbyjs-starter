@@ -127,10 +127,6 @@ const courierApplicationMutation = gql`
 `;
 
 class CourierApplicationForm extends React.Component {
-  state = {
-    isLoading: false,
-  };
-
   render() {
     const {
       values,
@@ -140,8 +136,9 @@ class CourierApplicationForm extends React.Component {
       handleBlur,
       handleSubmit,
       isSubmitting,
+      loading,
     } = this.props;
-    console.log(isSubmitting);
+
     return (
       <Container className="login-page">
         <div className="row">
@@ -221,7 +218,13 @@ class CourierApplicationForm extends React.Component {
                 )}
 
                 <button type="submit" value="submit" disabled={isSubmitting}>
-                  Become a Courier
+                  {loading ? (
+                    <span>
+                      <i className="fas fa-spinner fa-spin" /> Become a Courier
+                    </span>
+                  ) : (
+                    'Become a Courier'
+                  )}
                 </button>
               </form>
             </div>
@@ -264,11 +267,12 @@ export default withFormik({
         val => val.toString().length === 16,
       ),
   }),
-  handleSubmit: (values, { setSubmitting, resetForm }) => {
+  handleSubmit: (values, { setSubmitting, resetForm, props }) => {
     // console.log ('handle submit', values);
     const { telephone, adharNumber } = values;
     const newTelephone = telephone.toString();
     const newAdharNumber = adharNumber.toString();
+    props.toggleLoading();
     apolloClient
       .mutate({
         mutation: courierApplicationMutation,
@@ -290,6 +294,7 @@ export default withFormik({
           title: 'Thanks for submission! We will revert back soon.',
           icon: 'success',
         });
+        props.toggleLoading();
         setSubmitting(false);
       })
       .catch(() => {
