@@ -13,6 +13,10 @@ const Container = styled.div`
   background-repeat: no-repeat;
   padding: 8% 0 8%;
   margin: auto;
+  .row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
   @media screen and (max-width: 769px) {
     padding: 30% 0 8%;
   }
