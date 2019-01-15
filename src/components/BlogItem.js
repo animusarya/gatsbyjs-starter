@@ -40,7 +40,7 @@ const BlogItem = () => (
             Lorem ipsum dolor sit amet, consectcing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. enim ad minim niam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis{' '}
+            commodo consequat. Duis
           </p>
         </div>
         <a href="blog.html" className="read-more">

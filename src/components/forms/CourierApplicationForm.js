@@ -13,6 +13,10 @@ const Container = styled.div`
   background-repeat: no-repeat;
   padding: 8% 0 8%;
   margin: auto;
+  .row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
   @media screen and (max-width: 769px) {
     padding: 30% 0 8%;
   }
@@ -126,104 +130,114 @@ const courierApplicationMutation = gql`
   }
 `;
 
-const CourierApplicationForm = props => {
-  const {
-    values,
-    touched,
-    errors,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isSubmitting,
-  } = props;
-  return (
-    <Container className="login-page">
-      <div className="row">
-        <div className="col-md-5">
-          <div className="form">
-            <h2>Deliver with Us</h2>
-            <hr />
-            <form className="login-form" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="fullName"
-                placeholder="Full Name"
-                value={values.fullName}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.fullName && touched.fullName && (
-                <span className="help">{errors.fullName}</span>
-              )}
-              <input
-                type="email"
-                name="email"
-                value={values.email}
-                placeholder="Email Address"
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.email && touched.email && (
-                <span className="help">{errors.email}</span>
-              )}
-              <input
-                type="number"
-                name="telephone"
-                value={values.telephone}
-                placeholder="Contact Number"
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.telephone && touched.telephone && (
-                <span className="help">{errors.telephone}</span>
-              )}
-              <input
-                type="text"
-                name="address"
-                placeholder="Permanent Address"
-                value={values.address}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.address && touched.address && (
-                <span className="help">{errors.address}</span>
-              )}
-              <input
-                type="text"
-                name="panNumber"
-                placeholder="PAN Number"
-                value={values.panNumber}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.panNumber && touched.panNumber && (
-                <span className="help">{errors.panNumber}</span>
-              )}
-              <input
-                type="number"
-                name="adharNumber"
-                placeholder="Aadhar Number"
-                value={values.adharNumber}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.adharNumber && touched.adharNumber && (
-                <span className="help">{errors.adharNumber}</span>
-              )}
+class CourierApplicationForm extends React.Component {
+  render() {
+    const {
+      values,
+      touched,
+      errors,
+      handleChange,
+      handleBlur,
+      handleSubmit,
+      isSubmitting,
+      loading,
+    } = this.props;
 
-              <button type="submit" value="submit" disabled={isSubmitting}>
-                Become a Courier
-              </button>
-            </form>
+    return (
+      <Container className="login-page">
+        <div className="row">
+          <div className="col-md-7 illustration">
+            <img src="../images/handshake-2.svg" alt="" />
+          </div>
+          <div className="col-md-5">
+            <div className="form">
+              <h2>Deliver with Us</h2>
+              <hr />
+              <form className="login-form" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="fullName"
+                  placeholder="Full Name"
+                  value={values.fullName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.fullName && touched.fullName && (
+                  <span className="help">{errors.fullName}</span>
+                )}
+                <input
+                  type="email"
+                  name="email"
+                  value={values.email}
+                  placeholder="Email Address"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.email && touched.email && (
+                  <span className="help">{errors.email}</span>
+                )}
+                <input
+                  type="number"
+                  name="telephone"
+                  value={values.telephone}
+                  placeholder="Contact Number"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.telephone && touched.telephone && (
+                  <span className="help">{errors.telephone}</span>
+                )}
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Permanent Address"
+                  value={values.address}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.address && touched.address && (
+                  <span className="help">{errors.address}</span>
+                )}
+                <input
+                  type="text"
+                  name="panNumber"
+                  placeholder="PAN Number"
+                  value={values.panNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.panNumber && touched.panNumber && (
+                  <span className="help">{errors.panNumber}</span>
+                )}
+                <input
+                  type="number"
+                  name="adharNumber"
+                  placeholder="Aadhar Number"
+                  value={values.adharNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.adharNumber && touched.adharNumber && (
+                  <span className="help">{errors.adharNumber}</span>
+                )}
+
+                <button type="submit" value="submit" disabled={isSubmitting}>
+                  {loading ? (
+                    <span>
+                      <i className="fas fa-spinner fa-spin" /> Become a Courier
+                    </span>
+                  ) : (
+                    'Become a Courier'
+                  )}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-        <div className="col-md-7 illustration">
-          <img src="../images/handshake-2.svg" alt="" />
-        </div>
-      </div>
-    </Container>
-  );
-};
+      </Container>
+    );
+  }
+}
 
 export default withFormik({
   mapPropsToValues: () => ({
@@ -239,7 +253,13 @@ export default withFormik({
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
-    telephone: Yup.number(),
+    telephone: Yup.string()
+      .required('ADHAR is required!')
+      .test(
+        'len',
+        'Must be exactly 10 characters',
+        val => val.toString().length === 10,
+      ),
 
     address: Yup.string().required('Address is required!'),
     panNumber: Yup.string().required('PAN is required!'),
@@ -251,11 +271,12 @@ export default withFormik({
         val => val.toString().length === 16,
       ),
   }),
-  handleSubmit: (values, { setSubmitting }) => {
+  handleSubmit: (values, { setSubmitting, resetForm, props }) => {
     // console.log ('handle submit', values);
     const { telephone, adharNumber } = values;
     const newTelephone = telephone.toString();
     const newAdharNumber = adharNumber.toString();
+    props.toggleLoading();
     apolloClient
       .mutate({
         mutation: courierApplicationMutation,
@@ -271,17 +292,20 @@ export default withFormik({
           },
         },
       })
+
       .then(() => {
         swal({
           title: 'Thanks for submission! We will revert back soon.',
           icon: 'success',
         });
+        props.toggleLoading();
         setSubmitting(false);
       })
       .catch(() => {
         setSubmitting(false);
         swal('Oops', 'Something went wrong!', 'error');
       });
+    resetForm();
   },
   displayName: 'CourierApplication', // helps with React DevTools
 })(CourierApplicationForm);

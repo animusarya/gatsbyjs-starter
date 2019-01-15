@@ -31,11 +31,11 @@ const AppDownload = () => (
         <div className="download-btns btn-area text-center">
           <a onClick={() => swal('Coming soon !')}>
             <i className="fab fa-google-play" />
-            Download on Android
+            Android App
           </a>
           <a onClick={() => swal('Coming soon !')}>
             <i className="fab fa-apple" />
-            Download on iPhone
+            iPhone App
           </a>
         </div>
       </div>

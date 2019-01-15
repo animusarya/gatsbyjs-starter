@@ -68,7 +68,7 @@ const DeliveryRequirements = () => (
                     for two wheeler
                   </li>
                   <li>
-                    <i className="fas fa-credit-card-blank" /> PAN Card
+                    <i className="fas fa-columns" /> PAN Card
                   </li>
                 </ul>
               </div>
