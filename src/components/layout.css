@@ -1,3 +1,11 @@
 .service-single p {
   padding: 0 2.5rem !important;
 }
+
+.slider-area {
+  display: flex;
+  align-items: center;
+  height: 800px;
+  background: #33b7b7;
+  padding-top: 80px;
+}
