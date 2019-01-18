@@ -6,14 +6,15 @@ import PreRegisterForm from './forms/PreRegisterForm';
 
 const Container = styled.section`
   background-color: #33b7b7f7 !important;
+  @media screen and (max-width: 768px) {
+    background-color: #33b7b7f7 !important;
+  }
   .slider-inner h2 {
     font-size: 46px;
-
     @media screen and (max-width: 768px) {
       font-size: 23px !important;
     }
   }
-
   h2,
   h5 {
     font-family: Nunito, sans-serif !important;
@@ -88,7 +89,7 @@ class HomeHero extends React.Component {
   render() {
     const { loading } = this.state;
     const { refCode } = this.props;
-    const displayText = ['Parcels', 'Eatables', 'Grocery', 'Anything'];
+
     return (
       <Container className="slider-area" id="home">
         <div className="container">
