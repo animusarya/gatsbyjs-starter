@@ -111,7 +111,7 @@ const PreRegisterForm = props => {
           <button type="submit" className="btn btn-default">
             {loading ? (
               <span>
-                <i className="fas fa-spinner fa-spin" /> 'Pre-Register'
+                <i className="fas fa-spinner fa-spin" /> Pre-Register
               </span>
             ) : (
               'Pre-Register'
@@ -159,7 +159,7 @@ export default withFormik({
       })
       .then(() => {
         swal({
-          text: 'Thank you! The download link will be sent soon to your phone',
+          text: 'Thank you! We will revert back soon',
         });
 
         props.toggleLoading();
