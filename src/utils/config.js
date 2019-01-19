@@ -10,6 +10,7 @@ module.exports = {
   twitterUrl: 'https://twitter.com/PackrsOfficial',
   fbUrl: 'https://www.facebook.com/PackrsOfficial',
   instagramUrl: 'https://www.instagram.com/packrs_official',
+  mediumPublicationUrl: 'https://medium.com/packrs',
   twitter: '',
   fbUserId: '@NAME-HERE',
   fbAppID: '@NAME-HERE',

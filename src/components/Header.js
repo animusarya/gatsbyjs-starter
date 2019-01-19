@@ -14,7 +14,7 @@ const Container = styled.header`
   .apply-as-courier {
     color: #fff;
   }
-  #apply-courier-btn {
+  .apply-courier-btn {
     background-color: #666666;
     border: none;
     border-radius: 5px;
@@ -61,7 +61,7 @@ const Header = ({ isHome }) => (
                 <input
                   value="APPLY AS COURIER"
                   type="submit"
-                  id="apply-courier-btn"
+                  className="apply-courier-btn"
                 />
               </Link>
             </div>
