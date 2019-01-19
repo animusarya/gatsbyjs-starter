@@ -14,6 +14,15 @@ const Container = styled.header`
   .apply-as-courier {
     color: #fff;
   }
+  #apply-courier-btn {
+    background-color: #666666;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    color: white;
+    font-size: smaller;
+    padding: 0 15px;
+  }
 `;
 
 const Logo = styled(Link)`
@@ -49,7 +58,11 @@ const Header = ({ isHome }) => (
                 to="/courier-application/"
                 className="visible-xs visible-sm apply-as-courier"
               >
-                Apply as Courier
+                <input
+                  value="APPLY AS COURIER"
+                  type="submit"
+                  id="apply-courier-btn"
+                />
               </Link>
             </div>
             <div className="col-md-9 hidden-xs hidden-sm">
