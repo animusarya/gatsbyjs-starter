@@ -22,11 +22,17 @@ const Container = styled.div`
     margin-bottom: 0px !important;
     .apply-as-courier {
       background-color: powderblue;
+      font-weight: 800;
     }
     .apply-as-courier {
-      color: #000;
+      color: #000 !important;
     }
   }
+`;
+
+const LinkStyled = styled(Link)`
+  font-weight: 700;
+  color: #00b7b8 !important;
 `;
 
 const MobileMenu = ({ isActive }) => (
@@ -34,27 +40,27 @@ const MobileMenu = ({ isActive }) => (
     {isActive && (
       <ul className="list-group">
         <li className="list-group-item apply-as-courier">
-          <Link
+          <LinkStyled
             to="/courier-application/"
             className="visible-xs visible-sm apply-as-courier"
           >
             APPLY AS COURIER
-          </Link>
+          </LinkStyled>
         </li>
         <li className="list-group-item">
-          <Link to="/about/">About</Link>
+          <LinkStyled to="/about/">About</LinkStyled>
         </li>
         <li className="list-group-item">
-          <Link to="/blog/">Blog</Link>
+          <LinkStyled to="/blog/">Blog</LinkStyled>
         </li>
         <li className="list-group-item">
-          <Link to="/contact/">Contact</Link>
+          <LinkStyled to="/contact/">Contact</LinkStyled>
         </li>
         <li className="list-group-item">
-          <Link to="/privacy-policy/">Privacy Policy</Link>
+          <LinkStyled to="/privacy-policy/">Privacy Policy</LinkStyled>
         </li>
         <li className="list-group-item">
-          <Link to="/terms-and-conditions/">T&C</Link>
+          <LinkStyled to="/terms-and-conditions/">T&C</LinkStyled>
         </li>
       </ul>
     )}
