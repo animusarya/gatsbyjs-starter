@@ -6,6 +6,9 @@ import PreRegisterForm from './forms/PreRegisterForm';
 
 const Container = styled.section`
   background-color: #33b7b7f7 !important;
+  .mobile-menu {
+    display: none;
+  }
   @media screen and (max-width: 768px) {
     background-color: #33b7b7f7 !important;
     height: 55rem !important;
