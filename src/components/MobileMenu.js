@@ -10,11 +10,11 @@ const Container = styled.div`
     display: block;
     width: 100%;
     background-color: #00b7b8;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     border-radius: 2rem;
     box-shadow: rgba(10, 10, 10, 0.1) 0px 8px 16px;
-    padding-top: 9rem;
+    top: 11%;
   }
 
   .list-group {
