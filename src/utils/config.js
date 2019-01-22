@@ -5,7 +5,7 @@ module.exports = {
   author: 'vipin',
   description: 'A delivery platform for anything',
   siteUrl: 'https://www.packrs.co/',
-  image: 'https://packrs.co/images/packers-poster.png',
+  image: 'https://packrs.co/images/packrs-poster.png',
   graphqlUri: 'https://packrs-api.now.sh/graphql',
   twitterUrl: 'https://twitter.com/PackrsOfficial',
   fbUrl: 'https://www.facebook.com/PackrsOfficial',
