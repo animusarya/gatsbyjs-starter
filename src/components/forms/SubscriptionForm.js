@@ -52,7 +52,6 @@ class SubscriptionForm extends React.Component {
     const { email } = this.state;
     e.preventDefault();
     const data = await addToMailchimp(email);
-    console.log(data);
     this.setState({ email: '', message: data.msg });
     setTimeout(() => {
       this.setState({ message: '', result: data.result });

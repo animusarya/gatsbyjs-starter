@@ -272,7 +272,6 @@ export default withFormik({
       ),
   }),
   handleSubmit: (values, { setSubmitting, resetForm, props }) => {
-    // console.log ('handle submit', values);
     const { telephone, adharNumber } = values;
     const newTelephone = telephone.toString();
     const newAdharNumber = adharNumber.toString();

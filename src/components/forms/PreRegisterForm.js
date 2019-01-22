@@ -85,7 +85,6 @@ const PreRegisterForm = props => {
     errors,
     loading,
   } = props;
-  // console.log(swal.getState());
   return (
     <Container onSubmit={handleSubmit}>
       <div className="form-wrapper">

@@ -16,7 +16,6 @@ const BlogItem = ({ item }) => {
   const url = `${config.mediumPublicationUrl}/${item.uniqueSlug}`;
   return (
     <Container>
-      {console.log(item)}
       <div className="col-md-4 col-sm-6 col-xs-12">
         <div className="list-item">
           <div className="blog-thumbnail">
