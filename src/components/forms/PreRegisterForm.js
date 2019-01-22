@@ -144,7 +144,7 @@ export default withFormik({
     const { telephone } = values;
     props.toggleLoading();
     const newTelephone = telephone.toString();
-    // console.log('refCode', values.refCode.refCode);
+    console.log('refCode', values.refCode.refCode);
 
     apolloClient
       .mutate({
@@ -153,6 +153,7 @@ export default withFormik({
           type: 'preRegister',
           formData: {
             telephone: `0091${newTelephone}`,
+            refCode: values.refCode.refCode,
           },
         },
       })
