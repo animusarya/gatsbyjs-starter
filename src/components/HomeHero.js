@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TextLoop from 'react-text-loop';
+import Img from 'gatsby-image';
 
 import PreRegisterForm from './forms/PreRegisterForm';
 
@@ -92,15 +93,15 @@ class HomeHero extends React.Component {
 
   render() {
     const { loading } = this.state;
-    const { refCode } = this.props;
-
+    const { refCode, img } = this.props;
+    console.log(img);
     return (
       <Container className="slider-area" id="home">
         <div className="container">
           <div className="col-md-6 col-sm-6 hidden-xs">
             <div className="row">
               <div className="slider-img">
-                <img src="/img/hero-mockup.png" alt="sliderimage" />
+                <Img fluid={img} />
               </div>
             </div>
           </div>
