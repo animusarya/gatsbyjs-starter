@@ -93,15 +93,15 @@ class HomeHero extends React.Component {
 
   render() {
     const { loading } = this.state;
-    const { refCode, img } = this.props;
-    console.log(img);
+    const { refCode } = this.props;
+
     return (
       <Container className="slider-area" id="home">
         <div className="container">
           <div className="col-md-6 col-sm-6 hidden-xs">
             <div className="row">
               <div className="slider-img">
-                <Img fluid={img} />
+                <img src="/img/hero-mockup.png" alt="mockup" />
               </div>
             </div>
           </div>

@@ -14,7 +14,8 @@ import SubscriptionForm from '../components/forms/SubscriptionForm';
 export default class IndexPage extends React.Component {
   render() {
     const { location, data } = this.props;
-
+    const { edges: images } = data.allFile;
+    console.log(images);
     return (
       <Layout path={location.pathname}>
         <Seo
@@ -23,14 +24,11 @@ export default class IndexPage extends React.Component {
           url={`${config.siteUrl}`}
           image={config.image}
         />
-        <HomeHero
-          refCode={location.search}
-          img={data.imageOne.childImageSharp.fluid}
-        />
+        <HomeHero refCode={location.search} />
         <ServiceArea />
         <AboutArea />
         <Features />
-        <Slider />
+        <Slider images={images} />
         <AppDownload />
         <SubscriptionForm />
       </Layout>
@@ -40,10 +38,15 @@ export default class IndexPage extends React.Component {
 
 export const pageQuery = graphql`
   query {
-    imageOne: file(relativePath: { eq: "hero-mockup.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+    allFile {
+      edges {
+        node {
+          childImageSharp {
+            id
+            fluid(maxWidth: 450) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
