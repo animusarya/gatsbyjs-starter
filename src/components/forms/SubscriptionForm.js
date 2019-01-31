@@ -101,18 +101,30 @@ class SubscriptionForm extends React.Component {
                 <div className="c-social">
                   <ul>
                     <li>
-                      <a href={config.fbUrl}>
+                      <a
+                        href={config.fbUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i className="fab fa-facebook-f" />
                       </a>
                     </li>
                     <li>
-                      <a href={config.twitterUrl}>
+                      <a
+                        href={config.twitterUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i className="fab fa-twitter" />
                       </a>
                     </li>
 
                     <li>
-                      <a href={config.instagramUrl}>
+                      <a
+                        href={config.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i className="fab fa-instagram" />
                       </a>
                     </li>
