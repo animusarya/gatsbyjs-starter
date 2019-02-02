@@ -19,7 +19,7 @@ const BlogItem = ({ item }) => {
       <div className="col-md-4 col-sm-6 col-xs-12">
         <div className="list-item">
           <div className="blog-thumbnail">
-            <a href="blog-details.html">
+            <a href={url}>
               <img
                 src={
                   item.virtuals.previewImage.imageId === ''
@@ -33,7 +33,7 @@ const BlogItem = ({ item }) => {
             </a>
           </div>
           <h2 className="blog-title">
-            <a href="blog-details.html">{item.title}</a>
+            <a href={url}>{item.title}</a>
           </h2>
           <div className="blog-meta">
             <ul>
