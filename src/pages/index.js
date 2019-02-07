@@ -15,7 +15,7 @@ export default class IndexPage extends React.Component {
   render() {
     const { location, data } = this.props;
     const { edges: images } = data.allFile;
-    console.log(images);
+    // console.log(images);
     return (
       <Layout path={location.pathname}>
         <Seo

@@ -125,7 +125,7 @@ const PreRegisterForm = props => {
 export default withFormik({
   mapPropsToValues: refCode => ({
     telephone: '',
-    refCode,
+    // refCode,
   }),
 
   validationSchema: Yup.object().shape({
@@ -144,7 +144,7 @@ export default withFormik({
     const { telephone } = values;
     props.toggleLoading();
     const newTelephone = telephone.toString();
-    console.log('refCode', values.refCode.refCode);
+    // console.log('refCode', values.refCode.refCode);
 
     apolloClient
       .mutate({
@@ -153,7 +153,7 @@ export default withFormik({
           type: 'preRegister',
           formData: {
             telephone: `0091${newTelephone}`,
-            refCode: values.refCode.refCode,
+            // refCode: values.refCode.refCode,
           },
         },
       })
@@ -161,7 +161,6 @@ export default withFormik({
         swal({
           text: 'Thank you! We will revert back soon',
         });
-
         props.toggleLoading();
         setSubmitting(false);
       })
