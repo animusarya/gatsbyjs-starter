@@ -91,7 +91,7 @@ class Header extends React.Component {
   toggleMenu = () => {
     const { isActive } = this.state;
     this.setState({ isActive: !isActive });
-    console.log(isActive);
+    // console.log(isActive);
   };
 
   render() {
@@ -133,6 +133,9 @@ class Header extends React.Component {
                             </li>
                             <li>
                               <a href="#screenshot">Screenshot</a>
+                            </li>
+                            <li>
+                              <a href="#team">Team</a>
                             </li>
                             <li>
                               <a href="#download">Download</a>

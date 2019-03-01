@@ -10,6 +10,19 @@ const Container = styled.div`
   .read-more {
     background-color: #33b760 !important;
   }
+  .blog-thumbnail a img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .blog-summery p {
+    color: #696969;
+    height: 50px;
+    overflow: hidden;
+  }
+  img {
+    max-height: 116px;
+  }
 `;
 
 const BlogItem = ({ item }) => {
