@@ -1,6 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
+import Markdown from 'react-markdown';
 
 import apolloClient from '../utils/apolloClient';
 import config from '../utils/config';
@@ -62,7 +63,7 @@ export default class Contact extends React.Component {
             <div className="row d-flex flex-center">
               <div className="col-md-12 col-sm-12 col-xs-12 d-flex flex-center">
                 <div className="about-content">
-                  <p>{data.details}</p>
+                  <Markdown escapeHtml source={data.details} />
                 </div>
               </div>
             </div>

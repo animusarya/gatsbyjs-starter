@@ -8,14 +8,23 @@ import Pagination from './Pagination';
 
 const mediumQuery = graphql`
   query {
-    allMediumUser {
+    allMediumPost(sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {
           id
-          name
-          username
-          imageId
-          userId
+          title
+          createdAt
+          uniqueSlug
+          virtuals {
+            totalClapCount
+            subtitle
+            previewImage {
+              imageId
+            }
+          }
+          author {
+            name
+          }
         }
       }
     }
@@ -33,17 +42,13 @@ const BlogList = () => (
             <StaticQuery
               query={mediumQuery}
               render={data => {
-                const { edges: blog } = data.allMediumUser;
-                console.log(blog);
-                return <BlogItem data={data} />;
+                const { edges: blogs } = data.allMediumPost;
+
+                return blogs.map(blog => (
+                  <BlogItem item={blog.node} key={blog.node.id} />
+                ));
               }}
             />
-
-            <BlogItem />
-            <BlogItem />
-            <BlogItem />
-            <BlogItem />
-            <BlogItem />
           </div>
         </div>
       </div>

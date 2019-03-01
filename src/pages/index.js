@@ -13,8 +13,9 @@ import SubscriptionForm from '../components/forms/SubscriptionForm';
 
 export default class IndexPage extends React.Component {
   render() {
-    const { location } = this.props;
-
+    const { location, data } = this.props;
+    const { edges: images } = data.allFile;
+    // console.log(images);
     return (
       <Layout path={location.pathname}>
         <Seo
@@ -27,10 +28,27 @@ export default class IndexPage extends React.Component {
         <ServiceArea />
         <AboutArea />
         <Features />
-        <Slider />
+        <Slider images={images} />
         <AppDownload />
         <SubscriptionForm />
       </Layout>
     );
   }
 }
+
+export const pageQuery = graphql`
+  query {
+    allFile {
+      edges {
+        node {
+          childImageSharp {
+            id
+            fluid(maxWidth: 450) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;

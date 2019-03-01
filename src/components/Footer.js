@@ -22,8 +22,7 @@ const Footer = () => (
       <div className="container">
         <div className="row">
           <Link to="/contact/">Contact</Link>
-          <Link to="/blog/">Blog</Link>
-          <Link to="/about/">About</Link>
+          <Link to="/privacy-policy/">Privacy Policy</Link>
           <Link to="/terms-and-conditions/">T&C</Link>
           <Link to="/fAQ/" id="faq">
             FAQ

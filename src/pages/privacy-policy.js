@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
-import styled from 'styled-components';
 import Markdown from 'react-markdown';
+import styled from 'styled-components';
 
 import apolloClient from '../utils/apolloClient';
 import config from '../utils/config';
@@ -32,7 +32,7 @@ const Container = styled.div`
   }
 `;
 
-export default class FAQ extends React.Component {
+export default class PrivacyPolicy extends React.Component {
   state = { data: {} };
 
   componentDidMount() {
@@ -40,7 +40,7 @@ export default class FAQ extends React.Component {
       .query({
         query,
         variables: {
-          slug: 'faq',
+          slug: 'safety-and-privacy',
         },
       })
       .then(result => this.setState({ data: result.data.page }));
@@ -48,17 +48,19 @@ export default class FAQ extends React.Component {
 
   render() {
     const { data } = this.state;
+    // console.log('data', data);
+
     const { location } = this.props;
 
     return (
       <Layout path={location.pathname}>
         <Seo
-          title="FAQ"
+          title="Privacy Policy"
           description="Deliver anything, anywhere"
           url={`${config.siteUrl}`}
           image={config.image}
         />
-        <Breadcrumb title="FAQ" />
+        <Breadcrumb title="Privacy Policy" />
         <Container className="about-area ptb--100">
           <div className="container">
             <div className="row d-flex flex-center">

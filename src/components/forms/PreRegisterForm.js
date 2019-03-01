@@ -50,7 +50,7 @@ const Container = styled.form`
       border-radius: 6rem;
       color: #18b9ba;
       transition: 0.5s;
-      font-weight: 500;
+      font-weight: 600 !important;
       border-width: 2px;
       border-color: #fff;
       outline: 0;
@@ -83,8 +83,8 @@ const PreRegisterForm = props => {
     handleSubmit,
     touched,
     errors,
+    loading,
   } = props;
-
   return (
     <Container onSubmit={handleSubmit}>
       <div className="form-wrapper">
@@ -96,7 +96,7 @@ const PreRegisterForm = props => {
             value={values.telephone}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder="Add your mobile number to get the app"
+            placeholder="Add your mobile number"
             id="inputSuccess4"
             aria-describedby="inputSuccess4Status"
           />
@@ -108,7 +108,13 @@ const PreRegisterForm = props => {
 
         <div className="button-wrapper">
           <button type="submit" className="btn btn-default">
-            Text Me
+            {loading ? (
+              <span>
+                <i className="fas fa-spinner fa-spin" /> Pre-Register
+              </span>
+            ) : (
+              'Pre-Register'
+            )}
           </button>
         </div>
       </div>
@@ -119,8 +125,9 @@ const PreRegisterForm = props => {
 export default withFormik({
   mapPropsToValues: refCode => ({
     telephone: '',
-    refCode,
+    // refCode,
   }),
+
   validationSchema: Yup.object().shape({
     telephone: Yup.number()
       .typeError("That doesn't look like a phone number")
@@ -132,11 +139,12 @@ export default withFormik({
       )
       .required('A phone number is required'),
   }),
-  handleSubmit: (values, { setSubmitting }) => {
-    // console.log ('handle submit', values);
+  handleSubmit: (values, { setSubmitting, resetForm, props }) => {
+    // console.log('handle submit', props.toggleLoading, props.loading);
     const { telephone } = values;
+    props.toggleLoading();
     const newTelephone = telephone.toString();
-    console.log('refCode', values.refCode.refCode);
+    // console.log('refCode', values.refCode.refCode);
 
     apolloClient
       .mutate({
@@ -145,19 +153,22 @@ export default withFormik({
           type: 'preRegister',
           formData: {
             telephone: `0091${newTelephone}`,
+            // refCode: values.refCode.refCode,
           },
         },
       })
       .then(() => {
         swal({
-          text: 'Thank you! The download link will be sent soon to your phone',
+          text: 'Thank you! We will revert back soon',
         });
+        props.toggleLoading();
         setSubmitting(false);
       })
       .catch(() => {
         setSubmitting(false);
         swal('Oops', 'Something went wrong!', 'error');
       });
+    resetForm();
   },
   displayName: 'PreRegister', // helps with React DevTools
 })(PreRegisterForm);

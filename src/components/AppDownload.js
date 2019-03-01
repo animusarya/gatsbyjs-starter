@@ -29,13 +29,13 @@ const AppDownload = () => (
           <p>Our app is available both on android and ios platforms</p>
         </div>
         <div className="download-btns btn-area text-center">
-          <a onClick={() => swal('Coming soon !')}>
+          <a href="https://play.google.com/store/apps/details?id=com.packrs" target="_blank">
             <i className="fab fa-google-play" />
-            Download on Android
+            Android App
           </a>
           <a onClick={() => swal('Coming soon !')}>
             <i className="fab fa-apple" />
-            Download on iPhone
+            iPhone App
           </a>
         </div>
       </div>

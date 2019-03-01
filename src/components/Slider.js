@@ -1,6 +1,7 @@
 /* global $:true */
 import React from 'react';
 import styled from 'styled-components';
+import SliderItem from './SliderItem';
 
 const Container = styled.section`
   h2 {
@@ -17,7 +18,7 @@ const Container = styled.section`
     border: 1px solid #33b760 !important;
   }
   .screen-slider .owl-dots .active {
-    background-color: #33b760; !important;
+    background-color: #33b760 !important;
   }
 `;
 
@@ -59,6 +60,7 @@ class Slider extends React.Component {
   }
 
   render() {
+    const { images } = this.props;
     return (
       <Container className="screen-area bg-gray ptb--100" id="screenshot">
         <div className="container">
@@ -72,27 +74,9 @@ class Slider extends React.Component {
             alt="mobile screen"
           />
           <div className="screen-slider owl-carousel">
-            <div className="single-screen">
-              <img src="/img/s1.jpg" alt="mobile screen" />
-            </div>
-            <div className="single-screen">
-              <img src="/img/s2.jpg" alt="mobile screen" />
-            </div>
-            <div className="single-screen">
-              <img src="/img/s3.jpg" alt="mobile screen" />
-            </div>
-            <div className="single-screen">
-              <img src="/img/s4.jpg" alt="mobile screen" />
-            </div>
-            <div className="single-screen">
-              <img src="/img/s5.jpg" alt="mobile screen" />
-            </div>
-            <div className="single-screen">
-              <img src="/img/s6.jpg" alt="mobile screen" />
-            </div>
-            <div className="single-screen">
-              <img src="/img/s7.jpg" alt="mobile screen" />
-            </div>
+            {images.map(item => (
+              <SliderItem item={item} key={item} />
+            ))}
           </div>
         </div>
       </Container>

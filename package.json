@@ -27,6 +27,7 @@
     "apollo-link-http": "^1.5.9",
     "formik": "^1.4.2",
     "gatsby": "next",
+    "gatsby-image": "^2.0.26",
     "gatsby-plugin-favicon": "^3.1.5",
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-mailchimp": "^4.0.0",
@@ -36,6 +37,7 @@
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-styled-components": "next",
+    "gatsby-source-filesystem": "^2.0.16",
     "gatsby-source-medium": "^2.0.2",
     "gatsby-transformer-sharp": "next",
     "graphql-tag": "^2.10.0",
@@ -44,6 +46,7 @@
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
     "react-markdown": "^4.0.6",
+    "react-text-loop": "^2.0.1",
     "styled-components": "^3.4.5",
     "sweetalert": "^2.1.2",
     "yup": "^0.26.6"

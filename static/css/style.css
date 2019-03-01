@@ -266,22 +266,8 @@ END Header Area
 2.2 Slider Area
 ===========================*/
 
-.slider-area {
-  display: flex;
-  align-items: center;
-  height: 800px;
-  background: #5d12f8;
-  padding-top: 80px;
-}
-
-.slider-img {
-}
-
 .slider-img img {
   max-height: 100%;
-}
-
-.slider-inner {
 }
 
 .slider-inner h2 {

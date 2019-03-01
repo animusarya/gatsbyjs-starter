@@ -4,6 +4,10 @@ import { Link } from 'gatsby';
 
 const Container = styled.section`
   background-color: #33b7b7f7 !important;
+  @media screen and (max-width: 768px) {
+    background-color: #33b7b7f7 !important;
+    height: 48rem !important;
+  }
   .form-control {
     height: 60px !important;
     border: 3px solid #fff !important;
