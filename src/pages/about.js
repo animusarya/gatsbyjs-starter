@@ -8,6 +8,7 @@ import config from '../utils/config';
 import Seo from '../components/Seo';
 import Layout from '../components/Layout';
 import Breadcrumb from '../components/Breadcrumb';
+import AboutArea from '../components/AboutArea';
 
 const query = gql`
   query Page($slug: String!) {
@@ -63,7 +64,11 @@ export default class Contact extends React.Component {
             <div className="row d-flex flex-center">
               <div className="col-md-12 col-sm-12 col-xs-12 d-flex flex-center">
                 <div className="about-content">
-                  <Markdown escapeHtml source={data.details} />
+                  {data ? (
+                    <Markdown escapeHtml source={data.details} />
+                  ) : (
+                    <AboutArea />
+                  )}
                 </div>
               </div>
             </div>
