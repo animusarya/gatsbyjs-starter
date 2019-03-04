@@ -26,22 +26,22 @@ export default () => (
       <div className="row">
         <TeamMember
           name="Perminder Klair"
-          designation="CEO"
+          designation="Founder & CEO"
           imageUrl="/images/perminder.jpeg"
         />
         <TeamMember
           name="Nasim Akthar"
-          designation="Full-stack Developer"
+          designation="Lead Developer"
           imageUrl="/images/nasim.jpeg"
         />
         <TeamMember
           name="Vipin Rawat"
-          designation="Front-end Developer"
+          designation="UI/UX Designer"
           imageUrl="/images/vipin1.jpeg"
         />
         <TeamMember
           name="Balwinder Klair"
-          designation="Social Media Manager"
+          designation="Marketing Strategist "
           imageUrl="/images/bal1.jpg"
         />
       </div>
