@@ -24,7 +24,7 @@ const Container = styled.div`
       width: 100%;
     }
   }
-  .checkbox {
+  .check-box {
     margin-left: 1.1rem;
   }
 `;
@@ -36,6 +36,11 @@ const Items = styled.div`
 `;
 
 class BusinessForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <Container>
@@ -105,7 +110,10 @@ class BusinessForm extends React.Component {
                 className="form-check-input"
                 id="exampleCheck1"
               />
-              <label className="form-check-label" htmlFor="exampleCheck1">
+              <label
+                className="form-check-label check-box"
+                htmlFor="exampleCheck1"
+              >
                 I agree to the <a href="#">terms and conditions</a>
               </label>
             </div>
