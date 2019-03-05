@@ -21,7 +21,7 @@ export default () => (
     <div className="container">
       <div className="section-title">
         <h2>Our Amazing Team</h2>
-        <p>Always focued to achieve goals</p>
+        <p>Always focused to achieve goals</p>
       </div>
       <div className="row">
         <TeamMember
