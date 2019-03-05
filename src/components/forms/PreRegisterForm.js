@@ -8,6 +8,10 @@ import swal from 'sweetalert';
 import apolloClient from '../../utils/apolloClient';
 
 const Container = styled.form`
+  .form-group {
+    margin-left: 6rem;
+    margin-right: 3rem;
+  }
   .form-control-feedback {
     right: 25px !important;
     height: 60px !important;
@@ -21,7 +25,6 @@ const Container = styled.form`
   .form-control {
     height: 60px !important;
     border: 3px solid #fff !important;
-    width: 75%;
     background-color: #3b9e9e !important;
     padding: 6px 40px !important;
     padding-left: 20px !important;
@@ -29,9 +32,8 @@ const Container = styled.form`
     color: #fff !important;
     letter-spacing: 0px !important ;
     ::placeholder {
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: #fff;
-      opacity: 1; /* Firefox */
+      opacity: 1;
       font-weight: 100 !important;
     }
   }
@@ -64,6 +66,10 @@ const Container = styled.form`
       border-width: 2px;
       color: #fff;
     }
+  }
+  .button-wrapper {
+    margin-top: 2rem;
+    padding-left: 3rem;
   }
 `;
 

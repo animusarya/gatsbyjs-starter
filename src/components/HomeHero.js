@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import TextLoop from 'react-text-loop';
-import Img from 'gatsby-image';
 
 import PreRegisterForm from './forms/PreRegisterForm';
 
 const Container = styled.section`
-  background-color: #33b7b7f7 !important;
+  background-image: url(/images/bgimage.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media screen and (max-width: 768px) {
+    background-image: none;
+  }
   .mobile-menu {
     display: none;
   }
@@ -98,16 +103,16 @@ class HomeHero extends React.Component {
     return (
       <Container className="slider-area" id="home">
         <div className="container">
-          <div className="col-md-6 col-sm-6 hidden-xs">
-            <div className="row">
+          <div className="col-md-3 col-sm-3 hidden-xs">
+            {/* <div className="row">
               <div className="slider-img">
                 <img src="/img/hero-mockup.png" alt="mockup" />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="col-md-6 col-sm-6 col-xs-12">
             <div className="row">
-              <div className="slider-inner text-right">
+              <div className="slider-inner text-center">
                 <h2>
                   <span className="first-loop-text">Deliver</span>
                   <TextLoopWrapper>

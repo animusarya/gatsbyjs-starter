@@ -67,6 +67,16 @@ const Container = styled.header`
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
   }
+  .main-menu nav ul li a {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0;
+    padding: 27px 22px;
+    position: relative;
+    padding-left: 0;
+  }
 `;
 
 const Logo = styled(Link)`
@@ -151,6 +161,11 @@ class Header extends React.Component {
                             </li>
                             <li>
                               <Link to="/about/">About</Link>
+                            </li>
+                            <li>
+                              <Link to="/submit-business/">
+                                Apply as Business
+                              </Link>
                             </li>
                             <li id="apply-as-courier">
                               <Link to="/courier-application/">
