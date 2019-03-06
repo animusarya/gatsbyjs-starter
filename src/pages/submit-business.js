@@ -8,6 +8,7 @@ import BusinessForm from '../components/BusinessForm';
 
 export default class SubmitBusiness extends React.Component {
   render() {
+    const { location } = this.props;
     return (
       <Layout path={location.pathname}>
         <Seo title="Business" url={`${config.siteUrl}`} image={config.image} />
