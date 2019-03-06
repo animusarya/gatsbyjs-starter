@@ -170,29 +170,31 @@ class BusinessForm extends React.Component {
               Add Item
             </button>
           </Items>
-          <div className="form-group form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-              name="agree"
-              value={!!agree}
-              onChange={this.onChange}
-            />
-            <label
-              className="form-check-label check-box"
-              htmlFor="exampleCheck1"
+          <div className="control">
+            <div className="form-group form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="exampleCheck1"
+                name="agree"
+                value={!!agree}
+                onChange={this.onChange}
+              />
+              <label
+                className="form-check-label check-box"
+                htmlFor="exampleCheck1"
+              >
+                I agree to the <a href="#">terms and conditions</a>
+              </label>
+            </div>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={this.onSubmit}
             >
-              I agree to the <a href="#">terms and conditions</a>
-            </label>
+              Submit
+            </button>
           </div>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={this.onSubmit}
-          >
-            Submit
-          </button>
         </form>
       </Container>
     );
