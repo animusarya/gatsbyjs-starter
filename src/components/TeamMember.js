@@ -1,7 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  margin-top: 2.5rem;
+`;
 
 export default ({ name, designation, imageUrl }) => (
-  <div className="col-md-3 col-sm-6 col-xs-12 col-6">
+  <Container className="col-md-4 col-sm-6 col-xs-12 col-6">
     <div className="single-team">
       <div className="team-thumb">
         <img src={imageUrl} alt="image" />
@@ -9,5 +14,5 @@ export default ({ name, designation, imageUrl }) => (
       <h4>{name}</h4>
       <span>{designation}</span>
     </div>
-  </div>
+  </Container>
 );
