@@ -18,8 +18,8 @@ const Features = () => (
   <Container className="feature-area bg-gray ptb--100" id="feature">
     <div className="container">
       <div className="section-title">
-        <h2>Features</h2>
-        <p>A feature rich app with good UI</p>
+        <h2>Our Services</h2>
+        <p>What you can do with Packrs</p>
       </div>
       <div className="row">
         <div className="col-md-4 col-sm-6 col-xs-12">
