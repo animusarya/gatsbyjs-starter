@@ -44,7 +44,7 @@ class BusinessForm extends React.Component {
       category: '',
       itemName: '',
       itemPrice: '',
-      itemImage: '',
+      // itemImage: '',
       agree: false,
       items: [],
     };
@@ -63,7 +63,6 @@ class BusinessForm extends React.Component {
   onSubmit = () => {
     const { name, about, category, items } = this.state;
     this.setState({ name: '', about: '', category: '', items: [] });
-    console.log(name, about, category, items);
   };
 
   render() {
@@ -85,91 +84,98 @@ class BusinessForm extends React.Component {
         </div>
 
         <form>
-          <div className="form-group control">
-            <label htmlFor="exampleInputEmail1">Business Name</label>
-            <input
-              type="text"
-              name="name"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              value={name}
-              onChange={this.onChange}
-              placeholder="Enter your Business Title here"
-            />
-          </div>
-          <div className="form-group control">
-            <label htmlFor="exampleFormControlTextarea1">
-              About Your Business
-            </label>
-            <textarea
-              className="form-control"
-              id="exampleFormControlTextarea1"
-              name="about"
-              value={about}
-              onChange={this.onChange}
-              rows="3"
-            />
-          </div>
+          <div className="row">
+            <div className="col-md-12 col-sm-12 col-xs-12">
+              <div className="contact-form">
+                <div className="form-group control">
+                  <label htmlFor="exampleInputEmail1">Business Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    value={name}
+                    onChange={this.onChange}
+                    placeholder="Enter your Business Title here"
+                  />
+                </div>
+                <div className="form-group control">
+                  <label htmlFor="exampleFormControlTextarea1">
+                    About Your Business
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="exampleFormControlTextarea1"
+                    name="about"
+                    value={about}
+                    onChange={this.onChange}
+                    rows="3"
+                  />
+                </div>
 
-          <div className="form-group control">
-            <label htmlFor="exampleFormControlTextarea1">Category</label>
-            <div className="select">
-              <select
-                className="dropdown"
-                name="category"
-                value={category}
-                onChange={this.onChange}
-              >
-                <option>+ Choose Category*</option>
-                <option value="Mobiles, Mobile Accessories, Electronics">
-                  Mobiles, Mobile Accessories, Electronics
-                </option>
-              </select>
+                <div className="form-group control">
+                  <label htmlFor="exampleFormControlTextarea1">Category</label>
+                  <div className="select">
+                    <select
+                      className="dropdown"
+                      name="category"
+                      value={category}
+                      onChange={this.onChange}
+                    >
+                      <option>+ Choose Category*</option>
+                      <option value="Mobiles, Mobile Accessories, Electronics">
+                        Mobiles, Mobile Accessories, Electronics
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <Items className="form-group control">
+                  {items.length > 0 &&
+                    items.map(item => <div>{item.itemName}</div>)}
+                  <label htmlFor="exampleInputEmail1">Items</label>
+                  <input
+                    type="text"
+                    name="itemName"
+                    value={itemName}
+                    onChange={this.onChange}
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Name"
+                  />
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="itemPrice"
+                    value={itemPrice}
+                    onChange={this.onChange}
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Price"
+                  />
+                  <div className="form-group">
+                    <input
+                      type="file"
+                      className="form-control-file"
+                      id="exampleFormControlFile1"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={this.addItem}
+                    disabled={
+                      itemName.length === 0 || itemPrice.length === 0
+                      // itemImage.length === 0
+                    }
+                  >
+                    Add Item
+                  </button>
+                </Items>
+              </div>
             </div>
           </div>
-          <Items className="form-group control">
-            {items.length > 0 && items.map(item => <div>{item.itemName}</div>)}
-            <label htmlFor="exampleInputEmail1">Items</label>
-            <input
-              type="text"
-              name="itemName"
-              value={itemName}
-              onChange={this.onChange}
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Name"
-            />
-            <input
-              type="text"
-              className="form-control"
-              name="itemPrice"
-              value={itemPrice}
-              onChange={this.onChange}
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Price"
-            />
-            <div className="form-group">
-              <input
-                type="file"
-                className="form-control-file"
-                id="exampleFormControlFile1"
-              />
-            </div>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={this.addItem}
-              disabled={
-                itemName.length === 0 || itemPrice.length === 0
-                // itemImage.length === 0
-              }
-            >
-              Add Item
-            </button>
-          </Items>
           <div className="control">
             <div className="form-group form-check">
               <input
