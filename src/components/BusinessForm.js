@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import config from '../utils/config';
 
 const Container = styled.div`
+  margin-top: 10rem;
   h2 {
     font-family: Nunito, sans-serif !important;
     font-weight: 800 !important;
@@ -27,11 +29,23 @@ const Container = styled.div`
   .check-box {
     margin-left: 1.1rem;
   }
+  .alert {
+    padding: 0rem 3rem;
+    margin: 0rem 40rem;
+  }
 `;
 
 const Items = styled.div`
   .form-control {
     margin-top: 1rem;
+  }
+  .badge {
+    margin-left: 0.2rem;
+    margin-top: 1rem;
+    padding: 12px 19px 14px 20px;
+    background: #33b7b7;
+    color: #fff;
+    font-weight: bold;
   }
 `;
 
@@ -47,6 +61,7 @@ class BusinessForm extends React.Component {
       itemImage: '',
       agree: false,
       items: [],
+      success: false,
     };
   }
 
@@ -66,8 +81,15 @@ class BusinessForm extends React.Component {
   };
 
   onSubmit = () => {
-    const { name, about, category, items } = this.state;
-    this.setState({ name: '', about: '', category: '', items: [] });
+    const { name, about, category, items, success } = this.state;
+    this.setState({
+      name: '',
+      about: '',
+      category: '',
+      items: [],
+      success: '',
+    });
+    // console.log(name, about, category, items);
   };
 
   render() {
@@ -80,9 +102,10 @@ class BusinessForm extends React.Component {
       itemImage,
       agree,
       items,
+      success,
     } = this.state;
     return (
-      <Container>
+      <Container className="ptb--100">
         <div className="section-title">
           <h2>Become Business Partner with Packrs</h2>
           <p>What do you want to sell?</p>
@@ -123,76 +146,30 @@ class BusinessForm extends React.Component {
                   <label htmlFor="exampleFormControlTextarea1">Category</label>
                   <div className="select">
                     <select
-                      className="dropdown"
+                      className="form-control"
                       name="category"
                       value={category}
                       onChange={this.onChange}
                     >
                       <option>+ Choose Category*</option>
-                      <option value="Beauty">Beauty</option>
-                      <option value="Books">Books</option>
-                      <option value="Clothing & Accessories">
-                        Clothing & Accessories
-                      </option>
-                      <option value="Electronics (Accessories)">
-                        Electronics (Accessories)
-                      </option>
-                      <option value="Fashion Jewelry">Fashion Jewelry</option>
-                      <option value="Food and Beverage">
-                        Food and Beverage
-                      </option>
-                      <option value="Grocery & Gourmet Food">
-                        Grocery & Gourmet Food
-                      </option>
-                      <option value="Handmade">Handmade</option>
-                      <option value="Health & Personal Care">
-                        Health & Personal Care
-                      </option>
-                      <option value="Home & Garden">Home & Garden</option>
-                      <option value="Industrial & Scientific">
-                        Industrial & Scientific
-                      </option>
-                      <option value="Luggage & Travel Accessories">
-                        Luggage & Travel Accessories
-                      </option>
-                      <option value="Mobiles, Mobile Accessories">
-                        Mobiles, Mobile Accessories
-                      </option>
-                      <option value="Music">Music</option>
-                      <option value="Musical Instruments">
-                        Musical Instruments
-                      </option>
-                      <option value="Office Products">Office Products</option>
-                      <option value="Outdoors">Outdoors</option>
-                      <option value="Personal Computers">
-                        Personal Computers
-                      </option>
-                      <option value="Pharmaceuticals">Pharmaceuticals</option>
-                      <option value="Professional Services">
-                        Professional Services
-                      </option>
-                      <option value="Shoes, Handbags & Sunglasses">
-                        Shoes, Handbags & Sunglasses
-                      </option>
-                      <option value="shops">Shops</option>
-                      <option value="Software & Computer Games">
-                        Software & Computer Games
-                      </option>
-                      <option value="Tools & Home Improvement">
-                        Tools & Home Improvement
-                      </option>
-                      <option value="Toys & Games">Toys & Games</option>
-                      <option value="Video, DVD & Blu-Ray">
-                        Video, DVD & Blu-Ray
-                      </option>
-                      <option value="Watches">Watches</option>
+                      {config.businessCategories.map(category => (
+                        <option key={category.value} value={category.value}>
+                          {category.name}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
                 <Items className="form-group control">
-                  {items.length > 0 &&
-                    items.map(item => <div>{item.itemName}</div>)}
                   <label htmlFor="exampleInputEmail1">Items</label>
+                  <div>
+                    {items.length > 0 &&
+                      items.map(item => (
+                        <a className="badge" href="#">
+                          {item.itemName}
+                        </a>
+                      ))}
+                  </div>
                   <input
                     type="text"
                     name="itemName"
@@ -263,6 +240,15 @@ class BusinessForm extends React.Component {
               Submit
             </button>
           </div>
+          {/* <div
+            className="alert alert-success"
+            name="success"
+            value={success}
+            onChange={this.onChange}
+          >
+            <strong>Success!</strong> You have successfully register your
+            business with us.
+          </div> */}
         </form>
       </Container>
     );
