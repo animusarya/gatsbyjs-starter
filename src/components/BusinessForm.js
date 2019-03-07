@@ -174,6 +174,7 @@ class BusinessForm extends React.Component {
                       <option value="Shoes, Handbags & Sunglasses">
                         Shoes, Handbags & Sunglasses
                       </option>
+                      <option value="shops">Shops</option>
                       <option value="Software & Computer Games">
                         Software & Computer Games
                       </option>
