@@ -9,15 +9,19 @@ const Container = styled.section`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 769px) {
     background-image: none;
+    height: 70rem !important;
+  }
+  .slider-area {
+    @media screen and (max-width: 768px) {
+    }
   }
   .mobile-menu {
     display: none;
   }
   @media screen and (max-width: 768px) {
     background-color: #33b7b7f7 !important;
-    height: 55rem !important;
   }
   .slider-inner h2 {
     font-size: 46px;

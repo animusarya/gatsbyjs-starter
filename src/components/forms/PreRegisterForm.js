@@ -11,6 +11,10 @@ const Container = styled.form`
   .form-group {
     margin-left: 6rem;
     margin-right: 3rem;
+    @media screen and (max-width: 768px) {
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
   }
   .form-control-feedback {
     right: 25px !important;
@@ -47,7 +51,7 @@ const Container = styled.form`
       margin: 0;
     }
     .btn {
-      width: 30%;
+      width: 50% !important;
       padding: 15px 20px;
       border-radius: 6rem;
       color: #18b9ba;
@@ -70,6 +74,9 @@ const Container = styled.form`
   .button-wrapper {
     margin-top: 2rem;
     padding-left: 3rem;
+    @media screen and (max-width: 768px) {
+      padding-left: 0rem;
+    }
   }
 `;
 
