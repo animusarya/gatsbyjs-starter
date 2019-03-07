@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 
 const Container = styled.div`
   .mobile-menu {
@@ -30,15 +30,15 @@ const Container = styled.div`
   }
 `;
 
-const LinkStyled = styled (Link)`
+const LinkStyled = styled(Link)`
   font-weight: 700;
   color: #00b7b8 !important;
 `;
 
-const MobileMenu = ({isActive}) => (
+const MobileMenu = ({ isActive }) => (
   <Container className="mobile-menu">
     {isActive && (
-<ul className="list-group">
+      <ul className="list-group">
         <li className="list-group-item apply-as-courier">
           <LinkStyled
             to="/courier-application/"
@@ -46,6 +46,9 @@ const MobileMenu = ({isActive}) => (
           >
             APPLY AS COURIER
           </LinkStyled>
+        </li>
+        <li className="list-group-item">
+          <LinkStyled to="/submit-business/">Submit Your Business</LinkStyled>
         </li>
         <li className="list-group-item">
           <LinkStyled to="/about/">About</LinkStyled>
@@ -63,7 +66,7 @@ const MobileMenu = ({isActive}) => (
           <LinkStyled to="/terms-and-conditions/">T&C</LinkStyled>
         </li>
       </ul>
-)}
+    )}
   </Container>
 );
 

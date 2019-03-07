@@ -44,7 +44,7 @@ class BusinessForm extends React.Component {
       category: '',
       itemName: '',
       itemPrice: '',
-      // itemImage: '',
+      itemImage: '',
       agree: false,
       items: [],
     };
@@ -55,9 +55,14 @@ class BusinessForm extends React.Component {
   };
 
   addItem = () => {
-    const { items, itemName, itemPrice } = this.state;
+    const { items, itemName, itemPrice, itemImage } = this.state;
     const newItems = items.concat({ itemName, itemPrice });
-    this.setState({ items: newItems, itemName: '', itemPrice: '' });
+    this.setState({
+      items: newItems,
+      itemName: '',
+      itemPrice: '',
+      itemImage: '',
+    });
   };
 
   onSubmit = () => {
@@ -72,7 +77,7 @@ class BusinessForm extends React.Component {
       category,
       itemName,
       itemPrice,
-      // itemImage,
+      itemImage,
       agree,
       items,
     } = this.state;
@@ -124,9 +129,62 @@ class BusinessForm extends React.Component {
                       onChange={this.onChange}
                     >
                       <option>+ Choose Category*</option>
-                      <option value="Mobiles, Mobile Accessories, Electronics">
-                        Mobiles, Mobile Accessories, Electronics
+                      <option value="Beauty">Beauty</option>
+                      <option value="Books">Books</option>
+                      <option value="Clothing & Accessories">
+                        Clothing & Accessories
                       </option>
+                      <option value="Electronics (Accessories)">
+                        Electronics (Accessories)
+                      </option>
+                      <option value="Fashion Jewelry">Fashion Jewelry</option>
+                      <option value="Food and Beverage">
+                        Food and Beverage
+                      </option>
+                      <option value="Grocery & Gourmet Food">
+                        Grocery & Gourmet Food
+                      </option>
+                      <option value="Handmade">Handmade</option>
+                      <option value="Health & Personal Care">
+                        Health & Personal Care
+                      </option>
+                      <option value="Home & Garden">Home & Garden</option>
+                      <option value="Industrial & Scientific">
+                        Industrial & Scientific
+                      </option>
+                      <option value="Luggage & Travel Accessories">
+                        Luggage & Travel Accessories
+                      </option>
+                      <option value="Mobiles, Mobile Accessories">
+                        Mobiles, Mobile Accessories
+                      </option>
+                      <option value="Music">Music</option>
+                      <option value="Musical Instruments">
+                        Musical Instruments
+                      </option>
+                      <option value="Office Products">Office Products</option>
+                      <option value="Outdoors">Outdoors</option>
+                      <option value="Personal Computers">
+                        Personal Computers
+                      </option>
+                      <option value="Pharmaceuticals">Pharmaceuticals</option>
+                      <option value="Professional Services">
+                        Professional Services
+                      </option>
+                      <option value="Shoes, Handbags & Sunglasses">
+                        Shoes, Handbags & Sunglasses
+                      </option>
+                      <option value="Software & Computer Games">
+                        Software & Computer Games
+                      </option>
+                      <option value="Tools & Home Improvement">
+                        Tools & Home Improvement
+                      </option>
+                      <option value="Toys & Games">Toys & Games</option>
+                      <option value="Video, DVD & Blu-Ray">
+                        Video, DVD & Blu-Ray
+                      </option>
+                      <option value="Watches">Watches</option>
                     </select>
                   </div>
                 </div>
@@ -157,6 +215,9 @@ class BusinessForm extends React.Component {
                   <div className="form-group">
                     <input
                       type="file"
+                      name="itemImage"
+                      value={itemImage}
+                      onChange={this.onChange}
                       className="form-control-file"
                       id="exampleFormControlFile1"
                     />

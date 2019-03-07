@@ -185,6 +185,11 @@ class Header extends React.Component {
                               <Link to="/about/">About</Link>
                             </li>
                             <li>
+                              <Link to="/submit-business/">
+                                Apply as Business
+                              </Link>
+                            </li>
+                            <li>
                               <Link to="/courier-application/">
                                 Apply as Courier
                               </Link>
