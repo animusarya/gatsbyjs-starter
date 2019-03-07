@@ -48,7 +48,7 @@ const MobileMenu = ({ isActive }) => (
           </LinkStyled>
         </li>
         <li className="list-group-item">
-          <LinkStyled to="/submit-business/">Submit Your Business</LinkStyled>
+          <LinkStyled to="/submit-business/">APPLY AS BUSINESS</LinkStyled>
         </li>
         <li className="list-group-item">
           <LinkStyled to="/about/">About</LinkStyled>
