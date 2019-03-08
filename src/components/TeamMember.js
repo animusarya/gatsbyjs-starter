@@ -6,7 +6,7 @@ const Container = styled.div`
 `;
 
 export default ({ name, designation, imageUrl }) => (
-  <Container className="col-md-4 col-sm-6 col-xs-12 col-6">
+  <Container className="col-md-4 col-sm-4 col-xs-12 col-6">
     <div className="single-team">
       <div className="team-thumb">
         <img src={imageUrl} alt="image" />
