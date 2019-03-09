@@ -41,7 +41,7 @@ export default () => (
         />
         <TeamMember
           name="Vipin Rawat"
-          designation="UI/UX Designer"
+          designation="UI/UX Developer"
           imageUrl="/images/vipin1.jpeg"
         />
         <TeamMember
