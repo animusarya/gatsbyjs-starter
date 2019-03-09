@@ -246,8 +246,7 @@ class BusinessForm extends React.Component {
             value={success}
             onChange={this.onChange}
           >
-            <strong>Success!</strong> You have successfully register your
-            business with us.
+            <strong>Success!</strong> You have successfully became business Partner of Packrs
           </div> */}
         </form>
       </Container>
