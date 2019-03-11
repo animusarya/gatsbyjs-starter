@@ -32,10 +32,7 @@ module.exports = {
     { name: 'Health & Personal Care', value: 'healthPersonalCare' },
     { name: 'Home & Garden', value: 'homeAndGarden' },
     { name: 'Industrial & Scientific', value: 'industrialAndScientific' },
-    {
-      name: 'Luggage & Travel Accessories',
-      value: 'luggageAndTravelAccessories',
-    },
+    { name: 'Luggage & Travel Accessories', value: 'luggageAccessories' },
     { name: 'Mobiles, Mobile Accessories', value: 'mobilesAccessories' },
     { name: 'Music', value: 'music' },
     { name: 'Musical Instruments', value: 'musicalInstruments' },

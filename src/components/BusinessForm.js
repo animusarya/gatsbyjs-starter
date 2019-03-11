@@ -71,7 +71,7 @@ class BusinessForm extends React.Component {
 
   addItem = () => {
     const { items, itemName, itemPrice, itemImage } = this.state;
-    const newItems = items.concat({ itemName, itemPrice });
+    const newItems = items.concat({ itemName, itemPrice, itemImage });
     this.setState({
       items: newItems,
       itemName: '',
@@ -89,7 +89,7 @@ class BusinessForm extends React.Component {
       items: [],
       success: '',
     });
-    // console.log(name, about, category, items);
+    console.log(name, about, category, items, success);
   };
 
   render() {
