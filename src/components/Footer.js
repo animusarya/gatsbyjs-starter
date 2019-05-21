@@ -14,6 +14,10 @@ const Container = styled.footer`
       border-right: 1px solid #00b7b8 !important;
     }
   }
+
+  .row Link {
+    font-size: 18px;
+  }
 `;
 
 const Footer = () => (
@@ -23,6 +27,12 @@ const Footer = () => (
         <div className="row">
           <Link to="/contact/">Contact</Link>
           <Link to="/privacy-policy/">Privacy Policy</Link>
+          <Link to="/submit-business/">
+            Apply as Business
+          </Link>
+          <Link to="/courier-application/">
+            Apply as Courier
+          </Link>
           <Link to="/terms-and-conditions/">T&C</Link>
           <Link to="/fAQ/" id="faq">
             FAQ

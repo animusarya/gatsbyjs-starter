@@ -69,7 +69,7 @@ const Container = styled.header`
   }
   .main-menu nav ul li a {
     display: block;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     color: #fff;
     letter-spacing: 0;
@@ -138,7 +138,7 @@ class Header extends React.Component {
                       <nav className="nav-menu">
                         {isHome ? (
                           <ul>
-                            <li>
+                            {/* <li>
                               <a href="#feature">Features</a>
                             </li>
                             <li>
@@ -152,6 +152,9 @@ class Header extends React.Component {
                             </li>
                             <li>
                               <a href="#contact">Subscribe</a>
+                            </li> */}
+                            <li>
+                              <Link to="/">Home</Link>
                             </li>
                             <li>
                               <Link to="/contact/">Contact</Link>
@@ -162,7 +165,7 @@ class Header extends React.Component {
                             <li>
                               <Link to="/about/">About</Link>
                             </li>
-                            <li>
+                            {/* <li>
                               <Link to="/submit-business/">
                                 Apply as Business
                               </Link>
@@ -171,10 +174,13 @@ class Header extends React.Component {
                               <Link to="/courier-application/">
                                 Apply as Courier
                               </Link>
-                            </li>
+                            </li> */}
                           </ul>
                         ) : (
                           <ul>
+                            <li>
+                              <Link to="/">Home</Link>
+                            </li>
                             <li>
                               <Link to="/contact/">Contact</Link>
                             </li>
@@ -184,7 +190,7 @@ class Header extends React.Component {
                             <li>
                               <Link to="/about/">About</Link>
                             </li>
-                            <li>
+                            {/* <li>
                               <Link to="/submit-business/">
                                 Apply as Business
                               </Link>
@@ -193,7 +199,7 @@ class Header extends React.Component {
                               <Link to="/courier-application/">
                                 Apply as Courier
                               </Link>
-                            </li>
+                            </li> */}
                           </ul>
                         )}
                       </nav>

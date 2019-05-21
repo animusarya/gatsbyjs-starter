@@ -166,13 +166,28 @@ a,
 a:visited {
   text-decoration: none;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 18px;
   color: #111;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   outline: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  a,
+  a:visited {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 12px;
+    color: #111;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    outline: 0;
+  }
 }
 
 a:hover,
