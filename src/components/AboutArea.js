@@ -14,6 +14,8 @@ const Container = styled.div`
   }
 `;
 
+// this is just to check commit update
+
 const AboutArea = () => (
   <Container className="about-area ptb--100">
     <div className="container">
