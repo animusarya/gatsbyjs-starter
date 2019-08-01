@@ -29,11 +29,11 @@ const AppDownload = () => (
           <p>Our app is available both on android and ios platforms</p>
         </div>
         <div className="download-btns btn-area text-center">
-          <a href="https://play.google.com/store/apps/details?id=com.packrs" target="_blank">
+          <a href="https://play.google.com/store/apps/details?id=com.packrs">
             <i className="fab fa-google-play" />
             Android App
           </a>
-          <a onClick={() => swal('Coming soon !')}>
+          <a href="https://apps.apple.com/us/app/packrs/id1474759357?ls=1">
             <i className="fab fa-apple" />
             iPhone App
           </a>
