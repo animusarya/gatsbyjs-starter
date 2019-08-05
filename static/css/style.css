@@ -115,6 +115,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /* Fix for webkit rendering */
   -webkit-text-size-adjust: 100%;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 img {
@@ -1326,7 +1327,7 @@ END Contact Area
   font-weight: 700;
   color: #555555;
   line-height: 13px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   letter-spacing: 0;
 }
 
@@ -1706,7 +1707,7 @@ END Blog Standard
   letter-spacing: 0.01em;
   color: #535151;
   line-height: 22px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   margin-top: -3px;
 }
 

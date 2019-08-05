@@ -24,6 +24,10 @@ const Container = styled.section`
   }
   .c-social ul li a {
     background-color: #33b760 !important;
+    :hover {
+      background-color: #fff !important;
+      color: #33b760 !important;
+    }
   }
   .message {
     position: absolute;

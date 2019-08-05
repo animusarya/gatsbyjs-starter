@@ -37,7 +37,7 @@ const Footer = () => (
           <Link to="/fAQ/" id="faq">
             FAQ
           </Link>
-          <p>Copyright &copy;2018 | All rights reserved</p>
+          <p>Copyright &copy;2019 | All rights reserved</p>
         </div>
       </div>
     </div>
