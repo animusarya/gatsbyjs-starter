@@ -152,9 +152,9 @@ class BusinessForm extends React.Component {
                       onChange={this.onChange}
                     >
                       <option>+ Choose Category*</option>
-                      {config.businessCategories.map(category => (
-                        <option key={category.value} value={category.value}>
-                          {category.name}
+                      {config.businessCategories.map(categories=> (
+                        <option key={categories.value} value={categories.value}>
+                          {categories.name}
                         </option>
                       ))}
                     </select>

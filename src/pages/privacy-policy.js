@@ -40,7 +40,7 @@ export default class PrivacyPolicy extends React.Component {
       .query({
         query,
         variables: {
-          slug: 'safety-and-privacy',
+          slug: 'privacy-policy',
         },
       })
       .then(result => this.setState({ data: result.data.page }));
