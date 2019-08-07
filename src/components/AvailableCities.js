@@ -16,7 +16,7 @@ const Container = styled.section`
     list-style-type: disc;
     font-size: 2.2rem;
     color: #000;
-    margin-bottom: 2.5rem;
+    margin-bottom: 4.5rem;
     @media screen and (max-width: 768px) {
       justify-content: center;
       display: grid;
