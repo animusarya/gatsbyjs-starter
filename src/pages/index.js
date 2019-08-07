@@ -11,6 +11,7 @@ import Slider from '../components/Slider';
 import Team from '../components/Team';
 import AppDownload from '../components/AppDownload';
 import SubscriptionForm from '../components/forms/SubscriptionForm';
+import AvailableCities from '../components/AvailableCities';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -31,6 +32,7 @@ export default class IndexPage extends React.Component {
         <Features />
         <Slider images={images} />
         <Team />
+        <AvailableCities />
         <AppDownload />
         <SubscriptionForm />
       </Layout>
