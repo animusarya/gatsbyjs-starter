@@ -36,6 +36,11 @@ const AvailableCities = () => (
       <div className="row">
         <div className="col-xs-6 col-sm-3">
           <ul>
+            <li>Chandigarh</li>  
+          </ul>
+        </div>
+        <div className="col-xs-6 col-sm-3">
+          <ul>
             <li>Jalandhar</li>
           </ul>
         </div>
@@ -47,11 +52,6 @@ const AvailableCities = () => (
         <div className="col-xs-6 col-sm-3">
           <ul>
             <li>Amritsar</li>
-          </ul>
-        </div>
-        <div className="col-xs-6 col-sm-3">
-          <ul>
-            <li>Kapurthala</li>
           </ul>
         </div>
       </div>
