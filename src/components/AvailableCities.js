@@ -17,6 +17,8 @@ const Container = styled.section`
     font-size: 2.2rem;
     color: #000;
     margin-bottom: 4.5rem;
+    justify-content: center;
+    display: flex;
     @media screen and (max-width: 768px) {
       justify-content: center;
       display: grid;
@@ -32,22 +34,24 @@ const AvailableCities = () => (
         <p>To serve best part of our services</p>
       </div>
       <div className="row">
-        <div className="col-md-4">
+        <div className="col-xs-6 col-sm-3">
           <ul>
             <li>Jalandhar</li>
           </ul>
-          <ul>
-            <li>Kapurthala</li>
-          </ul>
         </div>
-        <div className="col-md-4">
+        <div className="col-xs-6 col-sm-3">
           <ul>
             <li>Ludhiana</li>
           </ul>
         </div>
-        <div className="col-md-4">
+        <div className="col-xs-6 col-sm-3">
           <ul>
             <li>Amritsar</li>
+          </ul>
+        </div>
+        <div className="col-xs-6 col-sm-3">
+          <ul>
+            <li>Kapurthala</li>
           </ul>
         </div>
       </div>
