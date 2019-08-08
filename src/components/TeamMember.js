@@ -9,7 +9,7 @@ export default ({ name, designation, imageUrl }) => (
   <Container className="col-md-4 col-sm-4 col-xs-12 col-6">
     <div className="single-team">
       <div className="team-thumb">
-        <img src={imageUrl} alt="image" />
+        <img src={imageUrl} alt="profile" />
       </div>
       <h4>{name}</h4>
       <span>{designation}</span>
