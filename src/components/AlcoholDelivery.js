@@ -16,7 +16,7 @@ const Container = styled.div`
     background-color: #33b760;
   }
   img {
-    max-width: 45%;
+    max-width: 55%;
     height: auto;
     @media screen and (max-width: 768px) {
       max-width: 100%;
@@ -25,14 +25,14 @@ const Container = styled.div`
   .row {
     display: flex;
   }
-  .col-xs-6 {
-    justify-content: center;
+  .image {
     display: flex;
+    justify-content: flex-end;
   }
   .content {
     font-size: 2.2rem;
     margin-top: 15%;
-    padding-right: 14%;
+    padding-right: 35%;
     text-align: justify;
     @media screen and (max-width: 768px) {
       padding-right: 0;
@@ -44,11 +44,11 @@ const AlcoholDelivery = () => (
   <Container className="team-area bg-gray ptb--100" id="team">
     <div className="container">
       <div className="section-title">
-        <h2>We deliver more than meals.</h2>
+        <h2>We Deliver More Than Meals.</h2>
         <p>We understand your feelings better than anyone else</p>
       </div>
       <div className="row">
-        <div className="col-xs-6">
+        <div className="col-xs-6 image">
           <img src={img} alt="food delivered" />
         </div>
         <div className="col-xs-6">
