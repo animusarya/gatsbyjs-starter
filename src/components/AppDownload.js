@@ -18,6 +18,10 @@ const Container = styled.div`
   a:visited {
     cursor: pointer;
   }
+  h2 {
+    font-family: Nunito, sans-serif !important;
+    font-weight: 800 !important;
+  }
 `;
 
 const AppDownload = () => (

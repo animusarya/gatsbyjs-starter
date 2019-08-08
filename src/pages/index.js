@@ -12,6 +12,7 @@ import Team from '../components/Team';
 import AppDownload from '../components/AppDownload';
 import SubscriptionForm from '../components/forms/SubscriptionForm';
 import AvailableCities from '../components/AvailableCities';
+import AlcoholDelivery from '../components/AlcoholDelivery';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -32,8 +33,9 @@ export default class IndexPage extends React.Component {
         <Features />
         <Slider images={images} />
         <Team />
-        <AvailableCities />
         <AppDownload />
+        <AlcoholDelivery />
+        <AvailableCities />
         <SubscriptionForm />
       </Layout>
     );
