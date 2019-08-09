@@ -7,10 +7,20 @@ import Seo from '../components/Seo';
 import Layout from '../components/Layout';
 import Jobs from '../components/Jobs';
 
-const Section = styled.section``;
+const Section = styled.section`
+  .section-title h2:before {
+    background-color: #33b760;
+  }
+  .section-title h2:after {
+    background-color: #33b760;
+  }
+  .job-cards {
+  }
+`;
 
 const Title = styled.div`
   justify-content: center;
+  margin-top: 4rem;
 `;
 
 export default class Career extends React.Component {
@@ -32,7 +42,14 @@ export default class Career extends React.Component {
                 <p>Give wings to your dreams with us</p>
               </div>
             </Title>
-            {/* <Jobs /> */}
+            <div className="job-cards">
+              <Jobs />
+              <Jobs />
+              <Jobs />
+              <Jobs />
+              <Jobs />
+              <Jobs />
+            </div>
           </div>
         </Section>
       </Layout>
