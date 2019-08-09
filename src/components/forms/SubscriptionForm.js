@@ -73,7 +73,7 @@ class SubscriptionForm extends React.Component {
         <div className="container">
           <div className="section-title">
             <h2>Subscribe</h2>
-            <p>Subscribe to us with your email to get updates</p>
+            <p>Subscribe us to get latest updates</p>
           </div>
           <div className="row">
             <div className="col-md-6 col-sm-6 col-xs-12">
