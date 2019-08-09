@@ -14,8 +14,6 @@ const Section = styled.section`
   .section-title h2:after {
     background-color: #33b760;
   }
-  .job-cards {
-  }
 `;
 
 const Title = styled.div`
@@ -42,7 +40,7 @@ export default class Career extends React.Component {
                 <p>Give wings to your dreams with us</p>
               </div>
             </Title>
-            <div className="job-cards">
+            <div>
               <Jobs />
               <Jobs />
               <Jobs />

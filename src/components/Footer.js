@@ -31,7 +31,7 @@ const Footer = () => (
             Apply as Business
           </Link>
           <a href="https://airtable.com/shrNYyLynebosW850">
-            Apply as Courier
+            Apply as Partner
           </a>
           <Link to="/terms-and-conditions/">T&C</Link>
           <Link to="/fAQ/" id="faq">

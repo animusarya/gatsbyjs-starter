@@ -63,7 +63,7 @@ const Features = () => (
             <div className="ft-single">
               <img src="/img/4.png" alt="icon" />
               <div className="meta-content">
-                <h2>Apply As Courier</h2>
+                <h2>Apply As Partner</h2>
                 <p>You can apply as a courier guy and earn bucks.</p>
               </div>
             </div>
@@ -82,8 +82,8 @@ const Features = () => (
               <div className="meta-content">
                 <h2>Refer Friends</h2>
                 <p>
-                  Refer your friends and get discount coupons for your next
-                  booking.
+                  Refer your friends and on each signup, both you and your friend 
+                  will get a signup bonus of ₹50 each.
                 </p>
               </div>
             </div>
