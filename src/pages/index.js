@@ -30,11 +30,11 @@ export default class IndexPage extends React.Component {
         <HomeHero refCode={location.search} />
         <ServiceArea />
         <AboutArea />
+        <AlcoholDelivery />
         <Features />
         <Slider images={images} />
         <Team />
         <AppDownload />
-        <AlcoholDelivery />
         <AvailableCities />
         <SubscriptionForm />
       </Layout>

@@ -24,6 +24,9 @@ const Container = styled.div`
   }
   .row {
     display: flex;
+    @media screen and (max-width: 768px) {
+      display: grid;
+    }
   }
   .image {
     display: flex;
@@ -38,10 +41,15 @@ const Container = styled.div`
       padding-right: 0;
     }
   }
+  .col-xs-6 {
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
 `;
 
 const AlcoholDelivery = () => (
-  <Container className="team-area bg-gray ptb--100" id="team">
+  <Container className="team-area bg-gray ptb--50" id="team">
     <div className="container">
       <div className="section-title">
         <h2>We Deliver More Than Meals.</h2>
