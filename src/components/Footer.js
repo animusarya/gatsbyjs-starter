@@ -27,11 +27,15 @@ const Footer = () => (
         <div className="row">
           <Link to="/contact/">Contact</Link>
           <Link to="/privacy-policy/">Privacy Policy</Link>
+          <Link to="/blog/">News</Link>
           <Link to="/submit-business/">
             Apply as Business
           </Link>
           <a href="https://airtable.com/shrNYyLynebosW850">
             Apply as Partner
+          </a>
+          <a href="https://packrs-334.freshstatus.io/" target="_blank" rel="noopener noreferrer">
+            Server Stats
           </a>
           <Link to="/terms-and-conditions/">T&C</Link>
           <Link to="/fAQ/" id="faq">
