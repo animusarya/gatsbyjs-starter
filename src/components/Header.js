@@ -157,7 +157,7 @@ class Header extends React.Component {
                               <Link to="/">Home</Link>
                             </li>
                             <li>
-                              <a href="https://packrs.freshteam.com/" target="_blank" rel="noopener noreferrer">Career</a>
+                              <a href="https://perminderklair.freshteam.com/jobs/" target="_blank" rel="noopener noreferrer">Career</a>
                             </li>
                             <li>
                               <Link to="/about/">About</Link>
@@ -182,7 +182,7 @@ class Header extends React.Component {
                               <Link to="/">Home</Link>
                             </li>
                             <li>
-                              <a href="https://packrs.freshteam.com/" target="_blank" rel="noopener noreferrer">Career</a>
+                              <a href="https://perminderklair.freshteam.com/jobs/" target="_blank" rel="noopener noreferrer">Career</a>
                             </li>
                             <li>
                               <Link to="/about/">About</Link>
