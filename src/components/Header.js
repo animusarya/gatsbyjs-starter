@@ -136,7 +136,21 @@ class Header extends React.Component {
                   <div className="col-md-9 hidden-xs hidden-sm">
                     <div className="main-menu">
                       <nav className="nav-menu">
-                        {isHome ? (
+                        <ul>
+                          <li>
+                            <Link to="/">Home</Link>
+                          </li>
+                          <li>
+                            <a href="https://perminderklair.freshteam.com/jobs/" target="_blank" rel="noopener noreferrer">Career</a>
+                          </li>
+                          <li>
+                            <Link to="/about/">About</Link>
+                          </li>
+                          <li>
+                            <Link to="/support/">Support</Link>
+                          </li>
+                        </ul>
+                        {/* {isHome ? (
                           <ul>
                             {/* <li>
                               <a href="#feature">Features</a>
@@ -153,7 +167,7 @@ class Header extends React.Component {
                             <li>
                               <a href="#contact">Subscribe</a>
                             </li> */}
-                            <li>
+                        {/*  <li>
                               <Link to="/">Home</Link>
                             </li>
                             <li>
@@ -164,8 +178,8 @@ class Header extends React.Component {
                             </li>
                             <li>
                               <Link to="/support/">Support</Link>
-                            </li>
-                            {/* <li>
+                            </li> */}
+                        {/* <li>
                               <Link to="/submit-business/">
                                 Apply as Business
                               </Link>
@@ -175,7 +189,7 @@ class Header extends React.Component {
                                 Apply as Courier
                               </Link>
                             </li> */}
-                          </ul>
+                        {/* </ul>
                         ) : (
                           <ul>
                             <li>
@@ -189,8 +203,8 @@ class Header extends React.Component {
                             </li>
                             <li>
                               <Link to="/support/">Support</Link>
-                            </li>
-                            {/* <li>
+                            </li> */}
+                        {/* <li>
                               <Link to="/submit-business/">
                                 Apply as Business
                               </Link>
@@ -199,9 +213,9 @@ class Header extends React.Component {
                               <Link to="/courier-application/">
                                 Apply as Courier
                               </Link>
-                            </li> */}
+                            </li> 
                           </ul>
-                        )}
+                          )} */}
                       </nav>
                     </div>
                   </div>
