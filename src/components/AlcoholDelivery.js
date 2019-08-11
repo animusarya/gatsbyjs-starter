@@ -18,9 +18,6 @@ const Container = styled.div`
   img {
     max-width: 55%;
     height: auto;
-    @media screen and (max-width: 768px) {
-      max-width: 100%;
-    }
   }
   .row {
     display: flex;
@@ -44,6 +41,7 @@ const Container = styled.div`
   .col-xs-6 {
     @media screen and (max-width: 768px) {
       width: 100%;
+      justify-content: center;
     }
   }
 `;

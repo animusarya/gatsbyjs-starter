@@ -35,7 +35,7 @@ const Footer = () => (
             Apply as Partner
           </a>
           <a href="https://packrs-334.freshstatus.io/" target="_blank" rel="noopener noreferrer">
-            Server Stats
+            Service Stats
           </a>
           <Link to="/terms-and-conditions/">T&C</Link>
           <Link to="/fAQ/" id="faq">
