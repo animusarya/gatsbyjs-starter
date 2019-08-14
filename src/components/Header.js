@@ -141,13 +141,13 @@ class Header extends React.Component {
                             <Link to="/">Home</Link>
                           </li>
                           <li>
-                            <a href="https://perminderklair.freshteam.com/jobs/">Career</a>
-                          </li>
-                          <li>
                             <Link to="/about/">About</Link>
                           </li>
                           <li>
                             <Link to="/support/">Support</Link>
+                          </li>
+                          <li>
+                            <a href="https://perminderklair.freshteam.com/jobs/">Career</a>
                           </li>
                         </ul>
                       </nav>
