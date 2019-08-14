@@ -31,22 +31,23 @@ const Footer = () => (
       <div className="container">
         <div className="row">
           <Link to="/contact/">Contact</Link>
-          <Link to="/privacy-policy/">Privacy Policy</Link>
           <Link to="/blog/">News</Link>
-          <Link to="/submit-business/">
+          <Link to="https://airtable.com/shrzgjKLLyiwUVRA0">
             Apply as Business
           </Link>
           <a href="https://airtable.com/shrNYyLynebosW850">
-            Apply as Partner
+            Apply as Delivery Partner
           </a>
-          <a href="https://packrs-334.freshstatus.io/" target="_blank" rel="noopener noreferrer">
-            Service Stats
-          </a>
-          <Link to="/terms-and-conditions/">T&C</Link>
+          <a href="https://perminderklair.freshteam.com/jobs/">Career</a>
           <Link to="/fAQ/" id="faq">
             FAQ
           </Link>
-          <p>Copyright &copy;2019 | All rights reserved</p>
+          <Link to="/privacy-policy/">Privacy Policy</Link>
+          <Link to="/terms-and-conditions/">T&C</Link>
+          <a href="https://packrs-334.freshstatus.io/" target="_blank" rel="noopener noreferrer">
+            Service Stats
+          </a>
+          <p>Copyright &copy;2019 | All rights reserved | Made with ❤️ in Punjab, India, and on the Internet.</p>
         </div>
       </div>
     </div>
