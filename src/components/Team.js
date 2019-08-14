@@ -32,7 +32,7 @@ export default () => (
         <TeamMember
           name="Nasim Akthar"
           designation="Lead Developer"
-          imageUrl="/images/nasim.jpg"
+          imageUrl="/images/nasim.jpeg"
         />
         <TeamMember
           name="Gagan Saini"

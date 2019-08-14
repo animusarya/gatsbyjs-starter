@@ -141,7 +141,7 @@ class Header extends React.Component {
                             <Link to="/">Home</Link>
                           </li>
                           <li>
-                            <a href="https://perminderklair.freshteam.com/jobs/" target="_blank" rel="noopener noreferrer">Career</a>
+                            <a href="https://perminderklair.freshteam.com/jobs/">Career</a>
                           </li>
                           <li>
                             <Link to="/about/">About</Link>
@@ -150,72 +150,6 @@ class Header extends React.Component {
                             <Link to="/support/">Support</Link>
                           </li>
                         </ul>
-                        {/* {isHome ? (
-                          <ul>
-                            {/* <li>
-                              <a href="#feature">Features</a>
-                            </li>
-                            <li>
-                              <a href="#screenshot">Screenshot</a>
-                            </li>
-                            <li>
-                              <a href="#team">Team</a>
-                            </li>
-                            <li>
-                              <a href="#download">Download</a>
-                            </li>
-                            <li>
-                              <a href="#contact">Subscribe</a>
-                            </li> */}
-                        {/*  <li>
-                              <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                              <a href="https://perminderklair.freshteam.com/jobs/" target="_blank" rel="noopener noreferrer">Career</a>
-                            </li>
-                            <li>
-                              <Link to="/about/">About</Link>
-                            </li>
-                            <li>
-                              <Link to="/support/">Support</Link>
-                            </li> */}
-                        {/* <li>
-                              <Link to="/submit-business/">
-                                Apply as Business
-                              </Link>
-                            </li>
-                            <li id="apply-as-courier">
-                              <Link to="/courier-application/">
-                                Apply as Courier
-                              </Link>
-                            </li> */}
-                        {/* </ul>
-                        ) : (
-                          <ul>
-                            <li>
-                              <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                              <a href="https://perminderklair.freshteam.com/jobs/" target="_blank" rel="noopener noreferrer">Career</a>
-                            </li>
-                            <li>
-                              <Link to="/about/">About</Link>
-                            </li>
-                            <li>
-                              <Link to="/support/">Support</Link>
-                            </li> */}
-                        {/* <li>
-                              <Link to="/submit-business/">
-                                Apply as Business
-                              </Link>
-                            </li>
-                            <li>
-                              <Link to="/courier-application/">
-                                Apply as Courier
-                              </Link>
-                            </li> 
-                          </ul>
-                          )} */}
                       </nav>
                     </div>
                   </div>

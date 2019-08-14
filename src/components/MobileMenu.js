@@ -35,29 +35,31 @@ const LinkStyled = styled(Link)`
   color: #00b7b8 !important;
 `;
 
+const LinkAnchor = styled.a`
+  font-weight: 700;
+  color: #00b7b8 !important;
+`;
+
 const MobileMenu = ({ isActive }) => (
   <Container className="mobile-menu">
     {isActive && (
       <ul className="list-group">
         <li className="list-group-item apply-as-courier">
           <LinkStyled
-            to="/courier-application/"
+            to="/"
             className="visible-xs visible-sm apply-as-courier"
           >
-            APPLY AS COURIER
+            Home
           </LinkStyled>
         </li>
         <li className="list-group-item">
-          <LinkStyled to="/submit-business/">APPLY AS BUSINESS</LinkStyled>
+          <LinkAnchor href="https://perminderklair.freshteam.com/jobs/">Career</LinkAnchor>
         </li>
         <li className="list-group-item">
           <LinkStyled to="/about/">About</LinkStyled>
         </li>
         <li className="list-group-item">
-          <LinkStyled to="/blog/">Blog</LinkStyled>
-        </li>
-        <li className="list-group-item">
-          <LinkStyled to="/contact/">Contact</LinkStyled>
+          <LinkStyled to="/support/">Support</LinkStyled>
         </li>
         <li className="list-group-item">
           <LinkStyled to="/privacy-policy/">Privacy Policy</LinkStyled>
