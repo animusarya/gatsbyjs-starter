@@ -57,7 +57,7 @@ export default class TermsAndConditions extends React.Component {
         <Seo
           title="Terms and Conditions"
           description="Deliver anything, anywhere"
-          url={`${config.siteUrl}`}
+          url={`${config.siteUrl}/terms-and-conditions`}
           image={config.image}
         />
         <Breadcrumb title="Terms And Conditions" />

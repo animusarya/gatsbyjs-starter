@@ -14,7 +14,7 @@ export default class Blog extends React.Component {
         <Seo
           title="News"
           description="Deliver anything, anywhere"
-          url={`${config.siteUrl}`}
+          url={`${config.siteUrl}/blog`}
           image={config.image}
         />
         <Breadcrumb title="News" />

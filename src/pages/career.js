@@ -28,7 +28,7 @@ export default class Career extends React.Component {
         <Seo
           title="Career"
           description="make your Career with Packrs"
-          url={`${config.siteUrl}`}
+          url={`${config.siteUrl}/career`}
           image={config.image}
         />
         <Breadcrumb title="Career" />

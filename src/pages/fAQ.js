@@ -55,7 +55,7 @@ export default class FAQ extends React.Component {
         <Seo
           title="FAQ"
           description="Deliver anything, anywhere"
-          url={`${config.siteUrl}`}
+          url={`${config.siteUrl}/fAQ`}
           image={config.image}
         />
         <Breadcrumb title="FAQ" />

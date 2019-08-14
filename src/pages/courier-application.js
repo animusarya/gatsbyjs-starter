@@ -19,7 +19,7 @@ export default class CourierApplication extends React.Component {
         <Seo
           title="Apply as Courier"
           description="Deliver anything, anywhere"
-          url={`${config.siteUrl}`}
+          url={`${config.siteUrl}/courier-application`}
           image={config.image}
         />
         <CourierHero />

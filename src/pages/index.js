@@ -23,7 +23,7 @@ export default class IndexPage extends React.Component {
       <Layout path={location.pathname}>
         <Seo
           title="Packrs"
-          description="Deliver anything, anywhere"
+          description="Deliver anything, anywhere, anytime"
           url={`${config.siteUrl}`}
           image={config.image}
         />

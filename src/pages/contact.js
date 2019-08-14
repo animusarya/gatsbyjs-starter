@@ -14,7 +14,7 @@ export default class Contact extends React.Component {
         <Seo
           title="Contact"
           description="Deliver anything, anywhere"
-          url={`${config.siteUrl}`}
+          url={`${config.siteUrl}/contact`}
           image={config.image}
         />
         <Breadcrumb title="Contact" />

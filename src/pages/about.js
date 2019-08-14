@@ -54,8 +54,8 @@ export default class Contact extends React.Component {
       <Layout path={location.pathname}>
         <Seo
           title="About"
-          description="Deliver anything, anywhere"
-          url={`${config.siteUrl}`}
+          description="Deliver anything, anywhere, anytime"
+          url={`${config.siteUrl}/about`}
           image={config.image}
         />
         <Breadcrumb title="About" />

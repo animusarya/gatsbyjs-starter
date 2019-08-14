@@ -57,7 +57,7 @@ export default class PrivacyPolicy extends React.Component {
         <Seo
           title="Privacy Policy"
           description="Deliver anything, anywhere"
-          url={`${config.siteUrl}`}
+          url={`${config.siteUrl}/privacy-policy`}
           image={config.image}
         />
         <Breadcrumb title="Privacy Policy" />
