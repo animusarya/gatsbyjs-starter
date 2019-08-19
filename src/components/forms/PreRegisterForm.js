@@ -80,9 +80,9 @@ const Container = styled.form`
   }
 `;
 
-const preRegisterMutation = gql`
-  mutation ContactForm($type: ContactType!, $formData: FormData!) {
-    contactForm(input: { type: $type, formData: $formData }) {
+const sendAppLinkMutation = gql`
+  mutation sendAppLink($input: SendAppLinkInput!) {
+    sendAppLink(input: $input) {
       success
     }
   }
@@ -136,9 +136,8 @@ const PreRegisterForm = props => {
 };
 
 export default withFormik({
-  mapPropsToValues: refCode => ({
+  mapPropsToValues: () => ({
     telephone: '',
-    // refCode,
   }),
 
   validationSchema: Yup.object().shape({
@@ -157,22 +156,19 @@ export default withFormik({
     const { telephone } = values;
     props.toggleLoading();
     const newTelephone = telephone.toString();
-    // console.log('refCode', values.refCode.refCode);
 
     apolloClient
       .mutate({
-        mutation: preRegisterMutation,
+        mutation: sendAppLinkMutation,
         variables: {
-          type: 'preRegister',
-          formData: {
-            telephone: `0091${newTelephone}`,
-            // refCode: values.refCode.refCode,
+          input: {
+            telephone: `+91${newTelephone}`,
           },
         },
       })
       .then(() => {
         swal({
-          text: 'Thank you, we have sent you the details in a SMS',
+          text: 'Thank you, we have sent app download link via SMS',
         });
         props.toggleLoading();
         setSubmitting(false);
