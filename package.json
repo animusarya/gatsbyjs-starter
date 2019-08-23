@@ -1,17 +1,17 @@
 {
-  "name": "kickoff-gatsbyjs",
-  "description": "A react starting point using GatsbyJS",
+  "name": "packrs-website",
+  "description": "packrs official website",
   "version": "2.0.1",
   "author": "Parminder Klair",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/perminder-klair/kickoff-gatsbyjs.git"
+    "url": "git+https://github.com//zeiq-co/packrs-website.git"
   },
   "bugs": {
-    "url": "https://github.com/perminder-klair/kickoff-gatsbyjs/issues"
+    "url": "https://github.com//zeiq-co/packrs-website/issues"
   },
-  "homepage": "https://github.com/perminder-klair/kickoff-gatsbyjs#readme",
+  "homepage": "https://github.com//zeiq-co/packrs-website#readme",
   "scripts": {
     "start": "npm run develop",
     "develop": "gatsby develop",
