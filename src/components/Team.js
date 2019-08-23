@@ -17,7 +17,7 @@ const Container = styled.section`
 `;
 
 export default () => (
-  <Container className="team-area bg-gray ptb--100" id="team">
+  <Container className="team-area ptb--100" id="team">
     <div className="container">
       <div className="section-title">
         <h2>Meet Our Amazing Team</h2>

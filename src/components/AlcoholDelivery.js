@@ -58,7 +58,7 @@ const AlcoholDelivery = () => (
           <img src={img} alt="food delivered" />
         </div>
         <div className="col-xs-6">
-          <p className="content">Get groceries and alcohol delivered in under an hour so 
+          <p className="content">Get groceries and food delivered in under an hour so 
             you can spend your time living your best life. Whether 
             you need a gallon of milk or a handle of vodka, we get it.
           </p>

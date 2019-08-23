@@ -59,7 +59,7 @@ class SubscriptionForm extends React.Component {
     this.setState({ email: '', message: data.msg });
     setTimeout(() => {
       this.setState({ message: '', result: data.result });
-    }, 1000);
+    }, 3000);
   };
 
   handleChange(event) {

@@ -15,7 +15,7 @@ const Container = styled.section`
 `;
 
 const Features = () => (
-  <Container className="feature-area bg-gray ptb--100" id="feature">
+  <Container className="feature-area ptb--100" id="feature">
     <div className="container">
       <div className="section-title">
         <h2>Our Services</h2>

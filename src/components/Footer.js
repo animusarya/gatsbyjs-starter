@@ -11,13 +11,14 @@ const Container = styled.footer`
       color: #fff;
     }
     #faq {
-      border-right: 1px solid #00b7b8 !important;
+      border-right: 1px solid white !important;
     }
   }
 
   .row Link {
     font-size: 18px;
   }
+
   .footer-area {
     @media screen and (max-width: 768px) {
       height: 140px;
@@ -32,9 +33,9 @@ const Footer = () => (
         <div className="row">
           <Link to="/contact/">Contact</Link>
           <Link to="/blog/">News</Link>
-          <Link to="https://airtable.com/shrzgjKLLyiwUVRA0">
+          <a href="https://airtable.com/shrzgjKLLyiwUVRA0">
             Apply as Business
-          </Link>
+          </a>
           <a href="https://airtable.com/shrNYyLynebosW850">
             Apply as Delivery Partner
           </a>

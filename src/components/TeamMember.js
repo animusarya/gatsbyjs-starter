@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   margin-top: 2.5rem;
   .single-team {
-    box-shadow: 12px 12px 14px rgba(10, 8, 8, 0.1);
+    box-shadow: 12px 12px 14px rgba(10,8,8,0.1), 0px 0px 7px rgba(10,0,0,0.1);
     :hover {
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     }
