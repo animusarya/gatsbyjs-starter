@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+
 import MobileMenu from './MobileMenu';
 
 const Container = styled.header`
   .header-area {
-    background-color: #33b7b7 !important;
+    background-color: #2da2a2 !important;
+    padding: 4px 0;
   }
   .header-region {
     display: flex;
@@ -105,8 +107,9 @@ class Header extends React.Component {
   };
 
   render() {
-    const { isHome } = this.props;
+    // const { isHome } = this.props;
     const { isActive } = this.state;
+
     return (
       <React.Fragment>
         <Container id="header">
@@ -117,10 +120,9 @@ class Header extends React.Component {
                   <div className="col-md-3 col-sm-12 col-xs-12 header-region">
                     <Logo className="logo" to="/">
                       <img
-                        src="/images/white-logo.png"
+                        src="/images/packrs-logo.png"
                         alt="logo"
-                        height="35px"
-                        width="35px"
+                        style={{ width: '70px', height: 'auto' }}
                       />
                       <span className="logo-text">PACKRS</span>
                     </Logo>
@@ -147,7 +149,9 @@ class Header extends React.Component {
                             <Link to="/support/">Support</Link>
                           </li>
                           <li>
-                            <a href="https://perminderklair.freshteam.com/jobs/">Career</a>
+                            <a href="https://perminderklair.freshteam.com/jobs/">
+                              Career
+                            </a>
                           </li>
                         </ul>
                       </nav>
