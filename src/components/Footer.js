@@ -15,7 +15,7 @@ const Container = styled.footer`
     }
   }
 
-  .row Link {
+  .row link {
     font-size: 18px;
   }
 
@@ -31,11 +31,8 @@ const Footer = () => (
     <div className="footer-area">
       <div className="container">
         <div className="row">
-          <Link to="/contact/">Contact</Link>
-          <Link to="/blog/">News</Link>
-          <a href="https://airtable.com/shrzgjKLLyiwUVRA0">
-            Apply as Business
-          </a>
+          <a href="https://packrs.freshdesk.com/support/tickets/new">Contact</a>
+          <a href="https://airtable.com/shrzgjKLLyiwUVRA0">Apply as Business</a>
           <a href="https://airtable.com/shrNYyLynebosW850">
             Apply as Delivery Partner
           </a>
@@ -45,10 +42,17 @@ const Footer = () => (
           </Link>
           <Link to="/privacy-policy/">Privacy Policy</Link>
           <Link to="/terms-and-conditions/">T&C</Link>
-          <a href="https://packrs-334.freshstatus.io/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://packrs-334.freshstatus.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Service Stats
           </a>
-          <p>Copyright &copy;2019 | All rights reserved | Made with ❤️ in Punjab, India, and on the Internet.</p>
+          <p>
+            Copyright &copy;2019 | All rights reserved | Made with ❤️ in Punjab,
+            India, and on the Internet.
+          </p>
         </div>
       </div>
     </div>

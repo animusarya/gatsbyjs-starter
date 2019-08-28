@@ -65,8 +65,8 @@ class Slider extends React.Component {
       <Container className="screen-area bg-gray ptb--100" id="screenshot">
         <div className="container">
           <div className="section-title">
-            <h2>Screenshot</h2>
-            <p>The app is feature rich with top notch user experience. </p>
+            <h2>Our App</h2>
+            <p>The app is feature rich with top notch user experience.</p>
           </div>
           <img
             className="screen-img"
